@@ -22,8 +22,10 @@ class MainPage extends StatelessWidget {
           resturants(),
           resturants(),
           resturants(),
-          resturants(),  resturants(),
-          resturants(),  resturants(),
+          resturants(),
+          resturants(),
+          resturants(),
+          resturants(),
           resturants(),
         ]
       ),
