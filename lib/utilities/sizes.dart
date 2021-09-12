@@ -18,8 +18,9 @@ class CustomSizes{
   static  double height3 = getAdaptiveTextSize(200);
   static  double height4 = getAdaptiveTextSize(150);
   static  double height5 = getAdaptiveTextSize(100);
-  static  double height6 = getAdaptiveTextSize(50);
-  static  double height7 = getAdaptiveTextSize(25);
+  static  double height6 = getAdaptiveTextSize(75);
+  static  double height7 = getAdaptiveTextSize(50);
+  static  double height8 = getAdaptiveTextSize(25);
 
   //ICON SIZE
   static double iconSize    = getAdaptiveTextSize(20);
@@ -34,6 +35,8 @@ class CustomSizes{
   static double padding4  = getAdaptiveTextSize(14);
   static double padding5  = getAdaptiveTextSize(10);
   static double padding6  = getAdaptiveTextSize(8);
+  static double padding7  = getAdaptiveTextSize(6);
+  static double padding8  = getAdaptiveTextSize(4);
 
   // SPACES
 

@@ -14,10 +14,13 @@ class CustomText extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
 
+
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign: TextAlign.center,
+
       style: TextStyle(fontSize: fontSize, color: color,fontWeight:fontWeight),
     );
   }
