@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
-import 'package:getir_clone/screens/resturant_page/resturant_home_page.dart';
-import 'package:getir_clone/screens/resturant_page/widgets/widgets.dart';
+import 'package:getir_clone/screens/resturant_details/resturant_details.dart';
+import 'package:getir_clone/screens/resturant_details/widgets/widgets.dart';
+
 import 'package:getir_clone/screens/resturants/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';

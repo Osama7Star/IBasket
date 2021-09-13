@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
-import 'package:getir_clone/screens/home_page/widgets/widgets.dart';
+import 'package:getir_clone/screens/home/widgets/widgets.dart';
 import 'package:getir_clone/screens/resturants/widgets/cusines.dart';
 import 'package:getir_clone/screens/resturants/widgets/resturants_widget.dart';
 import 'package:getir_clone/screens/resturants/widgets/returants_small.dart';

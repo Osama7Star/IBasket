@@ -16,6 +16,8 @@ class DeliverTypeCircle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
+
       width: CustomSizes.iconSize,
       height: CustomSizes.iconSize,
       // child: Icon(Icons.error, size: CustomSizes.iconSize,),

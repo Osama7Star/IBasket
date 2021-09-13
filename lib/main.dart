@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/screens/home_page/home_page.dart';
-import 'package:getir_clone/screens/resturants/main_page.dart';
+import 'package:getir_clone/screens/home/home.dart';
+import 'package:getir_clone/screens/resturants/resturants.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
 

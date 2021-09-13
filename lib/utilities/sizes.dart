@@ -40,7 +40,7 @@ class CustomSizes{
 
   // SPACES
 
-  static double verticalSpace  = getAdaptiveTextSize(8);
+  static double verticalSpace    = getAdaptiveTextSize(8);
   static double horizontalSpace  = getAdaptiveTextSize(8);
 
 }
