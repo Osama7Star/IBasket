@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
+import 'package:getir_clone/screens/resturants/main_page.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -19,7 +20,7 @@ class AddressBar extends StatelessWidget {
             Expanded(
               flex: 6,
               child: Container(
-                  padding: EdgeInsets.all(CustomSizes.padding4),
+                  padding: EdgeInsets.all(CustomSizes.padding1),
 
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -79,8 +80,8 @@ class AddressBar extends StatelessWidget {
   }
 }
 
-class categories extends StatelessWidget {
-  const categories({
+class MainCategories extends StatelessWidget {
+  const MainCategories({
     Key? key,
   }) : super(key: key);
 
@@ -90,15 +91,24 @@ class categories extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
+          children:  [
             CustomButton(
                 text: 'getir',
                 backGroundColor: CustomColors.primary,
-                textColor: CustomColors.yellow),
-            CustomButton(text: 'getirfood'),
-            CustomButton(text: 'getirmore'),
-            CustomButton(text: 'getirwater'),
-            CustomButton(text: 'getirlocals'),
+                textColor: CustomColors.yellow,function: (){}),
+
+
+
+
+            CustomButton(text: 'getirfood'  ,function: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MainPage()),
+              );
+            }),
+            CustomButton(text: 'getirmore'  ,function: (){}),
+            CustomButton(text: 'getirwater' ,function: (){}),
+            CustomButton(text: 'getirlocals',function: (){}),
           ]),
     );
   }

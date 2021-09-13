@@ -16,8 +16,7 @@ class ResturantsSmall extends StatelessWidget {
           child: Row(
             children: [
               Container(
-                width:getScreenWidth()*0.2,
-
+                  width: getScreenWidth() * 0.2,
                   child: Stack(
                     children: [
                       Container(
@@ -26,32 +25,32 @@ class ResturantsSmall extends StatelessWidget {
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
-                            image: NetworkImage("https://cdn.getiryemek.com/cuisines/1619220143647_480x300.jpeg"),
+                            image: NetworkImage(
+                                "https://cdn.getiryemek.com/cuisines/1619220143647_480x300.jpeg"),
                           ),
                         ),
                       ),
                       Positioned(
-                        top:0,
-                        left:0,
-                        child: Container(
-                          width:getScreenWidth()*0.2,
-
-                          padding: EdgeInsets.all(CustomSizes.padding8),
-                          color:CustomColors.primary,
-                          child:CustomText(text:"20 Tl",color:CustomColors.white,fontSize: CustomSizes.header5,),
-                        )
-                      ),
-                      Positioned(
-                        bottom:0,
-                        left:0,
-                        child:
-                            Icon(
-                              Icons.flip_camera_ios_rounded,
-                              color: CustomColors.primary,
-                              size: CustomSizes.iconSizeMedium,
+                          top: 0,
+                          left: 0,
+                          child: Container(
+                            width: getScreenWidth() * 0.2,
+                            padding: EdgeInsets.all(CustomSizes.padding8),
+                            color: CustomColors.primary,
+                            child: CustomText(
+                              text: "20 Tl",
+                              color: CustomColors.white,
+                              fontSize: CustomSizes.header5,
                             ),
-
-
+                          )),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        child: Icon(
+                          Icons.flip_camera_ios_rounded,
+                          color: CustomColors.primary,
+                          size: CustomSizes.iconSizeMedium,
+                        ),
                       ),
                     ],
                   )
@@ -59,8 +58,7 @@ class ResturantsSmall extends StatelessWidget {
                   ),
               SizedBox(width: CustomSizes.horizontalSpace),
               Container(
-                width:getScreenWidth()*0.5,
-
+                width: getScreenWidth() * 0.5,
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -135,16 +133,11 @@ class ResturantsSmall extends StatelessWidget {
                                 fontSize: CustomSizes.header5,
                                 fontWeight: FontWeight.bold,
                               ),
-                              SizedBox(width:CustomSizes.horizontalSpace/2),
+                              SizedBox(width: CustomSizes.horizontalSpace / 2),
                               Container(
-                                padding: EdgeInsets.all( 2),
-
-        color:CustomColors.primary,
-                                child:const CustomText(
-                                  text:'25%',
-                                  color:CustomColors.white
-                                )
-                              )
+                                  color: CustomColors.primary,
+                                  child: const CustomText(
+                                      text: '25%', color: CustomColors.white))
                             ],
                           )
                         ],
@@ -153,42 +146,30 @@ class ResturantsSmall extends StatelessWidget {
               ),
               Expanded(
                 child: Container(
-                    width:getScreenWidth()*0.3,
-
+                    width: getScreenWidth() * 0.3,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                      Card(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(7),
-                            color: CustomColors.white,
-                          ),
-                          child: Row(children: [
-                            Icon(
-                              Icons.star,
-                              color: CustomColors.primary,
-                              size: CustomSizes.iconSize,
+                          Card(
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(7),
+                                color: CustomColors.white,
+                              ),
+                              child: const RestaurantsReviewWidget(
+                                review: 3.4,
+                                restaurantsNumber: 200,
+                                icon:Icons.star
+                              ),
                             ),
-                            CustomText(
-                                text: '4.6 ',
-                                color: CustomColors.primary,
-                                fontSize: CustomSizes.header5,
-                                fontWeight: FontWeight.bold),
-                            CustomText(
-                                text: '(200+)',
-                                color: CustomColors.black.withOpacity(0.8),
-                                fontSize: CustomSizes.header6),
-                          ]),
-                        ),
-                      ),
-                      Icon(
-                        Icons.favorite,
-                        color: CustomColors.primary,
-                        size: CustomSizes.iconSizeBig,
-                      ),
-                    ])),
+                          ),
+                          Icon(
+                            Icons.favorite,
+                            color: CustomColors.primary,
+                            size: CustomSizes.iconSizeMedium,
+                          ),
+                        ])),
               ),
             ],
           ),
@@ -197,3 +178,4 @@ class ResturantsSmall extends StatelessWidget {
     );
   }
 }
+

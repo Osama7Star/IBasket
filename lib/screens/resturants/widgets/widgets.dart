@@ -50,3 +50,64 @@ class titleandshowall extends StatelessWidget {
     );
   }
 }
+
+class ChoicesWidget extends StatelessWidget {
+  const ChoicesWidget({Key? key,required this.text,required this.icon}) : super(key: key);
+
+  final String text ;
+  final IconData icon ;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Row(children: [
+            Icon(
+              icon,
+              color: CustomColors.primary,
+              size: CustomSizes.iconSizeMedium,
+            ),
+            SizedBox(width:CustomSizes.verticalSpace),
+            CustomText(text:text)
+          ]),
+
+
+        ]);
+  }
+}
+
+
+class RestaurantsReviewWidget extends StatelessWidget {
+  const RestaurantsReviewWidget({
+    Key? key,
+    required this.review,
+    required this.restaurantsNumber,
+    required this.icon
+  }) : super(key: key);
+
+  final double review ;
+  final int restaurantsNumber;
+  final IconData icon ;
+  @override
+  Widget build(BuildContext context) {
+    return Row(                                mainAxisSize: MainAxisSize.min,
+
+        children: [
+          Icon(
+            icon,
+            color: CustomColors.primary,
+            size: CustomSizes.iconSize,
+          ),
+          CustomText(
+              text: review.toString(),
+              color: CustomColors.primary,
+              fontSize: CustomSizes.header5,
+              fontWeight: FontWeight.bold),
+          CustomText(
+              text:'(${restaurantsNumber.toString()})',
+              color: CustomColors.black.withOpacity(0.8),
+              fontSize: CustomSizes.header6),
+        ]);
+  }
+}

@@ -8,12 +8,13 @@ class CustomButton extends StatelessWidget {
       {Key? key,
         required this.text,
         this.backGroundColor = CustomColors.white,
-        this.textColor = CustomColors.primary})
+        this.textColor = CustomColors.primary,required this.function})
       : super(key: key);
 
   final String text;
 
   final Color backGroundColor, textColor;
+  final VoidCallback function ;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class CustomButton extends StatelessWidget {
             shadowColor:MaterialStateProperty.all(CustomColors.black)
         ),
 
-        onPressed: () {},
+        onPressed: function,
       ),
     );
   }

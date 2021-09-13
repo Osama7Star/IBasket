@@ -13,15 +13,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
     return Scaffold(
         backgroundColor: CustomColors.white1,
         appBar: CustomAppBar(context,'getir'),
         body: ListView(children: [
-          AddressBar(),
+          const AddressBar(),
           Image.network(
             'https://cdn.getir.com/misc/611e4a50c270af509cd486b5_banner_en_1629375136600.jpeg',
           ),
-          const categories(),
+          const MainCategories(),
           const Categories(),
         ]));
   }
