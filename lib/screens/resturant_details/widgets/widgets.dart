@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
+import 'package:getir_clone/screens/meal/meal.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -77,51 +78,71 @@ class MealsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(CustomSizes.padding6),
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                flex: 5,
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomText(
-                          text: "Çiğ Köfte Dürüm (120 g)",
-                          fontWeight: FontWeight.bold,
-                          fontSize: CustomSizes.header4,
-                          color: CustomColors.black.withOpacity(0.7)),
-                      SizedBox(height: CustomSizes.verticalSpace),
-                      CustomText(
-                          text: "Göbek marul maydanoa limon domates  Göbek marul maydanoa limon domatesGöbek marul maydanoa limon domatesGöbek marul maydanoa limon domates",
-                          fontSize: CustomSizes.header5,
-                          color: CustomColors.black.withOpacity(0.5),
-                          isCenter:false),
-                      SizedBox(height: CustomSizes.verticalSpace),
-                      CustomText(
-                          text: "₺ 120",
-                          color: CustomColors.primary,
-                          fontSize: CustomSizes.header4),
-                    ]),
-              ),
-              SizedBox(width: CustomSizes.verticalSpace),
-              Expanded(
-                flex: 2,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(8.0),
-                  child: Image.network(
-                    "https://cdn.getiryemek.com/cuisines/1619220143647_480x300.jpeg",
+    return GestureDetector(
+      onTap:()
+        {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Meal()),
+          );
+        },
+      child: Container(
+        padding: EdgeInsets.all(CustomSizes.padding6),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: MealDetails(),
+                ),
+                SizedBox(width: CustomSizes.verticalSpace),
+                Expanded(
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.network(
+                      "https://cdn.getiryemek.com/cuisines/1619220143647_480x300.jpeg",
+                    ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          const Divider(),
-        ],
+              ],
+            ),
+            const Divider(),
+          ],
+        ),
       ),
     );
+  }
+}
+
+class MealDetails extends StatelessWidget {
+  const MealDetails({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          CustomText(
+              text: "Çiğ Köfte Dürüm (120 g)",
+              fontWeight: FontWeight.bold,
+              fontSize: CustomSizes.header4,
+              color: CustomColors.black.withOpacity(0.7)),
+          SizedBox(height: CustomSizes.verticalSpace),
+          CustomText(
+              text: "Göbek marul maydanoa limon domates  Göbek marul maydanoa limon domatesGöbek marul maydanoa limon domatesGöbek marul maydanoa limon domates",
+              fontSize: CustomSizes.header5,
+              color: CustomColors.black.withOpacity(0.5),
+              isCenter:false),
+          SizedBox(height: CustomSizes.verticalSpace),
+          CustomText(
+              text: "₺ 120",
+              color: CustomColors.primary,
+              fontSize: CustomSizes.header4),
+        ]);
   }
 }
 class RestaurantWorkingHours extends StatelessWidget {
