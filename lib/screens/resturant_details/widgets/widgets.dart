@@ -133,13 +133,13 @@ class MealDetails extends StatelessWidget {
               color: CustomColors.black.withOpacity(0.7)),
           SizedBox(height: CustomSizes.verticalSpace),
           CustomText(
-              text: "Göbek marul maydanoa limon domates  Göbek marul maydanoa limon domatesGöbek marul maydanoa limon domatesGöbek marul maydanoa limon domates",
+              text: "Göbek marul maydanoa limon domates ",
               fontSize: CustomSizes.header5,
               color: CustomColors.black.withOpacity(0.5),
               isCenter:false),
           SizedBox(height: CustomSizes.verticalSpace),
           CustomText(
-              text: "₺ 120",
+              text: "₺ 12.00",
               color: CustomColors.primary,
               fontSize: CustomSizes.header4),
         ]);

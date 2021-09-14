@@ -16,7 +16,7 @@ class ImageViewer extends StatelessWidget {
             Center(
               child: Image.network(
                   "https://cdn.getiryemek.com/cuisines/1619220348726_480x300.jpeg",
-              fit:BoxFit.cover),
+              fit:BoxFit.fitWidth),
             ),
             Padding(
               padding:  EdgeInsets.only(left:CustomSizes.padding5,top:CustomSizes.padding5),
