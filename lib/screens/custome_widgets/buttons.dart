@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -46,9 +48,11 @@ class CustomButton extends StatelessWidget {
               shadowColor:MaterialStateProperty.all(CustomColors.black)
           ),
 
-          onPressed: function,
+          onPressed: function
         ),
       ),
     );
   }
 }
+
+

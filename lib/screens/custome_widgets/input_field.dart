@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 class InputField extends StatelessWidget {
+
   const InputField({
     Key? key,
     this.labelText = '',
@@ -12,7 +13,7 @@ class InputField extends StatelessWidget {
     this.obscure = false,
     this.textInputType ,
     this.verticalPadding,
-    this.horizontalPadding,
+    this.horizontalPadding, this.errorMessage, this.lengthErrorMessage, this.minLength=3, this.activeValidation = true,
   }) : super(key: key);
   final String labelText, hintText;
   final IconButton? icon;
@@ -25,10 +26,24 @@ class InputField extends StatelessWidget {
   final double? verticalPadding;
   final double? horizontalPadding;
 
+  final String? errorMessage,lengthErrorMessage;
+
+  final int minLength;
+  final bool activeValidation;
+
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       obscureText: obscure,
+
+      validator: (value) {
+        if (activeValidation) {
+          if (value!.isEmpty) return errorMessage??'';
+          if (value.length < minLength) return lengthErrorMessage??'';
+        }
+
+        return null;
+      },
       keyboardType:textInputType?? TextInputType.text,
       decoration: InputDecoration(
         labelText: labelText,
@@ -64,7 +79,7 @@ class InputField extends StatelessWidget {
             height: 1.5,
             fontWeight: FontWeight.w800,
             fontSize: fontSize ?? CustomSizes.header4,
-            color: CustomColors.black.withOpacity(0.5)),
+            color: textColor??CustomColors.black.withOpacity(0.5)),
       ),
     );
   }
