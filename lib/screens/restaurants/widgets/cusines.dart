@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/cuisine_model.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
@@ -6,8 +7,10 @@ import 'package:getir_clone/utilities/sizes.dart';
 
 class Cuisines extends StatelessWidget {
   const Cuisines({
-    Key? key,
+    Key? key,required this.cuisine,
   }) : super(key: key);
+
+  final CuisineModel cuisine;
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +22,11 @@ class Cuisines extends StatelessWidget {
               width: getScreenWidth()*0.3,
               height: CustomSizes.height6,
               decoration: BoxDecoration(
-                image: const DecorationImage(
+                image:  DecorationImage(
                     image: NetworkImage(
-                        "https://cdn.getiryemek.com/cuisines/1619220007982_480x300.jpeg"),
+                        cuisine.image),
                     fit: BoxFit.cover),
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(10),
 
               ),
               child: Stack(
@@ -35,7 +38,7 @@ class Cuisines extends StatelessWidget {
                         height:CustomSizes.height6,
                         alignment: Alignment.bottomCenter,
                         decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
+                            borderRadius: BorderRadius.circular(10),
 
                             gradient: LinearGradient(
                               begin: Alignment.bottomCenter,
@@ -51,7 +54,10 @@ class Cuisines extends StatelessWidget {
                               ],
                             )
                         ),
-                        child: SizedBox(width:getScreenWidth(),child: CustomText(text:'Burger',color: CustomColors.white,fontWeight: FontWeight.bold,fontSize: CustomSizes.header4,)))
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom: 8.0),
+                          child: SizedBox(width:getScreenWidth(),child: CustomText(text:cuisine.name,color: CustomColors.white,fontWeight: FontWeight.bold,fontSize: CustomSizes.header4,)),
+                        ))
                   ]
               )
 

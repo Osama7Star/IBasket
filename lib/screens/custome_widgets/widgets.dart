@@ -8,5 +8,6 @@ CustomAppBar(BuildContext context,String text) => AppBar(
   title: CustomText(
       text: text,
       fontSize: CustomSizes.header3,
-      color: CustomColors.yellow),
+      color: CustomColors.yellow,
+  fontWeight: FontWeight.bold),
 );

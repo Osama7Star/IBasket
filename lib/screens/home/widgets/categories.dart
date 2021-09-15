@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/category.dart';
+import 'package:getir_clone/models/category_model.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -10,19 +10,19 @@ class CategoryWidget extends StatelessWidget {
     required this.category,
   }) : super(key: key);
 
-  final Category category;
+  final CategoryModel category;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
-              color: Colors.green,
-            ),
+
             width: getScreenWidth() / 5,
-            child: Image.asset('lib/assets/images/cat1.jpg')),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+
+                child: Image.network(category.imageUrl))),
         SizedBox(height: CustomSizes.verticalSpace),
         CustomText(
           text: category.name,

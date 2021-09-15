@@ -8,13 +8,15 @@ class CustomButton extends StatelessWidget {
       {Key? key,
         required this.text,
         this.backGroundColor = CustomColors.white,
-        this.textColor = CustomColors.primary,required this.function})
+        this.textColor = CustomColors.primary,required this.function,
+      this.fontWeight = FontWeight.normal})
       : super(key: key);
 
   final String text;
 
   final Color backGroundColor, textColor;
   final VoidCallback function ;
+  final FontWeight fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -25,11 +27,13 @@ class CustomButton extends StatelessWidget {
           text: text,
           color: textColor,
           fontSize: CustomSizes.header6,
+          fontWeight:fontWeight
         ),
         style: ButtonStyle(
+          elevation:MaterialStateProperty.all(1) ,
             backgroundColor: MaterialStateProperty.all(backGroundColor),
             side: MaterialStateProperty.all(
-                const BorderSide(width: 0.1, color: CustomColors.black)),
+                const BorderSide(width: 0.1, color: CustomColors.white)),
             shadowColor:MaterialStateProperty.all(CustomColors.black)
         ),
 

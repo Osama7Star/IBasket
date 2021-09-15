@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
-import 'package:getir_clone/screens/resturants/resturants.dart';
+import 'package:getir_clone/screens/restaurants/resturants.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -21,7 +21,6 @@ class AddressBar extends StatelessWidget {
               flex: 6,
               child: Container(
                   padding: EdgeInsets.all(CustomSizes.padding1),
-
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(50),
@@ -35,41 +34,41 @@ class AddressBar extends StatelessWidget {
                           Icons.home,
                           color: Colors.pink,
                           size: CustomSizes.iconSize,
-
                         ),
                         const VerticalDivider(color: Colors.red, width: 20),
-                        CustomText(
-                            text: 'Home', fontSize: CustomSizes.header4),
+                        CustomText(text: 'Home', fontSize: CustomSizes.header4),
                         CustomText(
                             text: 'Kervan geçmez',
                             color: CustomColors.black.withOpacity(0.5),
                             fontSize: CustomSizes.header4),
-                        Icon(
-                            Icons.arrow_forward_ios,
+                        Icon(Icons.arrow_forward_ios,
                             color: CustomColors.primary,
-                            size: CustomSizes.iconSize
-
-                        ),
+                            size: CustomSizes.iconSize/1.5),
                       ])),
             ),
             Expanded(
-              flex:2,
+              flex: 2,
               child: Container(
-
                   color: CustomColors.yellow,
                   child: Column(
                     children: [
-                      CustomText(text: 'TVS',fontSize: CustomSizes.header5),
-                      const SizedBox(height:5),
-
+                      CustomText(text: 'TVS', fontSize: CustomSizes.header5,
+                        fontWeight:FontWeight.bold,
+                      ),
+                      const SizedBox(height: 5),
                       Row(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children:[
-                            CustomText(text: '8',fontSize: CustomSizes.header3,),
-                            CustomText(text: 'min',fontSize: CustomSizes.header4),
-
-                          ]
-                      )
+                          children: [
+                            CustomText(
+                              text: '8',
+                              fontSize: CustomSizes.header3,
+                              fontWeight:FontWeight.bold,
+                            ),
+                            CustomText(
+                                text: 'min', fontSize: CustomSizes.header4,
+                              fontWeight:FontWeight.bold,
+                            ),
+                          ])
                     ],
                   )),
             )
@@ -89,27 +88,29 @@ class MainCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children:  [
-            CustomButton(
-                text: 'getir',
-                backGroundColor: CustomColors.primary,
-                textColor: CustomColors.yellow,function: (){}),
-
-
-
-
-            CustomButton(text: 'getirfood'  ,function: (){
+      child: Row(children: [
+        CustomButton(
+            text: 'getir',
+            backGroundColor: CustomColors.primary,
+            textColor: CustomColors.yellow,
+            function: () {},
+            fontWeight: FontWeight.bold),
+        CustomButton(
+            text: 'getirfood',
+            fontWeight: FontWeight.bold,
+            function: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => MainPage()),
               );
             }),
-            CustomButton(text: 'getirmore'  ,function: (){}),
-            CustomButton(text: 'getirwater' ,function: (){}),
-            CustomButton(text: 'getirlocals',function: (){}),
-          ]),
+        CustomButton(
+            text: 'getirmore', function: () {}, fontWeight: FontWeight.bold),
+        CustomButton(
+            text: 'getirwater', function: () {}, fontWeight: FontWeight.bold),
+        CustomButton(
+            text: 'getirlocals', function: () {}, fontWeight: FontWeight.bold),
+      ]),
     );
   }
 }

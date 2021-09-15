@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/home/home.dart';
-import 'package:getir_clone/screens/resturants/resturants.dart';
-import 'package:getir_clone/utilities/sizes.dart';
 
 
 void main() {

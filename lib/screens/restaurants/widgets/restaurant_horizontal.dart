@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/restaurants_model.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
-import 'package:getir_clone/screens/resturants/widgets/widgets.dart';
+import 'package:getir_clone/screens/restaurants/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
-class ResturantsSmall extends StatelessWidget {
-  const ResturantsSmall({Key? key}) : super(key: key);
+class RestaurantHorizontalDesign extends StatelessWidget {
+   const RestaurantHorizontalDesign({Key? key,required this.restaurant}) : super(key: key);
 
-  @override
+
+   final RestaurantsModel restaurant;  @override
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
@@ -22,11 +24,11 @@ class ResturantsSmall extends StatelessWidget {
                       Container(
                         width: MediaQuery.of(context).size.width,
                         height: CustomSizes.height5,
-                        decoration: const BoxDecoration(
+                        decoration:  BoxDecoration(
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                "https://cdn.getiryemek.com/cuisines/1619220143647_480x300.jpeg"),
+                                restaurant.image),
                           ),
                         ),
                       ),
@@ -62,7 +64,7 @@ class ResturantsSmall extends StatelessWidget {
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const CustomText(text: "Gazi Çiğ Köfte Şirinevler "),
+                       CustomText(text: restaurant.name),
                       SizedBox(height: CustomSizes.verticalSpace),
                       Row(
                         children: [
@@ -91,7 +93,7 @@ class ResturantsSmall extends StatelessWidget {
                                 fontSize: CustomSizes.header5,
                               ),
                               CustomText(
-                                text: ' Min. t 15.00 ',
+                                text:'min. ₺ ${restaurant.minimum.toString()}',
                                 color: CustomColors.black.withOpacity(0.5),
                                 fontSize: CustomSizes.header5,
                                 fontWeight: FontWeight.bold,
