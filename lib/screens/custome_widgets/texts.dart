@@ -23,7 +23,7 @@ class CustomText extends StatelessWidget {
       text,
       textAlign:isCenter? TextAlign.center:TextAlign.start,
 
-      style: TextStyle(fontSize: fontSize, color: color,fontWeight:fontWeight),
+      style: TextStyle(fontSize: fontSize, color: color,fontWeight:fontWeight,fontFamily: 'Schyler'),
     );
   }
 }

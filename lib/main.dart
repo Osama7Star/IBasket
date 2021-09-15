@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/screens/home/home.dart';
+import 'package:getir_clone/screens/authentication/login/login.dart';
 
 
 void main() {
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.deepPurple,
       ),
-      home: const HomePage(),
+      home: const Login(),
     );
   }
 }

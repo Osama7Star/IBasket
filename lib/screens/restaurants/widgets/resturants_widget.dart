@@ -33,7 +33,7 @@ class _RestaurantsState extends State<Restaurants> {
           onTap:(){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => RestaurantHomePage()),
+              MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant:widget.restaurant)),
             );
     },
           child: Padding(
