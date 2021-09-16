@@ -26,7 +26,7 @@ class CategoryWidget extends StatelessWidget {
         SizedBox(height: CustomSizes.verticalSpace),
         CustomText(
           text: category.name,
-          fontSize: CustomSizes.header5,
+          fontSize: CustomSizes.header6,
         )
       ],
     );

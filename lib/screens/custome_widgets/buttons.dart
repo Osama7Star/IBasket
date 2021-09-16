@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: CustomSizes.padding6),
+      padding: EdgeInsets.only(left: CustomSizes.padding8),
       child: SizedBox(
         height:height??CustomSizes.height7,
         width:width??CustomSizes.height1,
@@ -35,16 +35,18 @@ class CustomButton extends StatelessWidget {
           child: CustomText(
             text: text,
             color: textColor,
-            fontSize: fontSize??CustomSizes.header6,
+            fontSize: fontSize??CustomSizes.header7,
             fontWeight:fontWeight,
 
           ),
 
-          style: ButtonStyle(
-            elevation:MaterialStateProperty.all(1) ,
+          style:ButtonStyle(
+              padding: MaterialStateProperty.all(EdgeInsets.zero),
+
+              elevation:MaterialStateProperty.all(1) ,
               backgroundColor: MaterialStateProperty.all(backGroundColor),
               side: MaterialStateProperty.all(
-                   BorderSide(width: borderSize??0.1, color: CustomColors.primary)),
+                  BorderSide(width: borderSize??0.1, color: CustomColors.primary)),
               shadowColor:MaterialStateProperty.all(CustomColors.black)
           ),
 
@@ -54,5 +56,40 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+class myButton extends StatelessWidget {
+  const myButton({Key? key,required this.text, this.textColor, this.fontSize, this.fontWeight, this.width, this.height, this.backgroundColor}) : super(key: key);
+
+  final String text;
+  final Color? textColor,backgroundColor;
+  final double? fontSize;
+  final FontWeight? fontWeight;
+  final double? width,height;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width:width??CustomSizes.height6,
+        height:height??CustomSizes.height6,
+        decoration:  BoxDecoration(
+            border: Border.all(color: CustomColors.primary),
+          borderRadius:  const BorderRadius.all(
+             Radius.circular(10),
+             ),
+          color: backgroundColor??CustomColors.primary,
+        ),
+      child: Center(
+        child: CustomText(
+          text: 'test teest test tese  test test test ',
+          color: textColor??CustomColors.black,
+          fontSize: fontSize??CustomSizes.header7,
+          fontWeight:fontWeight??FontWeight.normal,
+
+        ),
+      ),
+    );
+  }
+}
+
 
 

@@ -88,29 +88,63 @@ class MainCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
-      child: Row(children: [
-        CustomButton(
-            text: 'getir',
-            backGroundColor: CustomColors.primary,
-            textColor: CustomColors.yellow,
-            function: () {},
-            fontWeight: FontWeight.bold),
-        CustomButton(
-            text: 'getirfood',
-            fontWeight: FontWeight.bold,
-            function: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => MainPage()),
-              );
-            }),
-        CustomButton(
-            text: 'getirmore', function: () {}, fontWeight: FontWeight.bold),
-        CustomButton(
-            text: 'getirwater', function: () {}, fontWeight: FontWeight.bold),
-        CustomButton(
-            text: 'getirlocals', function: () {}, fontWeight: FontWeight.bold),
-      ]),
+      child: Column(
+
+        children: [
+          SizedBox(
+            height:CustomSizes.verticalSpace*2,
+          ),
+          SizedBox(
+            width:getScreenWidth(),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+
+                  CustomButton(
+                    text: 'getir',
+                    backGroundColor: CustomColors.primary,
+                    textColor: CustomColors.yellow,
+                    function: () {},
+                    fontWeight: FontWeight.bold,
+                    width: getScreenWidth()*0.17,
+                    height: CustomSizes.height4/3.5,),
+                  CustomButton(
+                      text: 'getirfood',
+                      fontWeight: FontWeight.bold,
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MainPage()),
+                        );
+                      },
+                      width: getScreenWidth()*0.17,
+                    height: CustomSizes.height4/3.5,),
+                  CustomButton(
+                      text: 'getirmore', function: () {}, fontWeight: FontWeight.bold,
+                      width: getScreenWidth()*0.17,
+                    height: CustomSizes.height4/3.5,),
+                  CustomButton(
+                      text: 'getirwater', function: () {}, fontWeight: FontWeight.bold,
+                      width: getScreenWidth()*0.17,
+                    height: CustomSizes.height4/3.5,),
+                  CustomButton(
+                      text: 'getirlocals', function: () {}, fontWeight: FontWeight.bold,
+                      width: getScreenWidth()*0.17,
+                    height: CustomSizes.height4/3.5,),
+                ]),
+
+                SizedBox(
+                  height:CustomSizes.verticalSpace*2,
+                )
+              ],
+
+            ),
+          ),
+        ],
+      )
     );
   }
 }

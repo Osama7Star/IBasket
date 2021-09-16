@@ -79,7 +79,7 @@ class _MainPageState extends State<MainPage> {
                   Card(
                     margin: EdgeInsets.zero,
                     child: SizedBox(
-                      height: CustomSizes.height2,
+                      height: CustomSizes.height2+CustomSizes.height2*0.02,
                       child: ListView.builder(
                           itemCount: restaurantsList.length,
                           scrollDirection: Axis.horizontal,
@@ -97,7 +97,7 @@ class _MainPageState extends State<MainPage> {
                   Card(
                     margin: EdgeInsets.zero,
                     child: SizedBox(
-                      height: CustomSizes.height2,
+                      height: CustomSizes.height2+CustomSizes.height2*0.02,
                       child: ListView.builder(
                           itemCount: restaurantsList.length,
                           scrollDirection: Axis.horizontal,

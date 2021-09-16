@@ -90,7 +90,7 @@ class _RegisterState extends State<Register> {
                         scale: CustomSizes.iconSize/14,
 
                         child: Checkbox(
-                          value: this.value,
+                          value: value,
                           onChanged: (bool? value) {
                             setState(() {
                               this.value = value!;

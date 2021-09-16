@@ -13,10 +13,13 @@ class Meal extends StatefulWidget {
   @override
   State<Meal> createState() => _MealState();
 }
-
+enum SingingCharacter { lafayette, jefferson }
 class _MealState extends State<Meal> {
   int mealsNumber = 0;
-
+  int _site = 0 ;
+  SingingCharacter? _character = SingingCharacter.lafayette;
+  bool _value = false;
+  int val = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +49,40 @@ class _MealState extends State<Meal> {
                     child: const MealDetails(),
                   ),
                 ),
+                /// MEALS DETAILS
                 SizedBox(height: CustomSizes.verticalSpace),
+
+
+                SizedBox(height: CustomSizes.verticalSpace*2),
+
+                MealChoices(site: _site,header:'Ekstra Nakzeme Terchi',widget:Column(
+                    children:[
+
+                      RadioBox(text: 'Ekstra CheddarPeynir',groupValue: _site,value1: 1),
+                      RadioBox(text: 'Pastırma',groupValue: _site,value1: 2)
+
+                    ]
+                )),
+                SizedBox(height: CustomSizes.verticalSpace*2),
+                MealChoices(site: _site,header:'Ekstra Nakzeme Terchi',widget:Column(
+                    children:[
+
+                      RadioBox(text: 'Ekstra CheddarPeynir',groupValue: _site,value1: 1),
+                      RadioBox(text: 'Pastırma',groupValue: _site,value1: 2)
+
+                    ]
+                )),
+                SizedBox(height: CustomSizes.verticalSpace*2),
+
+                MealChoices(site: _site,header:'Ekstra Nakzeme Terchi',widget:Column(
+                    children:[
+
+                      RadioBox(text: 'Ekstra CheddarPeynir',groupValue: _site,value1: 1),
+                      RadioBox(text: 'Pastırma',groupValue: _site,value1: 2)
+
+                    ]
+                )),
+                SizedBox(height: CustomSizes.verticalSpace*3),
                 Padding(
                   padding: EdgeInsets.all(CustomSizes.padding5),
                   child: CustomText(
@@ -70,6 +106,7 @@ class _MealState extends State<Meal> {
                     ),
                   ),
                 ),
+                /// ADDING NOTE
                 SizedBox(height: CustomSizes.verticalSpace),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                   ContainerIcon(
@@ -111,6 +148,8 @@ class _MealState extends State<Meal> {
               ],
             ),
           ),
+
+          /// MEALS COUNT
 
           Align(
             alignment: Alignment.bottomCenter,
@@ -155,8 +194,73 @@ class _MealState extends State<Meal> {
               ),
             ),
           )
+          /// ADD TO BASKET
         ],
       ),
+    );
+  }
+}
+
+class MealChoices extends StatelessWidget {
+  const MealChoices({
+    Key? key,
+    required int site, required this.header,required this.widget,
+  }) : _site = site, super(key: key);
+
+  final int _site;
+  final String header ;
+  final Widget widget ;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding:  EdgeInsets.only(left:CustomSizes.padding2),
+          child: CustomText(text:header,color: CustomColors.black.withOpacity(0.5),fontSize:CustomSizes.header5,isCenter:false),
+        ),
+        SizedBox(height: CustomSizes.verticalSpace),
+
+        Card(
+            margin: EdgeInsets.zero,
+
+            child:widget
+        ),
+      ],
+    );
+  }
+}
+
+class RadioBox extends StatefulWidget {
+   RadioBox({Key? key,required this.text, required this.groupValue,required this.value1}) : super(key: key);
+
+   final String text ;
+   int groupValue;
+    int value1;
+
+  @override
+  State<RadioBox> createState() => _RadioBoxState();
+}
+
+class _RadioBoxState extends State<RadioBox> {
+  @override
+  Widget build(BuildContext context) {
+    return  Row(
+     children:[
+       Radio<int>(
+         value: widget.value1,
+         groupValue: widget.groupValue,
+         onChanged: (int? value) {
+           setState(() {
+             widget.groupValue = value!;
+           });
+         },
+
+       ),
+       CustomText(text:widget.text,color: CustomColors.black.withOpacity(0.5),fontSize:CustomSizes.header5,isCenter:false),
+
+     ]
     );
   }
 }

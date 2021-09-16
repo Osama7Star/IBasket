@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/home/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -20,6 +21,7 @@ class HomePage extends StatelessWidget {
           Image.network(
             'https://cdn.getir.com/misc/611e4a50c270af509cd486b5_banner_en_1629375136600.jpeg',
           ),
+
           const MainCategories(),
           const Categories(),
         ]));
