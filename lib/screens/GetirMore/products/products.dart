@@ -22,8 +22,7 @@ class Products extends StatelessWidget {
                 CategoryWithUnderLine(),
                 CategoryWithUnderLine(isSelected: true),
                 CategoryWithUnderLine(),
-                CategoryWithUnderLine(),
-                CategoryWithUnderLine(),
+
               ]),
             ),
 
