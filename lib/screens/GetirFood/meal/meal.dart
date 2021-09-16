@@ -150,7 +150,6 @@ class _MealState extends State<Meal> {
           ),
 
           /// MEALS COUNT
-
           Align(
             alignment: Alignment.bottomCenter,
             child: Card(

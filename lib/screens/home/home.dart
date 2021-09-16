@@ -14,7 +14,6 @@ class HomePage extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-        backgroundColor: CustomColors.white1,
         appBar: CustomAppBar(context,'getir'),
         body: ListView(children: [
           const AddressBar(),

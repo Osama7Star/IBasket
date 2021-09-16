@@ -27,11 +27,9 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: CustomSizes.padding8),
-      child: SizedBox(
-        height:height??CustomSizes.height7,
-        width:width??CustomSizes.height1,
-
-        child: TextButton(
+      child: TextButton(
+        child: Padding(
+          padding:  EdgeInsets.all(CustomSizes.padding6),
           child: CustomText(
             text: text,
             color: textColor,
@@ -39,19 +37,19 @@ class CustomButton extends StatelessWidget {
             fontWeight:fontWeight,
 
           ),
-
-          style:ButtonStyle(
-              padding: MaterialStateProperty.all(EdgeInsets.zero),
-
-              elevation:MaterialStateProperty.all(1) ,
-              backgroundColor: MaterialStateProperty.all(backGroundColor),
-              side: MaterialStateProperty.all(
-                  BorderSide(width: borderSize??0.1, color: CustomColors.primary)),
-              shadowColor:MaterialStateProperty.all(CustomColors.black)
-          ),
-
-          onPressed: function
         ),
+
+        style:ButtonStyle(
+            padding: MaterialStateProperty.all(EdgeInsets.zero),
+
+            elevation:MaterialStateProperty.all(1) ,
+            backgroundColor: MaterialStateProperty.all(backGroundColor),
+            side: MaterialStateProperty.all(
+                BorderSide(width: borderSize??0.1, color: CustomColors.primary)),
+            shadowColor:MaterialStateProperty.all(CustomColors.black)
+        ),
+
+        onPressed: function
       ),
     );
   }

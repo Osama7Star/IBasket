@@ -7,7 +7,7 @@ class CustomText extends StatelessWidget {
         required this.text,
         this.color = Colors.black,
         this.fontSize = 14, this.fontWeight=FontWeight.normal ,
-      this.isCenter=true})
+      this.isCenter=true, this.textDecoration = TextDecoration.none})
       : super(key: key);
 
   final String text;
@@ -15,6 +15,7 @@ class CustomText extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final bool isCenter ;
+  final TextDecoration textDecoration;
 
 
   @override
@@ -23,7 +24,7 @@ class CustomText extends StatelessWidget {
       text,
       textAlign:isCenter? TextAlign.center:TextAlign.start,
 
-      style: TextStyle(fontSize: fontSize, color: color,fontWeight:fontWeight,fontFamily: 'Schyler'),
+      style: TextStyle(fontSize: fontSize, color: color,fontWeight:fontWeight,fontFamily: 'Schyler',decoration: textDecoration),
     );
   }
 }
