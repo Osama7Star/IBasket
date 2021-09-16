@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/screens/GetirFood/restaurants/resturants.dart';
+import 'package:getir_clone/screens/GetirMore/home/home.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
-import 'package:getir_clone/screens/restaurants/resturants.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -123,7 +124,12 @@ class MainCategories extends StatelessWidget {
                       width: getScreenWidth()*0.17,
                     height: CustomSizes.height4/3.5,),
                   CustomButton(
-                      text: 'getirmore', function: () {}, fontWeight: FontWeight.bold,
+                      text: 'getirmore', function: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Home()),
+                    );
+                  }, fontWeight: FontWeight.bold,
                       width: getScreenWidth()*0.17,
                     height: CustomSizes.height4/3.5,),
                   CustomButton(

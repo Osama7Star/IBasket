@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/screens/restaurants/widgets/widgets.dart';
+import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 

@@ -4,10 +4,10 @@ import 'package:getir_clone/models/restaurants_model.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/home/widgets/widgets.dart';
-import 'package:getir_clone/screens/restaurants/widgets/cusines.dart';
-import 'package:getir_clone/screens/restaurants/widgets/resturants_widget.dart';
-import 'package:getir_clone/screens/restaurants/widgets/restaurant_horizontal.dart';
-import 'package:getir_clone/screens/restaurants/widgets/widgets.dart';
+import 'package:getir_clone/screens/GetirFood/restaurants/widgets/cusines.dart';
+import 'package:getir_clone/screens/GetirFood/restaurants/widgets/resturants_widget.dart';
+import 'package:getir_clone/screens/GetirFood/restaurants/widgets/restaurant_horizontal.dart';
+import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
