@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/cuisine_model.dart';
 import 'package:getir_clone/models/restaurants_model.dart';
+import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/home/widgets/widgets.dart';
 import 'package:getir_clone/screens/restaurants/widgets/cusines.dart';
@@ -39,33 +40,8 @@ class _MainPageState extends State<MainPage> {
                   ),
                   const MainCategories(),
                   SizedBox(height: CustomSizes.verticalSpace),
-                  Card(
-                    child: Container(
-                        margin:
-                            EdgeInsets.symmetric(horizontal: CustomSizes.padding1),
-                        padding: EdgeInsets.all(CustomSizes.padding5),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(7),
-                          color: CustomColors.white1,
-                        ),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              const ChoicesWidget(
-                                text: 'Filtrele',
-                                icon: Icons.filter_alt_sharp,
-                              ),
-                              Container(
-                                height: CustomSizes.height5 / 4,
-                                width: 1.0,
-                                color: CustomColors.black.withOpacity(0.3),
-                                margin:
-                                    const EdgeInsets.only(left: 10.0, right: 10.0),
-                              ),
-                              const ChoicesWidget(
-                                  text: 'Sırala', icon: Icons.sort_sharp),
-                            ])),
-                  ),
+                  /// FILTER AND SORT WIDGET
+                  FilterSort(),
 
                   /// FILTIER AND SORT WIDGET
                   SizedBox(height: CustomSizes.verticalSpace),
@@ -202,3 +178,4 @@ class _MainPageState extends State<MainPage> {
         ));
   }
 }
+
