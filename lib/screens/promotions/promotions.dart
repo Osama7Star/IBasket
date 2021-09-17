@@ -11,7 +11,6 @@ class Promotions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
 
     return  DefaultTabController(
       length: 2,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
-class InputField extends StatelessWidget {
 
+class InputField extends StatelessWidget {
   const InputField({
     Key? key,
     this.labelText = '',
@@ -11,9 +11,15 @@ class InputField extends StatelessWidget {
     this.fontSize,
     this.textColor,
     this.obscure = false,
-    this.textInputType ,
+    this.textInputType,
     this.verticalPadding,
-    this.horizontalPadding, this.errorMessage, this.lengthErrorMessage, this.minLength=3, this.activeValidation = true, this.prefixIcon,
+    this.horizontalPadding,
+    this.errorMessage,
+    this.lengthErrorMessage,
+    this.minLength = 3,
+    this.activeValidation = true,
+    this.prefixIcon,
+    this.suffixIcon, this.controller, this.onChanged,
   }) : super(key: key);
   final String labelText, hintText;
   final IconButton? icon;
@@ -26,28 +32,34 @@ class InputField extends StatelessWidget {
   final double? verticalPadding;
   final double? horizontalPadding;
 
-  final String? errorMessage,lengthErrorMessage;
+  final String? errorMessage, lengthErrorMessage;
 
   final int minLength;
   final bool activeValidation;
   final IconButton? prefixIcon;
+  final IconButton? suffixIcon;
+  final TextEditingController? controller;
+  final Function(dynamic )? onChanged;
+
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      onChanged:onChanged,
       obscureText: obscure,
-
       validator: (value) {
         if (activeValidation) {
-          if (value!.isEmpty) return errorMessage??'';
-          if (value.length < minLength) return lengthErrorMessage??'';
+          if (value!.isEmpty) return errorMessage ?? '';
+          if (value.length < minLength) return lengthErrorMessage ?? '';
         }
 
         return null;
       },
-      keyboardType:textInputType?? TextInputType.text,
+      keyboardType: textInputType ?? TextInputType.text,
       decoration: InputDecoration(
-        prefixIcon: prefixIcon??Container(),
+        prefixIcon: prefixIcon ?? Container(width: 0),
+        suffixIcon: suffixIcon ?? Container(width: 0,),
         labelText: labelText,
         contentPadding: EdgeInsets.symmetric(
             vertical: verticalPadding ?? CustomSizes.padding1,
@@ -81,7 +93,7 @@ class InputField extends StatelessWidget {
             height: 1.5,
             fontWeight: FontWeight.w800,
             fontSize: fontSize ?? CustomSizes.header4,
-            color: textColor??CustomColors.black.withOpacity(0.5)),
+            color: textColor ?? CustomColors.black.withOpacity(0.5)),
       ),
     );
   }
