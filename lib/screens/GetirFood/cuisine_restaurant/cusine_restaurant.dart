@@ -24,7 +24,7 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
   Widget build(BuildContext context) {
     bool isVertical = true;
     return Scaffold(
-      appBar: CustomAppBar(context, 'getirFood'),
+      appBar: CustomAppBar(context: context, text:'getirFood'),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(

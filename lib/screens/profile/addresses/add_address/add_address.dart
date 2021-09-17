@@ -11,7 +11,7 @@ class AddAddress extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CustomAppBar(context,'Add New Address'),
+      appBar:CustomAppBar(context: context, text:'Add New Address'),
 
       body:ListView(
         children:[

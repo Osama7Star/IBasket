@@ -24,7 +24,7 @@ class _MealState extends State<Meal> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.white1,
-      appBar: CustomAppBar(context, 'Food Detail'),
+      appBar: CustomAppBar(context: context, text: 'Food Detail'),
       body: Stack(
         children: [
           Padding(

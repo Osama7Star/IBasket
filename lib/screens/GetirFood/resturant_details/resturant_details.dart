@@ -18,7 +18,7 @@ class RestaurantHomePage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: CustomAppBar(context, 'GetirYemek'),
+          appBar: CustomAppBar(context: context, text: 'GetirYemek'),
           body: ListView(
             children: [
               RestaurantInfo(restaurant: restaurant),

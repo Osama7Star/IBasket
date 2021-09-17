@@ -14,7 +14,7 @@ class Addresses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context,'Addresses'),
+      appBar: CustomAppBar(context: context, text:'Addresses'),
       body:ListView(
         children:[
           Padding(

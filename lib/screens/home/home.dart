@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-        appBar: CustomAppBar(context,'getir'),
+        appBar: CustomAppBar(context: context, text:'getir'),
         body: ListView(children: [
           const AddressBar(),
           Image.network(

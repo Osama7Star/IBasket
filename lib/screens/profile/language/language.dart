@@ -9,7 +9,7 @@ class Language extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context,'Change Language'),
+      appBar: CustomAppBar(context: context, text:'Change Language'),
       body:ListView(
         children:[
           ProfileList(

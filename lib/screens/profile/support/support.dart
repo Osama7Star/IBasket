@@ -13,7 +13,7 @@ class Support extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CustomAppBar(context,"Getir"),
+      appBar:CustomAppBar(context: context, text:"Getir"),
       body:ListView(
         children:[
           SizedBox(

@@ -26,7 +26,7 @@ class _LoginState extends State<Login> {
 
     return Scaffold(
         resizeToAvoidBottomInset:false,
-        appBar: CustomAppBar(context, 'Login'),
+        appBar: CustomAppBar(context: context, text:'Login'),
         body: Padding(
           padding: EdgeInsets.all(CustomSizes.padding5),
           child: Stack(

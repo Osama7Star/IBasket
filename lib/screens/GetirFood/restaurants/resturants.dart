@@ -26,7 +26,7 @@ class _MainPageState extends State<MainPage> {
     SizeConfig().init(context);
 
     return Scaffold(
-        appBar: CustomAppBar(context, 'GetirYemek'),
+        appBar: CustomAppBar(context: context, text: 'GetirYemek'),
         body: ListView(
           children: [
             const AddressBar(),

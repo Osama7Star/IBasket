@@ -15,7 +15,7 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBar(context, text),
+        appBar: CustomAppBar(context: context, text: text),
         body: ListView(
           children: [
             showCategories?    Column(

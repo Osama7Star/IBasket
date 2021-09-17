@@ -19,7 +19,7 @@ class Profile extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-        appBar: CustomAppBar(context, 'Profile'),
+        appBar: CustomAppBar(context: context, text: 'Profile'),
         body: ListView(children: [
           ProfileList(
               icon1: Icons.person,

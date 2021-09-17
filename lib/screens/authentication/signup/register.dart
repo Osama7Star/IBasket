@@ -21,7 +21,7 @@ class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(context, 'Register'),
+      appBar: CustomAppBar(context:context, text:'Register'),
       body: Padding(
         padding: EdgeInsets.all(CustomSizes.padding5),
         child: ListView(
