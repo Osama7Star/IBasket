@@ -33,13 +33,17 @@ class _LoginState extends State<Login> {
             children: [
               ListView(
                 children: [
-                  CustomButton(
-                      text: 'Connect With Facebook',
-                      backGroundColor: CustomColors.blue,
-                      textColor: CustomColors.white,
-                      function: () {},
-                      fontWeight: FontWeight.bold,
-                      fontSize: CustomSizes.header4),
+                  SizedBox(
+                    height:CustomSizes.height7,
+
+                    child: CustomButton(
+                        text: 'Connect With Facebook',
+                        backGroundColor: CustomColors.blue,
+                        textColor: CustomColors.white,
+                        function: () {},
+                        fontWeight: FontWeight.bold,
+                        fontSize: CustomSizes.header4),
+                  ),
                   SizedBox(height: CustomSizes.verticalSpace * 2),
                   Form(
                       key: _formKey,
@@ -80,21 +84,26 @@ class _LoginState extends State<Login> {
                           textColor: textColor,
                         ),
                         SizedBox(height: CustomSizes.verticalSpace * 2),
-                        CustomButton(
-                            text: 'Login',
-                            backGroundColor: CustomColors.primary,
-                            textColor: CustomColors.white,
-                            function: () {
-                              if (_formKey.currentState!.validate()) {
-                                setState(() {});
-                              } else {
-                                setState(() {
-                                  textColor = Colors.red;
-                                });
-                              }
-                            },
-                            fontWeight: FontWeight.bold,
-                            fontSize: CustomSizes.header4),
+                        SizedBox(
+                          width:getScreenWidth(),
+                          height:CustomSizes.height7,
+
+                          child: CustomButton(
+                              text: 'Login',
+                              backGroundColor: CustomColors.primary,
+                              textColor: CustomColors.white,
+                              function: () {
+                                if (_formKey.currentState!.validate()) {
+                                  setState(() {});
+                                } else {
+                                  setState(() {
+                                    textColor = Colors.red;
+                                  });
+                                }
+                              },
+                              fontWeight: FontWeight.bold,
+                              fontSize: CustomSizes.header4),
+                        ),
                       ])),
                   SizedBox(height: CustomSizes.verticalSpace * 2),
                   CustomText(
@@ -106,20 +115,27 @@ class _LoginState extends State<Login> {
               ),
               Positioned(
                 bottom: 0,
-                child: CustomButton(
-                    text: 'Register',
-                    backGroundColor: CustomColors.white,
-                    textColor: CustomColors.primary,
-                    borderSize: 1,
-                    function: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Register()),
-                      );
-                    },
-                    fontWeight: FontWeight.bold,
-                    fontSize: CustomSizes.header4),
+                child: SizedBox(
+                  width:getScreenWidth(),
+                  height:CustomSizes.height7,
+                  child: Padding(
+                    padding: EdgeInsets.only(right:CustomSizes.padding1),
+                    child: CustomButton(
+                        text: 'Register',
+                        backGroundColor: CustomColors.white,
+                        textColor: CustomColors.primary,
+                        borderSize: 1,
+                        function: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Register()),
+                          );
+                        },
+                        fontWeight: FontWeight.bold,
+                        fontSize: CustomSizes.header4),
+                  ),
+                ),
               )
             ],
           ),

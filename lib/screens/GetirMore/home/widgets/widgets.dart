@@ -19,7 +19,7 @@ class Category extends StatelessWidget {
         {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Products()),
+            MaterialPageRoute(builder: (context) => Products(text: 'Products Details',)),
           );        },
       child: Container(
           decoration:const BoxDecoration(

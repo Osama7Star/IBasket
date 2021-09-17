@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
+import 'package:getir_clone/screens/profile/custom_widgets/widgets.dart';
 import 'package:getir_clone/screens/profile/profile.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
+
+import 'add_address.dart';
 
 class Addresses extends StatelessWidget {
   const Addresses({Key? key}) : super(key: key);
@@ -26,19 +29,30 @@ class Addresses extends StatelessWidget {
           SizedBox(height: CustomSizes.verticalSpace * 2),
           ProfileList(
               icon1: Icons.home,
-              text: 'Support',
+              text: 'Add home address',
               icon2: Icons.add,
-              function:(){}),
+              function:(){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AddAddress()),
+                );
+              }),
           ProfileList(
               icon1: Icons.apartment,
-              text: 'Support',
+              text: 'add work address',
               icon2: Icons.add,
-              function:(){}),
+              function:(){   Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddAddress()),
+              );}),
           ProfileList(
               icon1: Icons.account_balance,
-              text: 'Support',
+              text: 'add other address',
               icon2: Icons.add,
-              function:(){}),
+              function:(){   Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddAddress()),
+              );}),
         ]
       )
     );

@@ -13,7 +13,7 @@ class InputField extends StatelessWidget {
     this.obscure = false,
     this.textInputType ,
     this.verticalPadding,
-    this.horizontalPadding, this.errorMessage, this.lengthErrorMessage, this.minLength=3, this.activeValidation = true,
+    this.horizontalPadding, this.errorMessage, this.lengthErrorMessage, this.minLength=3, this.activeValidation = true, this.prefixIcon,
   }) : super(key: key);
   final String labelText, hintText;
   final IconButton? icon;
@@ -30,6 +30,7 @@ class InputField extends StatelessWidget {
 
   final int minLength;
   final bool activeValidation;
+  final IconButton? prefixIcon;
 
   @override
   Widget build(BuildContext context) {
@@ -46,6 +47,7 @@ class InputField extends StatelessWidget {
       },
       keyboardType:textInputType?? TextInputType.text,
       decoration: InputDecoration(
+        prefixIcon: prefixIcon??Container(),
         labelText: labelText,
         contentPadding: EdgeInsets.symmetric(
             vertical: verticalPadding ?? CustomSizes.padding1,
