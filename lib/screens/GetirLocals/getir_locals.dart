@@ -37,29 +37,36 @@ class _GetirLocalsState extends State<GetirLocals> {
           ),
 
           const MainCategories(),
-          FilterSort(),
-          GridView.builder(
-            shrinkWrap: true,
-            itemCount: categoryList.length,
-            primary: false,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 8,
-              mainAxisSpacing: 8,
-              childAspectRatio: (8 /3),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
+            child: FilterSort(),
+          ),
+          SizedBox(height:CustomSizes.verticalSpace),
+          Padding(
+            padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
+            child: GridView.builder(
+              shrinkWrap: true,
+              itemCount: categoryList.length,
+              primary: false,
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                childAspectRatio: (8 /3),
+              ),
+              itemBuilder: (context, index) {
+                return  Category(category: categoryList[index],imageInLeft: true,function:
+                      () {
+                        print('test');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Shops()),
+                    );
+                  }
+                );
+              },
             ),
-            itemBuilder: (context, index) {
-              return  Category(category: categoryList[index],imageInLeft: true,function:
-                    () {
-                      print('test');
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const Shops()),
-                  );
-                }
-              );
-            },
           ),
           titleandshowall(
               text: "Mudavim restaurants",
