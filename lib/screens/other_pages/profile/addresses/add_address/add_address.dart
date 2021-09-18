@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/input_field.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
-import 'package:getir_clone/screens/profile/custom_widgets/widgets.dart';
+import 'package:getir_clone/screens/other_pages/profile/custom_widgets/widgets.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
 

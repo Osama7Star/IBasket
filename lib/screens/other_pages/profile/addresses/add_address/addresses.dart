@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
-import 'package:getir_clone/screens/profile/custom_widgets/widgets.dart';
-import 'package:getir_clone/screens/profile/profile.dart';
+import 'package:getir_clone/screens/other_pages/profile/custom_widgets/widgets.dart';
+import 'package:getir_clone/screens/other_pages/profile/profile.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -29,7 +29,7 @@ class Addresses extends StatelessWidget {
           SizedBox(height: CustomSizes.verticalSpace * 2),
           ProfileList(
               icon1: Icons.home,
-              text: 'Add home address',
+              text: 'Add Getir address',
               icon2: Icons.add,
               function:(){
                 Navigator.push(

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/resturants.dart';
+import 'package:getir_clone/screens/GetirLocals/getir_locals.dart';
 import 'package:getir_clone/screens/GetirMore/home/home.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
+
+import '../home.dart';
 
 class AddressBar extends StatelessWidget {
   const AddressBar({
@@ -108,10 +111,16 @@ class MainCategories extends StatelessWidget {
                     text: 'getir',
                     backGroundColor: CustomColors.primary,
                     textColor: CustomColors.yellow,
-                    function: () {},
+                    function: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                      );
+                    },
                     fontWeight: FontWeight.bold,
                     width: getScreenWidth()*0.17,
-                    height: CustomSizes.height4/3.5,),
+                    height: CustomSizes.height4/3.5,
+                  ),
                   CustomButton(
                       text: 'getirfood',
                       fontWeight: FontWeight.bold,
@@ -137,7 +146,12 @@ class MainCategories extends StatelessWidget {
                       width: getScreenWidth()*0.17,
                     height: CustomSizes.height4/3.5,),
                   CustomButton(
-                      text: 'getirlocals', function: () {}, fontWeight: FontWeight.bold,
+                      text: 'getirlocals', function: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GetirLocals()),
+                    );
+                  }, fontWeight: FontWeight.bold,
                       width: getScreenWidth()*0.17,
                     height: CustomSizes.height4/3.5,),
                 ]),

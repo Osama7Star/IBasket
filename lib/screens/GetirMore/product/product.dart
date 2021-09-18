@@ -11,7 +11,7 @@ class Product extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CustomAppBarWithIcons(context,'Product Details'),
+      appBar:CustomAppBarWithIcons(context:context,text:'Product Details'),
       body: Stack(
         children: [
           Padding(

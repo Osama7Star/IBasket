@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
-import 'package:getir_clone/screens/home/widgets/widgets.dart';
-import 'package:getir_clone/utilities/colors.dart';
+import 'package:getir_clone/screens/Getir/widgets/widgets.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 import 'widgets/categories.dart';
 

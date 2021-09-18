@@ -10,7 +10,7 @@ class ContainerIcon extends StatelessWidget {
         required this.widget,
         this.isRounded = false,
         required this.whichBox,
-        required this.function})
+        required this.function, this.paddingValue})
       : super(key: key);
 
   final Color color;
@@ -19,6 +19,7 @@ class ContainerIcon extends StatelessWidget {
   final bool isRounded;
 
   final int whichBox;
+  final double? paddingValue;
 
   // 1 for left box
   // 2 for right box
@@ -60,7 +61,7 @@ class ContainerIcon extends StatelessWidget {
     return GestureDetector(
       onTap: function,
       child: Container(
-        padding: EdgeInsets.all(CustomSizes.header4),
+        padding: EdgeInsets.all(paddingValue??CustomSizes.header4),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(topLeft),

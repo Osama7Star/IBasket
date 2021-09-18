@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/cuisine_model.dart';
 import 'package:getir_clone/models/restaurants_model.dart';
+import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
+import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
-import 'package:getir_clone/screens/home/widgets/widgets.dart';
+import 'package:getir_clone/screens/Getir/widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/cusines.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/resturants_widget.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/restaurant_horizontal.dart';
@@ -26,8 +28,8 @@ class _MainPageState extends State<MainPage> {
     SizeConfig().init(context);
 
     return Scaffold(
-        appBar: CustomAppBar(context: context, text: 'GetirYemek'),
-        body: ListView(
+        appBar:CustomAppBarWithIcons(context:context,text:'getirfood',widget:
+        BasketCard(value: 200)),        body: ListView(
           children: [
             const AddressBar(),
 
@@ -41,7 +43,7 @@ class _MainPageState extends State<MainPage> {
                   const MainCategories(),
                   SizedBox(height: CustomSizes.verticalSpace),
                   /// FILTER AND SORT WIDGET
-                  FilterSort(),
+                  const FilterSort(),
 
                   /// FILTIER AND SORT WIDGET
                   SizedBox(height: CustomSizes.verticalSpace),
@@ -60,7 +62,14 @@ class _MainPageState extends State<MainPage> {
                           itemCount: restaurantsList.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (BuildContext context, int index) {
-                            return Restaurants(restaurant: restaurantsList[index]);
+                            return Restaurants(restaurant: restaurantsList[index],function:
+                                (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                              );
+                            },
+                            );
                           }),
                     ),
                   ),
@@ -78,7 +87,12 @@ class _MainPageState extends State<MainPage> {
                           itemCount: restaurantsList.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (BuildContext context, int index) {
-                            return Restaurants(restaurant: restaurantsList[index]);
+                            return Restaurants(restaurant: restaurantsList[index],function:   (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                              );
+                            },);
                           }),
                     ),
                   ),
@@ -153,7 +167,13 @@ class _MainPageState extends State<MainPage> {
                                   itemBuilder: (BuildContext context, int index) {
                                     return Restaurants(
                                         restaurant: restaurantsList[index],
-                                        isFullScreen: true);
+                                        isFullScreen: true,
+                                    function:   (){
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                                      );
+                                    },);
                                   }),
                             ),
                           ),

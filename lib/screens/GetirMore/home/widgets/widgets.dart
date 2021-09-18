@@ -7,58 +7,78 @@ import 'package:getir_clone/utilities/sizes.dart';
 
 class Category extends StatelessWidget {
   const Category({
-    Key? key,required this.category,
+    Key? key,
+    required this.category,
+    this.imageInLeft = false,required this.function,
   }) : super(key: key);
 
-  final CategoryModel category ;
+  final CategoryModel category;
+
+  final bool imageInLeft;
+  final VoidCallback function;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:()
-        {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Products(text: 'Products Details',)),
-          );        },
+      onTap: function,
       child: Container(
-          decoration:const BoxDecoration(
-              color:Colors.white,
+          decoration: const BoxDecoration(
+              color: Colors.white,
               borderRadius: BorderRadius.all(
                 Radius.circular(10),
-              )
-          ),
-          child:Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-
-              children:[
-                Expanded(flex:2,child: Image.network(category.imageUrl)),
-                Expanded(
-                  flex:4,
-                  child: Center(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children:[
-                          CustomText(text:category.name,fontSize:CustomSizes.header5,fontWeight:FontWeight.bold,color:CustomColors.black),
-                          CustomText(text:"(64)",fontSize:CustomSizes.header5,fontWeight:FontWeight.bold,color:CustomColors.black.withOpacity(0.3))
-
-                        ]
+              )),
+          child: imageInLeft
+              ? Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                  Expanded(
+                    flex: 4,
+                    child: Center(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomText(
+                                text: category.name,
+                                fontSize: CustomSizes.header5,
+                                fontWeight: FontWeight.bold,
+                                color: CustomColors.black),
+                          ]),
                     ),
                   ),
-                )
-              ]
-          )
-      ),
+                  Expanded(flex: 2, child: Image.network(category.imageUrl)),
+                ])
+              : Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
+                  Expanded(flex: 2, child: Image.network(category.imageUrl)),
+                  Expanded(
+                    flex: 4,
+                    child: Center(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            CustomText(
+                                text: category.name,
+                                fontSize: CustomSizes.header5,
+                                fontWeight: FontWeight.bold,
+                                color: CustomColors.black),
+                            CustomText(
+                                text: "(64)",
+                                fontSize: CustomSizes.header5,
+                                fontWeight: FontWeight.bold,
+                                color: CustomColors.black.withOpacity(0.3))
+                          ]),
+                    ),
+                  )
+                ])),
     );
   }
 }
+
 class CategoryList extends StatelessWidget {
   const CategoryList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return     GridView.builder(
+    return GridView.builder(
       shrinkWrap: true,
       itemCount: categoryList.length,
       primary: false,
@@ -66,12 +86,19 @@ class CategoryList extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 8,
         mainAxisSpacing: 8,
-        childAspectRatio: (8 /3),
+        childAspectRatio: (8 / 3),
       ),
       itemBuilder: (context, index) {
-        return  Category(category: categoryList[index]);
+        return Category(category: categoryList[index],function:  (){
+              () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => Products(text: 'Products',)),
+            );
+          };
+        },);
       },
     );
   }
 }
-

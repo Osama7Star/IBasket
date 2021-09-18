@@ -24,7 +24,8 @@ class _MealState extends State<Meal> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.white1,
-      appBar: CustomAppBar(context: context, text: 'Food Detail'),
+      appBar: CustomAppBarWithIcons(context:context,text:'getirfood',widget:
+      const BasketCard(value: 200)),
       body: Stack(
         children: [
           Padding(
@@ -199,6 +200,7 @@ class _MealState extends State<Meal> {
     );
   }
 }
+
 
 class MealChoices extends StatelessWidget {
   const MealChoices({

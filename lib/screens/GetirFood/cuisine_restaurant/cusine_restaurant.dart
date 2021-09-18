@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/restaurants_model.dart';
+import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
@@ -24,7 +25,8 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
   Widget build(BuildContext context) {
     bool isVertical = true;
     return Scaffold(
-      appBar: CustomAppBar(context: context, text:'getirFood'),
+      appBar:CustomAppBarWithIcons(context:context,text:'getirfood',widget:
+      BasketCard(value: 200)),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(
@@ -32,28 +34,9 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const FilterSort(),
+                  IconTextInContainer(text: 'Müdavim',icon: Icons.close_sharp,),
               SizedBox(height: CustomSizes.verticalSpace),
-              Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(30)),
-                  color: CustomColors.primary.withOpacity(0.15),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    CustomText(
-                      text: widget.cuisineName,
-                      color: CustomColors.primary,
-                      fontSize: CustomSizes.header5,
-                    ),
-                    Icon(Icons.close_sharp,
-                        size: CustomSizes.iconSize / 1.3,
-                        color: CustomColors.primary),
-                  ],
-                ),
-              ),
+
             ]),
           ),
           SizedBox(height: CustomSizes.verticalSpace),
@@ -99,7 +82,14 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
                         itemBuilder: (BuildContext context, int index) {
                           return Restaurants(
                               restaurant: restaurantsList[index],
-                              isFullScreen: true);
+                              isFullScreen: true,
+                            function:   (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                              );
+                            },
+                          );
                         }),
                   ),
                 )
@@ -121,3 +111,5 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
     );
   }
 }
+
+

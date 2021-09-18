@@ -3,10 +3,9 @@ import 'package:getir_clone/screens/GetirMore/products/products.dart';
 import 'package:getir_clone/screens/authentication/login/login.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
-import 'package:getir_clone/screens/profile/support/support.dart';
+import 'package:getir_clone/screens/other_pages/profile/support/support.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
-
 import 'addresses/add_address/addresses.dart';
 import 'custom_widgets/widgets.dart';
 import 'language/language.dart';

@@ -10,12 +10,12 @@ import 'package:getir_clone/utilities/sizes.dart';
 
 class Restaurants extends StatefulWidget {
   const Restaurants({
-    Key? key, this.isFullScreen = false,required this.restaurant,
+    Key? key, this.isFullScreen = false,required this.restaurant,required this.function,
   }) : super(key: key);
 
   final bool isFullScreen;
   final RestaurantsModel restaurant;
-
+  final Function() function;
 
   @override
   State<Restaurants> createState() => _RestaurantsState();
@@ -24,17 +24,13 @@ class Restaurants extends StatefulWidget {
 class _RestaurantsState extends State<Restaurants> {
    bool isFavorite = false;
 
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
-          onTap:(){
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant:widget.restaurant)),
-            );
-    },
+          onTap:widget.function,
           child: Padding(
             padding:  EdgeInsets.all(CustomSizes.padding5),
             child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
