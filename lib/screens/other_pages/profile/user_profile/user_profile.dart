@@ -161,7 +161,7 @@ class UserProfile extends StatelessWidget {
                     color: CustomColors.black.withOpacity(0.5),
                     isCenter: false),
               ),
-              SizedBox(height: CustomSizes.verticalSpace * 2),
+              SizedBox(height: CustomSizes.verticalSpace ),
               Card(
                 child: ProfileList(
                     icon1: Icons.contact_support,
@@ -193,6 +193,8 @@ class UserProfile extends StatelessWidget {
                     isIcon2: false,
                     function: () {}),
               ),
+              SizedBox(height: CustomSizes.verticalSpace *2),
+
             ]),
           ],
         ));

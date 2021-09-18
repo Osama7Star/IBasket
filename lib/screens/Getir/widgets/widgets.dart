@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/resturants.dart';
 import 'package:getir_clone/screens/GetirLocals/getir_locals.dart';
 import 'package:getir_clone/screens/GetirMore/home/home.dart';
+import 'package:getir_clone/screens/GetirWater/getir_water.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -142,7 +143,12 @@ class MainCategories extends StatelessWidget {
                       width: getScreenWidth()*0.17,
                     height: CustomSizes.height4/3.5,),
                   CustomButton(
-                      text: 'getirwater', function: () {}, fontWeight: FontWeight.bold,
+                      text: 'getirwater', function: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => GetirWater()),
+                    );
+                  }, fontWeight: FontWeight.bold,
                       width: getScreenWidth()*0.17,
                     height: CustomSizes.height4/3.5,),
                   CustomButton(
