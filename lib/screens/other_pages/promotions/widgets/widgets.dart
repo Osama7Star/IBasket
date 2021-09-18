@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 class IconInContainer extends StatelessWidget {
-  const IconInContainer({Key? key,required this.icon, this.radius = 15}) : super(key: key);
+  const IconInContainer({Key? key,required this.icon, this.radius = 15, this.iconSize}) : super(key: key);
   final IconData icon ;
   final double radius;
+  final double? iconSize;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,6 +25,6 @@ class IconInContainer extends StatelessWidget {
         ),
         child: Icon(icon,
             color: CustomColors.primary,
-            size: CustomSizes.iconSize));
+            size: iconSize??CustomSizes.iconSize));
   }
 }

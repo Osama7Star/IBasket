@@ -35,8 +35,8 @@ class ContainerIcon extends StatelessWidget {
     switch (whichBox) {
       case 1:
         {
-          topLeft = CustomSizes.padding7;
-          bottomLeft = CustomSizes.padding7;
+          topLeft = CustomSizes.padding5;
+          bottomLeft = CustomSizes.padding5;
           topRight = 0;
           bottomRight = 0;
         }
@@ -45,8 +45,8 @@ class ContainerIcon extends StatelessWidget {
         {
           topLeft = 0;
           bottomLeft = 0;
-          topRight = CustomSizes.padding7;
-          bottomRight = CustomSizes.padding7;
+          topRight = CustomSizes.padding5;
+          bottomRight = CustomSizes.padding5;
         }
         break;
       case 3:
@@ -63,6 +63,15 @@ class ContainerIcon extends StatelessWidget {
       child: Container(
         padding: EdgeInsets.all(paddingValue??CustomSizes.header4),
         decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 1,
+              blurRadius: 7,
+              offset: const Offset(
+                  0, 3), // changes position of shadow
+            ),
+          ],
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(topLeft),
               topRight: Radius.circular(topRight),
