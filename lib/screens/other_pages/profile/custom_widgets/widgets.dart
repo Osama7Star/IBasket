@@ -25,44 +25,42 @@ class ProfileList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:function,
-      child: Card(
-          margin: EdgeInsets.zero,
-          child: isIcon1
-              ? ListTile(
-            leading: isIcon1
-                ? Icon(icon1,
-                color: CustomColors.primary,
-                size: CustomSizes.iconSizeMedium)
-                : Container(width: 0),
-            title: CustomText(
-                text: text,
-                fontSize: CustomSizes.header4,
-                color: CustomColors.black,
-                isCenter: false,
-                fontWeight: FontWeight.bold),
-            trailing: isIcon2
-                ? Icon(icon2,
-                color: CustomColors.primary, size: CustomSizes.iconSize)
-                : Container(width: 0),
-          )
-              : Padding(
-            padding: EdgeInsets.all(CustomSizes.padding4),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomText(
-                      text: text,
-                      fontSize: CustomSizes.header4,
-                      color: CustomColors.black,
-                      isCenter: false,
-                      fontWeight: FontWeight.bold),
-                  isIcon2
-                      ? Icon(icon2,
-                      color: CustomColors.primary,
-                      size: CustomSizes.iconSize)
-                      : Container(width: 0)
-                ]),
-          )),
+      child: isIcon1
+          ? ListTile(
+        leading: isIcon1
+            ? Icon(icon1,
+            color: CustomColors.primary,
+            size: CustomSizes.iconSizeMedium)
+            : Container(width: 0),
+        title: CustomText(
+            text: text,
+            fontSize: CustomSizes.header4,
+            color: CustomColors.black,
+            isCenter: false,
+            fontWeight: FontWeight.bold),
+        trailing: isIcon2
+            ? Icon(icon2,
+            color: CustomColors.primary, size: CustomSizes.iconSize)
+            : Container(width: 0),
+      )
+          : Padding(
+        padding: EdgeInsets.all(CustomSizes.padding4),
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomText(
+                  text: text,
+                  fontSize: CustomSizes.header4,
+                  color: CustomColors.black,
+                  isCenter: false,
+                  fontWeight: FontWeight.bold),
+              isIcon2
+                  ? Icon(icon2,
+                  color: CustomColors.primary,
+                  size: CustomSizes.iconSize)
+                  : Container(width: 0)
+            ]),
+      ),
     );
   }
 }

@@ -18,10 +18,10 @@ CustomAppBar(
           fontWeight: FontWeight.bold),
     );
 
-CustomAppBarWithIcons({required BuildContext context,required String text, Widget? widget,Color? color,
+CustomAppBarWithIcons({required BuildContext context,required String text,bool hideLeftIcon = false, Widget? widget,Color? color,
   double? fontSize}) => AppBar(
       leading: IconButton(
-        icon: Icon(Icons.close, size: CustomSizes.iconSizeMedium / 1.2),
+        icon: hideLeftIcon?Container(width:0):Icon(Icons.close, size: CustomSizes.iconSizeMedium / 1.2),
         onPressed: () {
           Navigator.of(context).pop();
         },
