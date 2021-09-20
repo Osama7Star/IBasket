@@ -24,8 +24,10 @@ class IconInContainer extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(icon,
-            color: CustomColors.primary,
-            size: iconSize??CustomSizes.iconSize));
+        child: Center(
+          child: Icon(icon,
+              color: CustomColors.primary,
+              size: iconSize??CustomSizes.iconSize),
+        ));
   }
 }

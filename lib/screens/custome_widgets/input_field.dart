@@ -58,8 +58,17 @@ class InputField extends StatelessWidget {
       },
       keyboardType: textInputType ?? TextInputType.text,
       decoration: InputDecoration(
-        prefixIcon: prefixIcon ?? Container(width: 0),
-        suffixIcon: suffixIcon ?? Container(width: 0,),
+
+        suffixIconConstraints: BoxConstraints(
+            minHeight: prefixIcon!=null?CustomSizes.iconSize:0,
+            minWidth: suffixIcon!=null?CustomSizes.iconSize:0,
+        ),
+        prefixIconConstraints: BoxConstraints(
+          minHeight: prefixIcon!=null?24:0,
+          minWidth: suffixIcon!=null?24:0,
+        ),
+        prefixIcon: prefixIcon ?? Container(color:Colors.red,width: 0,height: 0,),
+        suffixIcon: suffixIcon ?? Container(color:Colors.green,width: 0,height: 0,),
         labelText: labelText,
         contentPadding: EdgeInsets.symmetric(
             vertical: verticalPadding ?? CustomSizes.padding1,

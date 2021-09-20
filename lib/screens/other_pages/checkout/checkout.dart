@@ -54,7 +54,7 @@ class _CheckoutState extends State<Checkout> {
                           padding: EdgeInsets.all(CustomSizes.padding3),
                           child: GestureDetector(
                             onTap:(){
-    showDialog(context: context, builder: (BuildContext context) => errorDialog);},
+    showDialog(context: context, builder: (BuildContext context) => PopupMessage);},
 
 
                             child: CustomText(

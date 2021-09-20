@@ -21,45 +21,60 @@ class Profile extends StatelessWidget {
     return Scaffold(
         appBar: CustomAppBar(context: context, text: 'Profile'),
         body: ListView(children: [
-          ProfileList(
-              icon1: Icons.person,
-              text: 'Login',
-              icon2: Icons.arrow_forward_ios,
-              function: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Login()),
-                );
-              }),
+          Card(
+            margin:EdgeInsets.zero,
+            child: ProfileList(
+                icon1: Icons.person,
+                text: 'Login',
+                icon2: Icons.arrow_forward_ios,
+                function: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Login()),
+                  );
+                }),
+          ),
           SizedBox(height: CustomSizes.verticalSpace * 2),
-          ProfileList(
-              icon1: Icons.location_on_rounded,
-              text: 'My Addresses',
-              icon2: Icons.arrow_forward_ios,
-              function: () {
-                Navigator.push(
+          Card(
+            margin:EdgeInsets.zero,
+
+            child: ProfileList(
+                icon1: Icons.location_on_rounded,
+                text: 'My Addresses',
+                icon2: Icons.arrow_forward_ios,
+                function: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Addresses()),
+                  );
+                }),
+          ),
+          Card(
+            margin:EdgeInsets.zero,
+
+            child: ProfileList(
+                icon1: Icons.favorite,
+                text: 'Favourite Products',
+                icon2: Icons.arrow_forward_ios,
+                function: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Products(text: 'Favourite Products',showCategories:false)),
+                  );
+                }),
+          ),
+          Card(
+            margin:EdgeInsets.zero,
+
+            child: ProfileList(
+                icon1: Icons.contact_support,
+                text: 'Support',
+                icon2: Icons.arrow_forward_ios,
+                function: () { Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Addresses()),
-                );
-              }),
-          ProfileList(
-              icon1: Icons.favorite,
-              text: 'Favourite Products',
-              icon2: Icons.arrow_forward_ios,
-              function: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Products(text: 'Favourite Products',showCategories:false)),
-                );
-              }),
-          ProfileList(
-              icon1: Icons.contact_support,
-              text: 'Support',
-              icon2: Icons.arrow_forward_ios,
-              function: () { Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Support()),
-              );}),
+                  MaterialPageRoute(builder: (context) => Support()),
+                );}),
+          ),
 
           SizedBox(height: CustomSizes.verticalSpace * 2),
           Padding(
@@ -70,18 +85,22 @@ class Profile extends StatelessWidget {
                 color: CustomColors.black.withOpacity(0.5),
                 isCenter: false),
           ),
-          SizedBox(height: CustomSizes.verticalSpace * 2),
-          ProfileList(
-              icon1: Icons.contact_support,
-              text: 'English',
-              icon2: Icons.arrow_forward_ios,
-              isIcon1: false,
-              function: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Language()),
-                );
-              }),
+          SizedBox(height: CustomSizes.verticalSpace ),
+          Card(
+            margin:EdgeInsets.zero,
+
+            child: ProfileList(
+                icon1: Icons.contact_support,
+                text: 'English',
+                icon2: Icons.arrow_forward_ios,
+                isIcon1: false,
+                function: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Language()),
+                  );
+                }),
+          ),
           SizedBox(height: CustomSizes.verticalSpace * 2),
           Padding(
             padding: EdgeInsets.all(CustomSizes.padding5),
@@ -91,13 +110,17 @@ class Profile extends StatelessWidget {
                 color: CustomColors.black.withOpacity(0.5),
                 isCenter: false),
           ),
-          ProfileList(
-              icon1: Icons.contact_support,
-              text: '2.0.1',
-              icon2: Icons.arrow_forward_ios,
-              isIcon1: false,
-              isIcon2: false,
-              function: () {}),
+          Card(
+            margin:EdgeInsets.zero,
+
+            child: ProfileList(
+                icon1: Icons.contact_support,
+                text: '2.0.1',
+                icon2: Icons.arrow_forward_ios,
+                isIcon1: false,
+                isIcon2: false,
+                function: () {}),
+          ),
         ]),
     bottomNavigationBar:  CustomBottomNavBar(selectedMenu: MenuState.profile),);
   }

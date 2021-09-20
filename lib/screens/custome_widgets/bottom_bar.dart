@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/Getir/home.dart';
 import 'package:getir_clone/screens/other_pages/profile/profile.dart';
+import 'package:getir_clone/screens/other_pages/profile/user_profile/user_profile.dart';
 import 'package:getir_clone/screens/other_pages/promotions/promotions.dart';
 import 'package:getir_clone/screens/other_pages/promotions/widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/search/search.dart';
@@ -141,7 +142,7 @@ class CustomBottomNavBar extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Profile()),
+                                    builder: (context) => UserProfile()),
                               );
                             },
                           ),
