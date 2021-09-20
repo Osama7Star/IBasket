@@ -44,7 +44,6 @@ class CustomBottomNavBar extends StatelessWidget {
                       Expanded(
                         flex:2,
                         child: Container(
-                          padding: EdgeInsets.symmetric(horizontal:15),
                           decoration:  BoxDecoration(
                             border: Border(
                               bottom: BorderSide(

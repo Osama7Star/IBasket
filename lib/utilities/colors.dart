@@ -8,6 +8,8 @@ class CustomColors{
 
   static const Color yellow  = Color.fromRGBO(247 ,201, 15, 1.0);
   static const Color black   = Color.fromRGBO(0 ,0 ,0, 1.0);
+  static const Color blackWithOpacity   = Color.fromRGBO(0 ,0 ,0, 0.5);
+
   static const Color white   = Color.fromRGBO(255,255,255, 1.0);
   static const Color white1  = Color.fromRGBO(255,255,255, 0.95);
   static const Color white2  = Color.fromRGBO(245,240,240, 1);
