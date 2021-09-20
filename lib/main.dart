@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/Getir/home.dart';
 import 'package:getir_clone/screens/GetirLocals/getir_locals.dart';
+import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/checkout/checkout.dart';
 import 'package:getir_clone/screens/other_pages/profile/user_profile/user_profile.dart';
 import 'package:getir_clone/utilities/colors.dart';

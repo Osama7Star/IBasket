@@ -4,6 +4,8 @@ import 'package:getir_clone/screens/other_pages/basket/basket.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
+import 'buttons.dart';
+
 CustomAppBar(
         {required BuildContext context,
         required String text,
@@ -118,3 +120,186 @@ class BasketCard extends StatelessWidget {
     );
   }
 }
+
+
+/// POPUP MESSAGE
+
+
+class PopupMessage extends StatefulWidget {
+  const PopupMessage({Key? key}) : super(key: key);
+
+  @override
+  State<PopupMessage> createState() => _PopupMessageState();
+}
+
+class _PopupMessageState extends State<PopupMessage> {
+  bool value = false;
+
+  @override
+  Widget build(BuildContext context) {
+    SizeConfig().init(context);
+
+    return
+      Center(
+        child: Container(
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(borderRadius: BorderRadius.only(
+              topRight: Radius.circular(50),
+              bottomRight: Radius.circular(50)),),
+          child: Card(
+            margin: EdgeInsets.zero,
+            elevation: 0,
+            child: Padding(
+              padding: EdgeInsets.all(CustomSizes.padding5),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left:CustomSizes.padding5),
+                    child: TextField(
+                      textAlign: TextAlign.left,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+
+                        hintText: 'Here you can add your order\'s note  ',
+                        hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
+
+                      ),
+                    ),
+                  ),
+                  Divider(),
+
+                  Row(
+                      children: [
+                        Transform.scale(
+                          scale: CustomSizes.iconSize / 14,
+
+                          child: Checkbox(
+                            value: value,
+                            onChanged: (bool? value) {
+                              setState(() {
+                                this.value = value!;
+                              });
+                            },
+                          ),
+                        ),
+                        Expanded(child: CustomText(text: 'Don\'t Ring the bell',
+                            fontSize: CustomSizes.header5,
+                            color: CustomColors.black,
+                            isCenter: false))
+                      ]
+                  ),
+                  SizedBox(height: CustomSizes.verticalSpace*2),
+                  Row(
+                      children: [
+                        Expanded(child: SizedBox(
+                          height:CustomSizes.height7/1.2,
+                          child: CustomButton(text: 'Close',
+                            function: () {},
+                            backGroundColor: CustomColors.grey,
+                            textColor: CustomColors.white,
+                            fontSize: CustomSizes.header5,),
+                        )),
+                        Expanded(child: SizedBox(
+                          height:CustomSizes.height7/1.2,
+
+                          child: CustomButton(text: 'Save',
+                              function: () {},
+                              backGroundColor: CustomColors.primary,
+                              textColor: CustomColors.white,
+                              fontSize: CustomSizes.header5),
+                        ),
+                        )
+                      ]
+                  )
+
+                ],
+              ),
+            ),
+          ),
+
+        )
+    );
+  }
+}
+
+Dialog errorDialog = Dialog(
+ //this right here
+  child: Container(
+    width:getScreenWidth(),
+    padding:EdgeInsets.all(CustomSizes.padding1),
+    decoration: const BoxDecoration(borderRadius: BorderRadius.only(
+        topRight: Radius.circular(50),
+        bottomRight: Radius.circular(50)),),
+    child: Card(
+      margin: EdgeInsets.zero,
+      elevation: 0,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left:CustomSizes.padding5),
+            child: TextField(
+              textAlign: TextAlign.left,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+
+                hintText: 'Here you can add your order\'s note  ',
+                hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
+
+              ),
+            ),
+          ),
+          Divider(),
+
+          Row(
+              children: [
+                Transform.scale(
+                  scale: CustomSizes.iconSize / 14,
+
+                  child: Checkbox(
+                    value: false,
+                    onChanged: (bool? value) {
+
+
+                    },
+                  ),
+                ),
+                Expanded(child: CustomText(text: 'Don\'t Ring the bell',
+                    fontSize: CustomSizes.header5,
+                    color: CustomColors.black,
+                    isCenter: false))
+              ]
+          ),
+          SizedBox(height: CustomSizes.verticalSpace*2),
+          Row(
+              children: [
+                Expanded(child: SizedBox(
+                  height:CustomSizes.height7/1.2,
+                  child: CustomButton(text: 'Close',
+                    function: () {},
+                    backGroundColor: CustomColors.grey,
+                    textColor: CustomColors.white,
+                    fontSize: CustomSizes.header5,),
+                )),
+                Expanded(child: SizedBox(
+                  height:CustomSizes.height7/1.2,
+
+                  child: CustomButton(text: 'Save',
+                      function: () {},
+                      backGroundColor: CustomColors.primary,
+                      textColor: CustomColors.white,
+                      fontSize: CustomSizes.header5),
+                ),
+                )
+              ]
+          )
+
+        ],
+      ),
+    ),
+
+  ),
+);
