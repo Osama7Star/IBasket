@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/promotions/widgets/widgets.dart';
@@ -87,6 +88,7 @@ class Promotions extends StatelessWidget {
             ),
           ],
         ),
+          bottomNavigationBar:CustomBottomNavBar(selectedMenu: MenuState.promotion),
       ),
     );
   }

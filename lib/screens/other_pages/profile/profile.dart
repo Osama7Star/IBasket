@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/GetirMore/products/products.dart';
 import 'package:getir_clone/screens/authentication/login/login.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/profile/support/support.dart';
@@ -97,6 +98,7 @@ class Profile extends StatelessWidget {
               isIcon1: false,
               isIcon2: false,
               function: () {}),
-        ]));
+        ]),
+    bottomNavigationBar:  CustomBottomNavBar(selectedMenu: MenuState.profile),);
   }
 }

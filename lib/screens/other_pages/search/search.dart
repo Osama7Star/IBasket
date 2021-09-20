@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/category_model.dart';
 import 'package:getir_clone/screens/GetirMore/products/widgets/widgets.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/search/widgets/widgets.dart';
@@ -81,6 +82,7 @@ class _SearchState extends State<Search> {
               ),
             ],
           ),
-        ));
+        ),
+     bottomNavigationBar:  CustomBottomNavBar(selectedMenu: MenuState.search));
   }
 }
