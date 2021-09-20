@@ -159,7 +159,7 @@ class _AddNewCardState extends State<AddNewCard> {
                   margin: EdgeInsets.zero,
                   child: Padding(
                     padding:
-                        EdgeInsets.symmetric(vertical: CustomSizes.padding5),
+                        EdgeInsets.symmetric(vertical: CustomSizes.padding5,horizontal:CustomSizes.padding5 ),
                     child: Row(children: [
                       Expanded(
                         flex:3,

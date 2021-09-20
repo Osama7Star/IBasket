@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.deepPurple,
       ),
-      home: const Payment(),
+      home: const HomePage(),
 
     );
   }

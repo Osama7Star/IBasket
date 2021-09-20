@@ -13,6 +13,7 @@ CustomAppBar(
         double? fontSize}) =>
     AppBar(
       centerTitle: true,
+      backgroundColor:CustomColors.primary2 ,
       title: CustomText(
           text: text,
           fontSize: fontSize ?? CustomSizes.header3,
