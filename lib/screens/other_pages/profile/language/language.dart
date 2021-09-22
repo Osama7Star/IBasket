@@ -10,23 +10,26 @@ class Language extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(context: context, text:'Change Language'),
-      body:ListView(
-        children:[
-          ProfileList(
-              icon1: Icons.contact_support,
-              text: 'Türkçe',
-              icon2: Icons.check,
-              isIcon1: false,
-              function:(){}),
-          ProfileList(
-              icon1: Icons.contact_support,
-              text: 'English',
-              icon2: Icons.check,
-              isIcon1: false,
-              isIcon2: false,
+      body:Card(
+        child: ListView(
+          children:[
+            ProfileList(
+                icon1: Icons.contact_support,
+                text: 'Türkçe',
+                icon2: Icons.check,
+                isIcon1: false,
+                function:(){}),
+            Divider(),
+            ProfileList(
+                icon1: Icons.contact_support,
+                text: 'English',
+                icon2: Icons.check,
+                isIcon1: false,
+                isIcon2: false,
 
-              function:(){}),
-        ]
+                function:(){}),
+          ]
+        ),
       )
     );
   }

@@ -3,6 +3,7 @@ import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/input_field.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
+import 'package:getir_clone/screens/other_pages/profile/addresses/add_address/addresses.dart';
 import 'package:getir_clone/screens/other_pages/profile/custom_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/profile/language/language.dart';
 import 'package:getir_clone/screens/other_pages/promotions/widgets/widgets.dart';
@@ -106,7 +107,9 @@ class _UserProfileState extends State<UserProfile> {
                                                   2),
                                           Expanded(
                                               child: TextField(
-                                            controller: controller3,
+                                                keyboardType: TextInputType.phone,
+
+                                                controller: controller3,
                                             decoration: InputDecoration(
                                                 border: InputBorder.none,
                                                 hintText: '+90 537 272 4890'),
@@ -228,7 +231,9 @@ class _UserProfileState extends State<UserProfile> {
                     ),
               editPage
                   ? SizedBox(width: 0)
-                  : Column(children: [
+                  : Column(
+                crossAxisAlignment :CrossAxisAlignment.start,
+                  children: [
                       SizedBox(height: CustomSizes.verticalSpace * 3),
                       Card(
                         child: Column(children: [
@@ -236,7 +241,12 @@ class _UserProfileState extends State<UserProfile> {
                               icon1: Icons.location_on,
                               text: ' My Addresses',
                               icon2: Icons.arrow_forward_ios,
-                              function: () {}),
+                              function: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>  Addresses()),
+                                );
+                              }),
                           Divider(),
                           ProfileList(
                               icon1: Icons.favorite,

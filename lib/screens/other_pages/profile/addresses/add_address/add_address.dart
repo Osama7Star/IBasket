@@ -13,22 +13,31 @@ class AddAddress extends StatelessWidget {
     return Scaffold(
       appBar:CustomAppBar(context: context, text:'Add New Address'),
 
-      body:ListView(
-        children:[
-          InputField(
-              hintText: 'Search Address',
-              textInputType: TextInputType.phone,
-              fontSize: CustomSizes.header4,
-              prefixIcon:IconButton(icon:Icon(Icons.search,size: CustomSizes.iconSizeMedium,), onPressed: () {  },)
-              ),
-          ProfileList(
-              icon1: Icons.location_searching_sharp,
-              text: 'Use current location',
-              icon2: Icons.location_searching_sharp,
-              isIcon2: false,
-              function:(){}),
+      body:Center(
+        child: ListView(
+          children:[
+            Card(
+              margin:EdgeInsets.zero,
+              child: InputField(
+                  hintText: 'Search Address',
+                  textInputType: TextInputType.phone,
+                  fontSize: CustomSizes.header4,
+                  prefixIcon:IconButton(icon:Icon(Icons.search,size: CustomSizes.iconSizeMedium,), onPressed: () {  },)
+                  ),
+            ),
+            Card(
+              margin:EdgeInsets.zero,
 
-        ]
+              child: ProfileList(
+                  icon1: Icons.location_searching_sharp,
+                  text: 'Use current location',
+                  icon2: Icons.location_searching_sharp,
+                  isIcon2: false,
+                  function:(){}),
+            ),
+
+          ]
+        ),
       )
     );
   }
