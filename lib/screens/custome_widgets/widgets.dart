@@ -83,7 +83,7 @@ class BasketCard extends StatelessWidget {
     Key? key,required this.value,
   }) : super(key: key);
 
-  final int value;
+  final double value;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

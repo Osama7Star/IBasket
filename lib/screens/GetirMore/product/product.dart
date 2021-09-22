@@ -18,7 +18,7 @@ class Product extends StatefulWidget {
 class _ProductState extends State<Product> {
   bool isClicked = false;
   int mealsNumber = 0 ;
-  int basketTotal=0;
+  double basketTotal=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,6 +121,8 @@ class _ProductState extends State<Product> {
                         function: () {
                           setState(() {
                             mealsNumber > 0 ? mealsNumber-- : mealsNumber;
+                            basketTotal = basketTotal - widget.product.price;
+
                           });
                         }),
                     ContainerIcon(
@@ -142,6 +144,8 @@ class _ProductState extends State<Product> {
                         function: () {
                           setState(() {
                             mealsNumber = mealsNumber + 1;
+                            basketTotal = basketTotal + widget.product.price;
+
                           });
                         }),
                   ]):
@@ -156,6 +160,7 @@ class _ProductState extends State<Product> {
                           setState((){
                             isClicked = true;
                             mealsNumber = mealsNumber + 1;
+                            basketTotal = basketTotal + widget.product.price;
                           });
                         }
                     ),
