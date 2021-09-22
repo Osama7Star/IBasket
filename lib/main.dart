@@ -4,6 +4,7 @@ import 'package:getir_clone/screens/GetirLocals/getir_locals.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/checkout/checkout.dart';
 import 'package:getir_clone/screens/other_pages/profile/payment/payment.dart';
+import 'package:getir_clone/screens/other_pages/profile/user_profile/order_details.dart';
 import 'package:getir_clone/screens/other_pages/profile/user_profile/previous_order.dart';
 import 'package:getir_clone/screens/other_pages/profile/user_profile/user_profile.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.deepPurple,
       ),
-      home: const PreviousOrder(),
+      home: const OrderDetails(),
 
     );
   }

@@ -7,19 +7,19 @@ class DeliverTypeCircle extends StatelessWidget {
   const DeliverTypeCircle({
     required this.widget,
     required this.color,
-    Key? key,
+    Key? key, this.padding,
   }) : super(key: key);
 
   final Widget widget;
   final Color color;
+  final double? padding;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
+      padding: EdgeInsets.all(padding??CustomSizes.padding5),
 
-      width: CustomSizes.iconSize,
-      height: CustomSizes.iconSize,
       // child: Icon(Icons.error, size: CustomSizes.iconSize,),
       child:widget,
       decoration:  BoxDecoration(
