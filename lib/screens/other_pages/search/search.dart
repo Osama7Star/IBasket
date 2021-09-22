@@ -5,6 +5,7 @@ import 'package:getir_clone/models/category_model.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirMore/products/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
+import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/search/widgets/widgets.dart';
@@ -22,6 +23,7 @@ class _SearchState extends State<Search> {
   bool showData = false;
   TextEditingController controller = new TextEditingController();
   IconData passwordSuffixIcon = Icons.mic;
+  String searchWord='';
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +97,70 @@ class _SearchState extends State<Search> {
                           ),
                         ),
                       ])
-                : Container(width: 0),
+                :
+
+            SizedBox(height:CustomSizes.verticalSpace*3),
+            Padding(
+              padding:  EdgeInsets.only(left:CustomSizes.padding5),
+              child: CustomText(text:'Popular Search',isCenter:false,color: CustomColors.blackWithOpacity,),
+            ),
+            SizedBox(height:CustomSizes.verticalSpace*2),
+
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Card(
+                margin: EdgeInsets.zero,
+                child: Padding(
+                  padding:  EdgeInsets.all(CustomSizes.padding5),
+                  child: Row(children: [
+                    Padding(
+                      padding:  EdgeInsets.only(right:CustomSizes.padding5),
+                      child: CustomButton(
+                          text: 'water',
+                          textColor: CustomColors.primary,
+                          function: () {}),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: CustomButton(
+                          text: 'ice cream',
+                          textColor: CustomColors.primary,
+                          function: () {}),
+                    ),Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: CustomButton(
+                          text: 'milk',
+                          textColor: CustomColors.primary,
+                          function: () {}),
+                    ),Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: CustomButton(
+                          text: 'bread',
+                          textColor: CustomColors.primary,
+                          function: () {}),
+                    ),Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: CustomButton(
+                          text: 'eggs',
+                          textColor: CustomColors.primary,
+                          function: () {}),
+                    ),Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: CustomButton(
+                          text: 'test',
+                          textColor: CustomColors.primary,
+                          function: () {}),
+                    ),Padding(
+                      padding: const EdgeInsets.only(right:8.0),
+                      child: CustomButton(
+                          text: 'test',
+                          textColor: CustomColors.primary,
+                          function: () {}),
+                    ),
+                  ]),
+                ),
+              ),
+            )
           ]),
         ),
         bottomNavigationBar:
