@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/category_model.dart';
+import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirMore/products/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
@@ -15,7 +16,8 @@ class Products extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBar(context: context, text: text),
+        appBar: CustomAppBarWithIcons(
+            context: context, text: 'getir', widget: BasketCard(value: 200),hideLeftIcon: true),
         body: ListView(
           children: [
             showCategories?    Column(
@@ -126,7 +128,7 @@ class Products extends StatelessWidget {
                     EdgeInsets.symmetric(horizontal: CustomSizes.padding8 / 1.5),
                 child: GridView.builder(
                   shrinkWrap: true,
-                  itemCount: categoryList.length,
+                  itemCount: productList.length,
                   primary: false,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
@@ -135,7 +137,7 @@ class Products extends StatelessWidget {
                     childAspectRatio: 3 / 6,
                   ),
                   itemBuilder: (context, index) {
-                    return productWidget();
+                    return productWidget(product: productList[index]);
                   },
                 ),
               ),

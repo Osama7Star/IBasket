@@ -24,7 +24,10 @@ class HomePage extends StatelessWidget {
           ),
 
           const MainCategories(),
-          const Categories(),
+          Padding(
+            padding:  EdgeInsets.all(CustomSizes.padding5),
+            child: const CategoriesList(),
+          ),
         ]),
     bottomNavigationBar: const CustomBottomNavBar(selectedMenu: MenuState.home),);
   }

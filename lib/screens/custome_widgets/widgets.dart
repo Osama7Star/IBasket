@@ -93,7 +93,7 @@ class BasketCard extends StatelessWidget {
           MaterialPageRoute(builder: (context) => Basket()),
         );
       },
-      child: Padding(
+      child:value>0?Padding(
         padding:  EdgeInsets.all(CustomSizes.padding5),
         child: Container(
             decoration:BoxDecoration(
@@ -117,7 +117,7 @@ class BasketCard extends StatelessWidget {
                 ]
             )
         ),
-      ),
+      ):SizedBox(width:0),
     );
   }
 }
