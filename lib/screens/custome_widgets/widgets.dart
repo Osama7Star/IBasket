@@ -16,7 +16,7 @@ CustomAppBar(
       backgroundColor:CustomColors.primary2 ,
       title: CustomText(
           text: text,
-          fontSize: fontSize ?? CustomSizes.header3,
+          fontSize: fontSize ?? CustomSizes.header5,
           color: color ?? CustomColors.yellow,
           fontWeight: FontWeight.bold),
     );
@@ -44,7 +44,7 @@ CustomAppBarWithIcons({required BuildContext context,required String text,bool h
       title: CustomText(
           text: text,
           fontSize:fontSize?? CustomSizes.header3,
-          color:color?? CustomColors.yellow,
+          color:color?? CustomColors.white,
           fontWeight: FontWeight.bold),
     );
 class IconTextInContainer extends StatelessWidget {
@@ -80,17 +80,18 @@ class IconTextInContainer extends StatelessWidget {
 
 class BasketCard extends StatelessWidget {
   const BasketCard({
-    Key? key,required this.value,
+    Key? key,required this.value,required this.fromWhichPage,
   }) : super(key: key);
 
   final double value;
+  final int fromWhichPage;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap:(){
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Basket()),
+          MaterialPageRoute(builder: (context) => Basket(fromWhichPage:fromWhichPage)),
         );
       },
       child:value>0?Padding(
@@ -112,7 +113,7 @@ class BasketCard extends StatelessWidget {
                     padding:  EdgeInsets.all(CustomSizes.padding5),
 
                     color:CustomColors.primary.withOpacity(0.1),
-                    child:CustomText(text:'₺ ${value}' ,fontSize:CustomSizes.header5,color:CustomColors.primary),
+                    child:CustomText(text:'₺ ${value.toStringAsFixed(2)}' ,fontSize:CustomSizes.header5,color:CustomColors.primary),
                   )
                 ]
             )

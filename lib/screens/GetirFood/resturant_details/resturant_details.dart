@@ -19,7 +19,7 @@ class RestaurantHomePage extends StatelessWidget {
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBarWithIcons(context:context,text:'getirfood',widget:
-          BasketCard(value: 200)),
+          BasketCard(value: 200,fromWhichPage: 0)),
           body: ListView(
             children: [
               RestaurantInfo(restaurant: restaurant),

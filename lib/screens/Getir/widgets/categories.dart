@@ -4,7 +4,6 @@ import 'package:getir_clone/screens/GetirMore/products/products.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
-
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({
     Key? key,
@@ -13,20 +12,18 @@ class CategoryWidget extends StatelessWidget {
   }) : super(key: key);
 
   final CategoryModel category;
-  final Function() function ;
+  final Function() function;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:function,
+      onTap: function,
       child: Column(
         children: [
-          Container(
-
+          SizedBox(
               width: getScreenWidth() / 5,
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
-
                   child: Image.network(category.imageUrl))),
           SizedBox(height: CustomSizes.verticalSpace),
           CustomText(
@@ -39,13 +36,12 @@ class CategoryWidget extends StatelessWidget {
   }
 }
 
-
 class CategoriesList extends StatelessWidget {
   const CategoriesList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return   GridView.builder(
+    return GridView.builder(
       shrinkWrap: true,
       itemCount: categoryList.length,
       primary: false,
@@ -57,15 +53,16 @@ class CategoriesList extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return CategoryWidget(
-          category: categoryList[index],
-          function:(){
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Products(text: 'Products',)),
-            );
-          }
-        );
+            category: categoryList[index],
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const Products(
+                          text: 'Products',
+                        )),
+              );
+            });
       },
     );
   }

@@ -26,7 +26,7 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
     bool isVertical = true;
     return Scaffold(
       appBar:CustomAppBarWithIcons(context:context,text:'getirfood',widget:
-      BasketCard(value: 200)),
+      BasketCard(value: 200, fromWhichPage: 1)),
       body: SingleChildScrollView(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Padding(

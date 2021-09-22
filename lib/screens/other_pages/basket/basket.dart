@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/GetirFood/meal/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
+import 'package:getir_clone/screens/other_pages/checkout/checkout.dart';
 import 'package:getir_clone/screens/other_pages/profile/addresses/add_address/addresses.dart';
 import 'package:getir_clone/screens/other_pages/profile/custom_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/promotions/widgets/widgets.dart';
@@ -9,7 +10,8 @@ import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
 class Basket extends StatefulWidget {
-  const Basket({Key? key}) : super(key: key);
+  const Basket({Key? key, required this.fromWhichPage}) : super(key: key);
+  final int fromWhichPage;
 
   @override
   State<Basket> createState() => _BasketState();
@@ -18,27 +20,38 @@ class Basket extends StatefulWidget {
 class _BasketState extends State<Basket> {
   int mealsNumber = 0;
 
+  /*
+  * 0 FOR GETIR FOOD
+  * ELSE FOR OTHER GETIR
+  * */
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBarWithIcons(
-            context: context, text: 'Basket',color: CustomColors.white,fontSize:CustomSizes.header4, widget: Padding(
-              padding:  EdgeInsets.all(8.0),
+            context: context,
+            text: 'Basket',
+            color: CustomColors.white,
+            fontSize: CustomSizes.header4,
+            widget: const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(Icons.delete),
             )),
         body: Stack(
           children: [
             ListView(children: [
-              ProfileList(
-                  icon1: Icons.no_meals_sharp,
-                  text: 'Ayça Burger',
-                  icon2: Icons.arrow_forward_ios,
-                  function: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Addresses()),
-                    );
-                  }),
+              widget.fromWhichPage == 0
+                  ? ProfileList(
+                      icon1: Icons.no_meals_sharp,
+                      text: 'Ayça Burger',
+                      icon2: Icons.arrow_forward_ios,
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Addresses()),
+                        );
+                      })
+                  : SizedBox(width: 0),
               SizedBox(height: CustomSizes.verticalSpace),
               Card(
                   margin: EdgeInsets.zero,
@@ -116,23 +129,25 @@ class _BasketState extends State<Basket> {
                       )
                     ]),
                   )),
-              SizedBox(height: CustomSizes.verticalSpace*2),
+              SizedBox(height: CustomSizes.verticalSpace * 2),
               Padding(
                 padding: EdgeInsets.only(left: CustomSizes.padding5),
                 child: CustomText(
-                    text: 'Yannında İyi Gider',
+                    text: widget.fromWhichPage == 0
+                        ? 'Perfect Pairings'
+                        : 'Recommended Products',
                     fontSize: CustomSizes.header5,
                     color: CustomColors.black.withOpacity(0.5),
                     isCenter: false),
               ),
-              SizedBox(height: CustomSizes.verticalSpace*2),
+              SizedBox(height: CustomSizes.verticalSpace * 2),
               Card(
                 margin: EdgeInsets.zero,
                 child: Padding(
                   padding: EdgeInsets.all(CustomSizes.padding5),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Row(children: [
+                    child: Row(children: const [
                       BasketExtra(),
                       BasketExtra(),
                       BasketExtra(),
@@ -166,26 +181,34 @@ class _BasketState extends State<Basket> {
                               fontSize: CustomSizes.header4,
                               fontWeight: FontWeight.bold,
                             ),
-                            function: () {}),
+                            function: () {
+
+
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => const Checkout()),
+                                );
+
+                            }),
                       ),
                       Expanded(
                         flex: 4,
-                        child: Container(
-                          decoration: BoxDecoration(
-
-                          ),
-                          child: ContainerIcon(
-                              whichBox: 2,
-                              isRounded: true,
-                              color: CustomColors.white,
-                              widget: CustomText(
-                                text: '₺ 420,00',
-                                color: CustomColors.primary,
-                                fontSize: CustomSizes.header3,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              function: () {}),
-                        ),
+                        child: ContainerIcon(
+                            whichBox: 2,
+                            isRounded: true,
+                            color: CustomColors.white,
+                            widget: CustomText(
+                              text: '₺ 420,00',
+                              color: CustomColors.primary,
+                              fontSize: CustomSizes.header3,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            function: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const Checkout()),
+                              );
+                            }),
                       ),
                     ]),
                   ),

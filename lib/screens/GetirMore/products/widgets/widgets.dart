@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirFood/meal/widgets/widgets.dart';
-import 'package:getir_clone/screens/GetirMore/product/product.dart';
+import 'package:getir_clone/screens/custome_widgets/product/product.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
@@ -64,15 +64,15 @@ class _productWidgetState extends State<productWidget> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
+          SizedBox(
             width: getScreenWidth() / 3,
             height: 160,
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
                 Container(
-                  width: getScreenWidth() / 3 - 10,
-                  height: 140,
+                  width: getScreenWidth() / 3 - 20,
+                  height: 150,
                   decoration: BoxDecoration(
 
                       border: Border.all(
@@ -167,25 +167,25 @@ class _productWidgetState extends State<productWidget> {
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             widget.product.oldPrice > 0
                 ? CustomText(
-                text: "₺10.95",
+                text: "₺${widget.product.oldPrice} ",
                 fontSize: CustomSizes.header5,
                 color: CustomColors.black.withOpacity(0.5),
                 textDecoration: TextDecoration.lineThrough)
                 : SizedBox(width: 0),
             SizedBox(width: CustomSizes.padding8),
             CustomText(
-                text: '₺ ${widget.product.price}',
-                fontSize: CustomSizes.header3,
+                text: '₺${widget.product.price}',
+                fontSize: CustomSizes.header4,
                 color: CustomColors.primary),
           ]),
           CustomText(
               text: widget.product.name,
-              fontSize: CustomSizes.header7,
+              fontSize: CustomSizes.header6,
               color: CustomColors.black,
-              maxLines: 1,
+              maxLines: 2,
               isCenter: false),
           CustomText(
-              text: '18',
+              text: widget.product.smallDetails,
               fontSize: CustomSizes.header6,
               color: CustomColors.black.withOpacity(0.5)),
         ],

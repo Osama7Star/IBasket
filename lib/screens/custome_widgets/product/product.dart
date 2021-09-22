@@ -23,7 +23,7 @@ class _ProductState extends State<Product> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBarWithIcons(
-          context: context, text: 'getirfood', widget: BasketCard(value: basketTotal)),
+          context: context, text: 'product details',fontSize:CustomSizes.header4, widget: BasketCard(value: basketTotal,fromWhichPage: 1)),
       body: Stack(
         children: [
           Padding(

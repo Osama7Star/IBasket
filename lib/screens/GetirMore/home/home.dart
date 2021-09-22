@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/GetirMore/home/widgets/widgets.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/Getir/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -27,8 +28,10 @@ class Home extends StatelessWidget {
                 child: const CategoryList(),
               ),
             ]
-        )
-    );
+        ),
+     bottomNavigationBar: const CustomBottomNavBar(selectedMenu: MenuState.home),);
+
+
   }
 }
 

@@ -29,7 +29,7 @@ class _MainPageState extends State<MainPage> {
 
     return Scaffold(
         appBar:CustomAppBarWithIcons(context:context,text:'getirfood',widget:
-        BasketCard(value: 200)),        body: ListView(
+        BasketCard(value: 200,fromWhichPage: 0)),        body: ListView(
           children: [
             const AddressBar(),
 

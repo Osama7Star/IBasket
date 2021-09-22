@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:getir_clone/models/category_model.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirMore/products/widgets/widgets.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
-import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
@@ -17,7 +17,7 @@ class Products extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: CustomAppBarWithIcons(
-            context: context, text: 'getir', widget: BasketCard(value: 200),hideLeftIcon: true),
+            context: context, text: 'Products', widget: BasketCard(value: 200,fromWhichPage: 1),hideLeftIcon: true),
         body: ListView(
           children: [
             showCategories?    Column(
@@ -134,7 +134,7 @@ class Products extends StatelessWidget {
                     crossAxisCount: 3,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8,
-                    childAspectRatio: 3 / 6,
+                    childAspectRatio: 3 / 6.5,
                   ),
                   itemBuilder: (context, index) {
                     return productWidget(product: productList[index]);
@@ -143,6 +143,8 @@ class Products extends StatelessWidget {
               ),
             ),
           ],
-        ));
+        ),
+      bottomNavigationBar: const CustomBottomNavBar(selectedMenu: MenuState.home),);
+
   }
 }

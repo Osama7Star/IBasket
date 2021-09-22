@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/Getir/widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/meal/widgets/widgets.dart';
+import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
+import 'package:getir_clone/screens/other_pages/profile/payment/payment.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -26,7 +28,7 @@ class _CheckoutState extends State<Checkout> {
     SizeConfig().init(context);
 
     return Scaffold(
-        appBar: CustomAppBar(context: context, text: 'Checkout'),
+        appBar: CustomAppBar(context: context, text: 'Checkout',color: CustomColors.white,fontSize:CustomSizes.header4),
         body: Stack(
           children: [
             ListView(
@@ -79,7 +81,7 @@ class _CheckoutState extends State<Checkout> {
                                   },
                                 ),
                               ),
-                              Expanded(child: CustomText(text: 'Zili Çalma',
+                              Expanded(child: CustomText(text: 'Don\'t ring the bell',
                                   fontSize: CustomSizes.header5,
                                   color: CustomColors.black,
                                   isCenter: false))
@@ -140,7 +142,7 @@ class _CheckoutState extends State<Checkout> {
                   Padding(
                     padding: EdgeInsets.only(left: CustomSizes.padding5),
                     child: CustomText(
-                        text: 'Teslimat Yöntemi',
+                        text: 'Delivery Option',
                         fontSize: CustomSizes.header5,
                         color: CustomColors.black.withOpacity(0.5),
                         isCenter: false),
@@ -173,11 +175,22 @@ class _CheckoutState extends State<Checkout> {
                                     children: [
                                       Row(
                                           children: [
+                                            DeliverTypeCircle(
+                                              color: CustomColors.primary,
+                                              widget: Icon(
+                                                Icons.shopping_bag,
+                                                color: CustomColors.yellow,
+                                                size: CustomSizes.iconSize / 1.5,
+                                              ),
+                                            ),
+                                            SizedBox(width: CustomSizes.verticalSpace),
+
                                             CustomText(text: 'getir ',
                                                 fontSize: CustomSizes.header5,
                                                 color: CustomColors.primary,
+                                                fontWeight: FontWeight.bold,
                                                 isCenter: false),
-                                            CustomText(text: 'getirsin ',
+                                            CustomText(text: 'delivery ',
                                                 fontSize: CustomSizes.header5,
                                                 color: CustomColors
                                                     .blackWithOpacity,
@@ -248,11 +261,25 @@ class _CheckoutState extends State<Checkout> {
                                     children: [
                                       Row(
                                           children: [
+                                            const DeliverTypeCircle(
+                                                color: CustomColors.green,
+                                                widget: CustomText(
+                                                    text: "R",
+                                                    color: CustomColors.white,
+                                                    fontWeight: FontWeight.bold)),
+                                            SizedBox(width: CustomSizes.verticalSpace),
+
                                             CustomText(
-                                                text: 'Restoran getirsin ',
+                                                text: 'Restaurant  ',
                                                 fontSize: CustomSizes.header5,
                                                 color: CustomColors
-                                                    .blackWithOpacity,
+                                                    .green,
+                                                isCenter: false),
+                                            CustomText(
+                                                text: 'delivery ',
+                                                fontSize: CustomSizes.header5,
+                                                color: CustomColors.blackWithOpacity,
+                                                fontWeight: FontWeight.bold,
                                                 isCenter: false),
 
                                           ]
@@ -375,7 +402,11 @@ class _CheckoutState extends State<Checkout> {
                           ),
                           Expanded(flex: 2,
                               child: CustomButton(text: 'Change',
-                                  function: () {},
+                                  function: () { Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Payment()));
+                                  },
                                   borderSize: 1,
                                   fontSize: CustomSizes.header5))
                         ],

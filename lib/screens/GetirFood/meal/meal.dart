@@ -25,7 +25,7 @@ class _MealState extends State<Meal> {
     return Scaffold(
       backgroundColor: CustomColors.white1,
       appBar: CustomAppBarWithIcons(context:context,text:'getirfood',widget:
-      const BasketCard(value: 200)),
+      const BasketCard(value: 200,fromWhichPage: 0)),
       body: Stack(
         children: [
           Padding(
