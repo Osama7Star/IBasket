@@ -23,8 +23,11 @@ class DeliverTypeCircle extends StatelessWidget {
       // child: Icon(Icons.error, size: CustomSizes.iconSize,),
       child:widget,
       decoration:  BoxDecoration(
+
+          border: Border.all(color: CustomColors.primary),
           shape: BoxShape.circle,
-          color: color),
+
+          color:  CustomColors.primary.withOpacity(0.1)),
     );
   }
 }

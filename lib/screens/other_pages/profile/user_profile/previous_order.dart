@@ -105,8 +105,9 @@ class PreviousOrderWidget extends StatelessWidget {
               flex:2,
               child: IconInContainer(
                 icon: Icons.home,
-                radius: 15,
+                radius: 20,
                 iconSize: CustomSizes.iconSize ,
+                borderColor: CustomColors.white,
               ),
             ),
             SizedBox(width:CustomSizes.verticalSpace),
