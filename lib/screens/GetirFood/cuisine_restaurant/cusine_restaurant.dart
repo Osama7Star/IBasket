@@ -74,24 +74,23 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
           isVertical
               ? Card(
                   margin: EdgeInsets.zero,
-                  child: SizedBox(
-                    height: getScreenHeight(),
-                    child: ListView.builder(
-                        itemCount: restaurantsList.length,
-                        scrollDirection: Axis.vertical,
-                        itemBuilder: (BuildContext context, int index) {
-                          return Restaurants(
-                              restaurant: restaurantsList[index],
-                              isFullScreen: true,
-                            function:   (){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
-                              );
-                            },
-                          );
-                        }),
-                  ),
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: restaurantsList.length,
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Restaurants(
+                            restaurant: restaurantsList[index],
+                            isFullScreen: true,
+                          function:   (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                            );
+                          },
+                        );
+                      }),
                 )
               : Card(
                   margin: EdgeInsets.zero,

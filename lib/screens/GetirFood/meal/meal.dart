@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/meal.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/meal/widgets/widgets.dart';
@@ -47,7 +48,7 @@ class _MealState extends State<Meal> {
                   margin: EdgeInsets.zero,
                   child: Padding(
                     padding: EdgeInsets.all(CustomSizes.padding5),
-                    child: const MealDetails(),
+                    child:  MealDetails(meal: mealList[0]),
                   ),
                 ),
                 /// MEALS DETAILS

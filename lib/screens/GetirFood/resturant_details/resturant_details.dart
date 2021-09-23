@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/meal.dart';
 import 'package:getir_clone/models/restaurants_model.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
@@ -59,10 +60,7 @@ class RestaurantHomePage extends StatelessWidget {
                 child: TabBarView(
                   children: [
                     ///TODO :USER USERID
-                    SingleChildScrollView(
-                      child: RestaurantMenu(),
-                      physics: NeverScrollableScrollPhysics(),
-                    ),
+                    RestaurantMenu(),
 
                     SingleChildScrollView(
                         child: RestaurantReviews(),
@@ -245,37 +243,51 @@ class RestaurantMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      titleandshowall(text: "Çiğ Köfte", function: () {}),
-      Card(
-        child: Column(children: const [
-          MealsWidget(),
-          MealsWidget(),
-          MealsWidget(),
-          MealsWidget(),
-          MealsWidget(),
-          MealsWidget(),
-          MealsWidget(),
+    return ListView(
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),      children: [
+        Column(children: [
+          titleandshowall(text: "Çiğ Köfte", function: () {}),
+          Card(
+            child: Column(children:  [
+              ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: mealList.length,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (BuildContext context, int index) {
+                    return MealsWidget(
+                      meal: mealList[index],
+
+
+                    );
+                  }),
+            ]),
+          ),
+          titleandshowall(text: "İçecek", function: () {}),
+          Card(
+            child: Column(children:  [
+
+              ListView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount:4,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (BuildContext context, int index) {
+                    return  const SideMealWidget(text: 'Ayran (200 ml)', price: 5.00);
+                  }),
+
+            ]),
+          ),
+          titleandshowall(text: "Plastic Bag", function: () {}),
+          Card(
+            child: Column(children: const [
+              SideMealWidget(text: 'Plastic Bag', price: 5.00),
+            ]),
+          ),
         ]),
-      ),
-      titleandshowall(text: "İçecek", function: () {}),
-      Card(
-        child: Column(children: const [
-          SideMealWidget(text: 'Ayran (200 ml)', price: 5.00),
-          SideMealWidget(text: 'Ayran (200 ml)', price: 5.00),
-          SideMealWidget(text: 'Ayran (200 ml)', price: 5.00),
-          SideMealWidget(text: 'Ayran (200 ml)', price: 5.00),
-          SideMealWidget(text: 'Ayran (200 ml)', price: 5.00),
-          SideMealWidget(text: 'Ayran (200 ml)', price: 5.00),
-        ]),
-      ),
-      titleandshowall(text: "Plastic Bag", function: () {}),
-      Card(
-        child: Column(children: const [
-          SideMealWidget(text: 'Plastic Bag', price: 5.00),
-        ]),
-      ),
-    ]);
+      ],
+    );
   }
 }
 

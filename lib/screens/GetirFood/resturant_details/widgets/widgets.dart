@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/meal.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/GetirFood/meal/meal.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -73,8 +74,10 @@ class SideMealWidget extends StatelessWidget {
 
 class MealsWidget extends StatelessWidget {
   const MealsWidget({
-    Key? key,
+    Key? key, required this.meal,
   }) : super(key: key);
+
+  final MealModel meal;
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +97,7 @@ class MealsWidget extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 5,
-                  child: MealDetails(),
+                  child: MealDetails(meal: meal,),
                 ),
                 SizedBox(width: CustomSizes.verticalSpace),
                 Expanded(
@@ -102,7 +105,7 @@ class MealsWidget extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
-                      "https://cdn.getiryemek.com/cuisines/1619220143647_480x300.jpeg",
+                      meal.imageUrl,
                     ),
                   ),
                 ),
@@ -118,8 +121,9 @@ class MealsWidget extends StatelessWidget {
 
 class MealDetails extends StatelessWidget {
   const MealDetails({
-    Key? key,
+    Key? key,required this.meal,
   }) : super(key: key);
+  final MealModel meal;
 
   @override
   Widget build(BuildContext context) {
@@ -127,19 +131,19 @@ class MealDetails extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomText(
-              text: "Çiğ Köfte Dürüm (120 g)",
+              text: meal.name,
               fontWeight: FontWeight.bold,
               fontSize: CustomSizes.header4,
               color: CustomColors.black.withOpacity(0.7)),
           SizedBox(height: CustomSizes.verticalSpace),
           CustomText(
-              text: "Göbek marul maydanoa limon domates ",
+              text: meal.details,
               fontSize: CustomSizes.header5,
               color: CustomColors.black.withOpacity(0.5),
               isCenter:false),
           SizedBox(height: CustomSizes.verticalSpace),
           CustomText(
-              text: "₺ 12.00",
+              text: "₺ ${meal.price}",
               color: CustomColors.primary,
               fontSize: CustomSizes.header4),
         ]);

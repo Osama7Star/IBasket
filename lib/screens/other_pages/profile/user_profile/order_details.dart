@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
+import 'package:getir_clone/screens/custome_widgets/product/product.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/profile/user_profile/previous_order.dart';
@@ -278,50 +279,59 @@ class PreviousOrderBasket extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: EdgeInsets.zero,
-      child: Padding(
-        padding: EdgeInsets.all(CustomSizes.padding5),
-        child: Row(children: [
-          Expanded(
-              flex: 2,
-              child: Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: CustomColors.black.withOpacity(0.1),
-                      ),
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(20),
-                      )),
-                  child: Image.network(
-                      product.imageUrl))),
-          SizedBox(width: CustomSizes.verticalSpace),
-          Expanded(
-            flex: 4,
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              CustomText(
-                  text: product.name,
-                  color: CustomColors.black,
-                  fontSize: CustomSizes.header5,
-                  isCenter: false),
-              CustomText(
-                  text: "₺ ${product.price}",
-                  color: CustomColors.primary,
-                  fontSize: CustomSizes.header5,
-                  isCenter: false),
-            ]),
-          ),
-          Expanded(
-            flex: 1,
-            child: DeliverTypeCircle(
-                color: CustomColors.primary.withOpacity(0.2),
-                widget: const CustomText(
-                    text: "1",
+    return GestureDetector(
+      onTap:()
+      {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) =>  Product(product:product)),
+      );
+      },
+      child: Card(
+        margin: EdgeInsets.zero,
+        child: Padding(
+          padding: EdgeInsets.all(CustomSizes.padding5),
+          child: Row(children: [
+            Expanded(
+                flex: 2,
+                child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          color: CustomColors.black.withOpacity(0.1),
+                        ),
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(20),
+                        )),
+                    child: Image.network(
+                        product.imageUrl))),
+            SizedBox(width: CustomSizes.verticalSpace),
+            Expanded(
+              flex: 4,
+              child:
+                  Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                CustomText(
+                    text: product.name,
+                    color: CustomColors.black,
+                    fontSize: CustomSizes.header5,
+                    isCenter: false),
+                CustomText(
+                    text: "₺ ${product.price}",
                     color: CustomColors.primary,
-                    fontWeight: FontWeight.bold)),
-          ),
-        ]),
+                    fontSize: CustomSizes.header5,
+                    isCenter: false),
+              ]),
+            ),
+            Expanded(
+              flex: 1,
+              child: DeliverTypeCircle(
+                  color: CustomColors.primary.withOpacity(0.2),
+                  widget: const CustomText(
+                      text: "1",
+                      color: CustomColors.primary,
+                      fontWeight: FontWeight.bold)),
+            ),
+          ]),
+        ),
       ),
     );
   }

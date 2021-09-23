@@ -28,13 +28,15 @@ class _MainPageState extends State<MainPage> {
     SizeConfig().init(context);
 
     return Scaffold(
-        appBar:CustomAppBarWithIcons(context:context,text:'getirfood',widget:
-        BasketCard(value: 200,fromWhichPage: 0)),        body: ListView(
+        appBar: CustomAppBarWithIcons(
+            context: context,
+            text: 'getirfood',
+            widget: BasketCard(value: 200, fromWhichPage: 0)),
+        body: ListView(
           children: [
             const AddressBar(),
-
             SizedBox(
-              height:getScreenHeight(),
+              height: getScreenHeight(),
               child: ListView(
                 children: [
                   Image.network(
@@ -42,6 +44,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                   const MainCategories(),
                   SizedBox(height: CustomSizes.verticalSpace),
+
                   /// FILTER AND SORT WIDGET
                   const FilterSort(),
 
@@ -57,18 +60,21 @@ class _MainPageState extends State<MainPage> {
                   Card(
                     margin: EdgeInsets.zero,
                     child: SizedBox(
-                      height: CustomSizes.height2+CustomSizes.height2*0.02,
+                      height: CustomSizes.height2 + CustomSizes.height2 * 0.02,
                       child: ListView.builder(
                           itemCount: restaurantsList.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (BuildContext context, int index) {
-                            return Restaurants(restaurant: restaurantsList[index],function:
-                                (){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
-                              );
-                            },
+                            return Restaurants(
+                              restaurant: restaurantsList[index],
+                              function: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RestaurantHomePage(
+                                          restaurant: restaurantsList[index])),
+                                );
+                              },
                             );
                           }),
                     ),
@@ -82,17 +88,22 @@ class _MainPageState extends State<MainPage> {
                   Card(
                     margin: EdgeInsets.zero,
                     child: SizedBox(
-                      height: CustomSizes.height2+CustomSizes.height2*0.02,
+                      height: CustomSizes.height2 + CustomSizes.height2 * 0.02,
                       child: ListView.builder(
                           itemCount: restaurantsList.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (BuildContext context, int index) {
-                            return Restaurants(restaurant: restaurantsList[index],function:   (){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
-                              );
-                            },);
+                            return Restaurants(
+                              restaurant: restaurantsList[index],
+                              function: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => RestaurantHomePage(
+                                          restaurant: restaurantsList[index])),
+                                );
+                              },
+                            );
                           }),
                     ),
                   ),
@@ -121,7 +132,8 @@ class _MainPageState extends State<MainPage> {
 
                   /// ALL RESTURANTS
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: CustomSizes.padding5),
+                    padding:
+                        EdgeInsets.symmetric(horizontal: CustomSizes.padding5),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -157,27 +169,31 @@ class _MainPageState extends State<MainPage> {
 
                   isVertical
                       ? SingleChildScrollView(
-                        child: Card(
+                          child: Card(
                             margin: EdgeInsets.zero,
-                            child: SizedBox(
-                              height: getScreenHeight(),
-                              child: ListView.builder(
-                                                           itemCount: restaurantsList.length,
-                                  scrollDirection: Axis.vertical,
-                                  itemBuilder: (BuildContext context, int index) {
-                                    return Restaurants(
-                                        restaurant: restaurantsList[index],
-                                        isFullScreen: true,
-                                    function:   (){
+                            child: ListView.builder(
+                              shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: restaurantsList.length,
+                                scrollDirection: Axis.vertical,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Restaurants(
+                                    restaurant: restaurantsList[index],
+                                    isFullScreen: true,
+                                    function: () {
                                       Navigator.push(
                                         context,
-                                        MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                RestaurantHomePage(
+                                                    restaurant: restaurantsList[
+                                                        index])),
                                       );
-                                    },);
-                                  }),
-                            ),
+                                    },
+                                  );
+                                }),
                           ),
-                      )
+                        )
                       : Card(
                           margin: EdgeInsets.zero,
                           child: SizedBox(
@@ -198,4 +214,3 @@ class _MainPageState extends State<MainPage> {
         ));
   }
 }
-
