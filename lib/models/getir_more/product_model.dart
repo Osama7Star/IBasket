@@ -86,4 +86,117 @@ List<ProductModel> productList = [
       details: '',
       imageUrl:
           'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),
+  ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'Fabrikita Dulce De Leche Milk Caramel',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/611216f1848c8b67d7e7d32c_tr_1628752985427.jpeg'),ProductModel(
+      id: 1,
+      name: 'XXXX',
+      smallDetails: '120',
+      price: 15.9,
+      oldPrice: 20,
+      details: '',
+      imageUrl:
+      'https://cdn.getir.com/product/613b09ef1e5236263753cb6c_tr_1631539076442.jpeg'),
 ];

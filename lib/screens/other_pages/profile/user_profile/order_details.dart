@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/profile/user_profile/previous_order.dart';
+import 'package:getir_clone/screens/other_pages/profile/user_profile/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -109,12 +111,16 @@ class OrderDetails extends StatelessWidget {
                 isCenter: false),
           ),
           SizedBox(height: CustomSizes.verticalSpace * 2),
-          PreviousOrderBasket(),
-          PreviousOrderBasket(),
-          PreviousOrderBasket(),
-          PreviousOrderBasket(),
-          PreviousOrderBasket(),
-          PreviousOrderBasket(),
+
+
+          ListView.builder(
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              itemCount: productList.length,
+              scrollDirection: Axis.vertical,
+              itemBuilder: (BuildContext context, int index) {
+                return PreviousOrderBasket(product:productList[index]);
+              }),
 
           /// END BASKET
 
@@ -224,6 +230,7 @@ class OrderDetails extends StatelessWidget {
                   mainAxisAlignment:MainAxisAlignment.spaceBetween,
             children: [
                 Card(
+                  elevation:10,
                   child: Padding(
                     padding: EdgeInsets.all(CustomSizes.padding5),
                     child: Image.network(
@@ -241,7 +248,7 @@ class OrderDetails extends StatelessWidget {
                     isCenter: false,
                   ),
                   CustomText(
-                    text: '531985*********30',
+                    text: '531985*********17',
                     color: CustomColors.blackWithOpacity,
                     fontSize: CustomSizes.header4,
                     isCenter: false,
@@ -259,30 +266,15 @@ class OrderDetails extends StatelessWidget {
   }
 }
 
-class PaymentDetailsWidget extends StatelessWidget {
-  const PaymentDetailsWidget(
-      {Key? key, required this.widget1, required this.widget2})
-      : super(key: key);
 
-  final Widget widget1, widget2;
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-        margin: EdgeInsets.zero,
-        child: Padding(
-          padding: EdgeInsets.all(CustomSizes.padding5),
-          child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [widget1, widget2]),
-        ));
-  }
-}
 
 class PreviousOrderBasket extends StatelessWidget {
   const PreviousOrderBasket({
     Key? key,
+    required this.product,
   }) : super(key: key);
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -302,19 +294,19 @@ class PreviousOrderBasket extends StatelessWidget {
                         Radius.circular(20),
                       )),
                   child: Image.network(
-                      'https://cdn.getir.com/product/5f43c8169d7e44a2f3fc199c_tr_1622551453764.jpeg'))),
+                      product.imageUrl))),
           SizedBox(width: CustomSizes.verticalSpace),
           Expanded(
             flex: 4,
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               CustomText(
-                  text: "Ülker Albeni White",
+                  text: product.name,
                   color: CustomColors.black,
                   fontSize: CustomSizes.header5,
                   isCenter: false),
               CustomText(
-                  text: "₺ 12.5",
+                  text: "₺ ${product.price}",
                   color: CustomColors.primary,
                   fontSize: CustomSizes.header5,
                   isCenter: false),
