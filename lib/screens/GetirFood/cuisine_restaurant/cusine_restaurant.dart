@@ -101,7 +101,15 @@ class _CuisineRestaurantState extends State<CuisineRestaurant> {
                         scrollDirection: Axis.vertical,
                         itemBuilder: (BuildContext context, int index) {
                           return RestaurantHorizontalDesign(
-                              restaurant: restaurantsList[index]);
+                              restaurant: restaurantsList[index],
+                            function: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RestaurantHomePage(
+                                        restaurant: restaurantsList[index])),
+                              );
+                            },);
                         }),
                   ),
                 )

@@ -3,6 +3,7 @@ import 'package:getir_clone/models/restaurants_model.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/restaurant_horizontal.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/resturants_widget.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
+import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
 import 'package:getir_clone/screens/GetirLocals/shop/shop.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
@@ -94,7 +95,15 @@ class _ShopsState extends State<Shops> {
                   scrollDirection: Axis.vertical,
                   itemBuilder: (BuildContext context, int index) {
                     return RestaurantHorizontalDesign(
-                        restaurant: restaurantsList[index]);
+                        restaurant: restaurantsList[index],
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => RestaurantHomePage(
+                                  restaurant: restaurantsList[index])),
+                        );
+                      },);
                   }),
             ),
           )

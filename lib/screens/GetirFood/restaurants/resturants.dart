@@ -116,18 +116,21 @@ class _MainPageState extends State<MainPage> {
                     margin: EdgeInsets.zero,
                     child: SizedBox(
                       height: CustomSizes.height5,
-                      child: Center(
-                        child: ListView.builder(
-                            itemCount: restaurantsList.length,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Cuisines(cuisine: cuisineList[index]);
-                            }),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical:CustomSizes.padding5),
+                        child: Center(
+                          child: ListView.builder(
+                              itemCount: restaurantsList.length,
+                              scrollDirection: Axis.horizontal,
+                              itemBuilder: (BuildContext context, int index) {
+                                return Cuisines(cuisine: cuisineList[index]);
+                              }),
+                        ),
                       ),
                     ),
                   ),
 
-                  /// CUISINE
+                  /// END CUISINE
                   SizedBox(height: CustomSizes.verticalSpace * 2),
 
                   /// ALL RESTURANTS
@@ -172,7 +175,7 @@ class _MainPageState extends State<MainPage> {
                           child: Card(
                             margin: EdgeInsets.zero,
                             child: ListView.builder(
-                              shrinkWrap: true,
+                                shrinkWrap: true,
                                 physics: NeverScrollableScrollPhysics(),
                                 itemCount: restaurantsList.length,
                                 scrollDirection: Axis.vertical,
@@ -196,16 +199,21 @@ class _MainPageState extends State<MainPage> {
                         )
                       : Card(
                           margin: EdgeInsets.zero,
-                          child: SizedBox(
-                            child: ListView.builder(
-                                primary: false,
-                                itemCount: restaurantsList.length,
-                                scrollDirection: Axis.vertical,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return RestaurantHorizontalDesign(
-                                      restaurant: restaurantsList[index]);
-                                }),
-                          ),
+                          child: ListView.builder(
+                              shrinkWrap: true,
+                              physics: NeverScrollableScrollPhysics(),
+                              itemCount: restaurantsList.length,
+                              scrollDirection: Axis.vertical,
+                              itemBuilder: (BuildContext context, int index) {
+                                return RestaurantHorizontalDesign(
+                                    restaurant: restaurantsList[index],
+                                  function:   (){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                                    );
+                                  },);
+                              }),
                         )
                 ],
               ),
