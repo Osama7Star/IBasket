@@ -6,12 +6,12 @@ import 'package:getir_clone/utilities/sizes.dart';
 class DeliverTypeCircle extends StatelessWidget {
   const DeliverTypeCircle({
     required this.widget,
-    required this.color,
+    this.color = CustomColors.primary,
     Key? key, this.padding, this.borderColor,
   }) : super(key: key);
 
   final Widget widget;
-  final Color? color;
+  final Color color;
   final Color? borderColor;
   final double? padding;
 
@@ -25,10 +25,10 @@ class DeliverTypeCircle extends StatelessWidget {
       child:widget,
       decoration:  BoxDecoration(
 
-          border: Border.all(color: borderColor??CustomColors.primary),
+          border: Border.all(color: borderColor??color),
           shape: BoxShape.circle,
 
-          color: color?? CustomColors.primary.withOpacity(0.1)),
+          color: color),
     );
   }
 }
@@ -75,7 +75,7 @@ class ChoicesWidget extends StatelessWidget {
               size: CustomSizes.iconSizeMedium,
             ),
             SizedBox(width:CustomSizes.verticalSpace),
-            CustomText(text:text)
+            CustomText(text:text,fontSize: CustomSizes.padding4,color:CustomColors.primary)
           ]),
 
 
@@ -103,7 +103,7 @@ class RestaurantsReviewWidget extends StatelessWidget {
           Icon(
             icon,
             color: CustomColors.primary,
-            size: CustomSizes.iconSize,
+            size: CustomSizes.iconSize/1.5,
           ),
           CustomText(
               text: review.toString(),
@@ -111,9 +111,9 @@ class RestaurantsReviewWidget extends StatelessWidget {
               fontSize: CustomSizes.header5,
               fontWeight: FontWeight.bold),
           CustomText(
-              text:'(${restaurantsNumber.toString()})',
+              text:' (${restaurantsNumber.toString()})',
               color: CustomColors.black.withOpacity(0.8),
-              fontSize: CustomSizes.header6),
+              fontSize: CustomSizes.header7),
         ]);
   }
 }

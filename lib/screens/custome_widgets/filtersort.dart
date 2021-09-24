@@ -28,7 +28,7 @@ class FilterSort extends StatelessWidget {
                 ),
                 Container(
                   height: CustomSizes.height5 / 4,
-                  width: 1.0,
+                  width: 0.3,
                   color: CustomColors.black.withOpacity(0.3),
                   margin:
                   const EdgeInsets.only(left: 10.0, right: 10.0),

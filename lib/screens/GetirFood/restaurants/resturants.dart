@@ -184,12 +184,12 @@ class _RestaurantsState extends State<Restaurants> {
 
                   isVertical
                       ? Padding(
-                        padding: const EdgeInsets.only(bottom:160),
+                    padding: const EdgeInsets.only(bottom:150),
                         child: Card(
                           margin: EdgeInsets.zero,
                           child: ListView.builder(
                               shrinkWrap: true,
-                              physics: NeverScrollableScrollPhysics(),
+                              physics: const NeverScrollableScrollPhysics(),
                               itemCount: restaurantsList.length,
                               scrollDirection: Axis.vertical,
                               itemBuilder: (BuildContext context, int index) {
@@ -210,24 +210,24 @@ class _RestaurantsState extends State<Restaurants> {
                               }),
                         ),
                       )
-                      : Card(
-                          margin: EdgeInsets.zero,
-                          child: ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount: restaurantsList.length,
-                              scrollDirection: Axis.vertical,
-                              itemBuilder: (BuildContext context, int index) {
-                                return RestaurantHorizontalDesign(
-                                    restaurant: restaurantsList[index],
-                                  function:   (){
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
-                                    );
-                                  },);
-                              }),
-                        )
+                      : Padding(
+                    padding: const EdgeInsets.only(bottom:150),
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: restaurantsList.length,
+                            scrollDirection: Axis.vertical,
+                            itemBuilder: (BuildContext context, int index) {
+                              return RestaurantHorizontalDesign(
+                                  restaurant: restaurantsList[index],
+                                function:   (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                                  );
+                                },);
+                            }),
+                      )
                 ],
               ),
             ),

@@ -10,6 +10,7 @@ class CustomSizes{
   static  double header5 = getAdaptiveTextSize(12);
   static  double header6 = getAdaptiveTextSize(10);
   static  double header7 = getAdaptiveTextSize(9);
+  static  double header8 = getAdaptiveTextSize(5);
 
   //HEIGHT
 
