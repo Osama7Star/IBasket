@@ -263,26 +263,28 @@ class RestaurantRatingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(CustomSizes.padding5),
           child: Row(children: [
             Expanded(
                 flex: 2,
                 child: Container(
-
                   /// TODO: MAKE THE CONTAINER EXPAND TO FILL AVILABLE SPACE
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: CustomColors.primary.withOpacity(0.1)),
                     child:
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      Icon(Icons.star,
-                          color: CustomColors.primary,
-                          size: CustomSizes.iconSizeMedium),
-                      CustomText(
-                          text: "4.6",
-                          fontSize: CustomSizes.header3,
-                          color: CustomColors.primary)
-                    ]))),
+                    Padding(
+                      padding:  EdgeInsets.symmetric(vertical:CustomSizes.height7),
+                      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                        Icon(Icons.star,
+                            color: CustomColors.primary,
+                            size: CustomSizes.iconSizeMedium),
+                        CustomText(
+                            text: "4.6",
+                            fontSize: CustomSizes.header3,
+                            color: CustomColors.primary)
+                      ]),
+                    ))),
             Expanded(
                 flex: 5,
                 child: Container(
@@ -370,7 +372,7 @@ class RatingBar extends StatelessWidget {
                   ),
                   child: const Text(''))
             ])),
-        CustomText(text: reviewsNumber.toString())
+        CustomText(text: reviewsNumber.toString(),color: CustomColors.blackWithOpacity,fontSize:CustomSizes.header5)
       ],
     );
   }

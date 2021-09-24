@@ -20,14 +20,18 @@ class RestaurantHomePage extends StatelessWidget {
         child: Scaffold(
           resizeToAvoidBottomInset: false,
           appBar: CustomAppBarWithIcons(context:context,text:'getirfood',widget:
-          BasketCard(value: 200,fromWhichPage: 0)),
+          const BasketCard(value: 200,fromWhichPage: 0)),
           body: ListView(
             children: [
-              RestaurantInfo(restaurant: restaurant),
+              /// RESTAURANTS INFORMATION
+              Card(
+                  margin:EdgeInsets.zero,child: RestaurantInfo(restaurant: restaurant)),
+              ///END RESTAURANTS INFORMATION
               // the tab bar with two items
               SizedBox(
-                height: 50,
+                height: CustomSizes.height7,
                 child: Card(
+                  margin:EdgeInsets.zero,
                   child: TabBar(
                     tabs: [
                       /// TODO : MAKE MARGIN BETWEN BOTTOMNAVIGATION BAR
@@ -53,25 +57,52 @@ class RestaurantHomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height:CustomSizes.verticalSpace),
+              /// SEARCH INPUT FIELD
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
+                child: Card(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
 
-              // create widgets for each tab bar here
-              const SizedBox(
-                height: 1000,
-                child: TabBarView(
-                  children: [
-                    ///TODO :USER USERID
-                    RestaurantMenu(),
-
-                    SingleChildScrollView(
-                        child: RestaurantReviews(),
-                        physics: NeverScrollableScrollPhysics()),
-
-                    SingleChildScrollView(
-                        child: RestaurantAbout(),
-                        physics: NeverScrollableScrollPhysics()),
-                  ],
+                      prefixIcon: Icon(Icons.search,
+                          color: CustomColors.primary,
+                          size: CustomSizes.iconSizeMedium),
+                      hintText: 'What are you craving?',
+                      hintStyle: TextStyle(
+                          fontSize: CustomSizes.header4,
+                          color: CustomColors.black.withOpacity(0.5)),
+                    ),
+                  ),
                 ),
               ),
+
+              SizedBox(height:CustomSizes.verticalSpace),
+              /// SEARCH INPUT FIELD
+
+
+                SingleChildScrollView(
+                  child: SizedBox(
+                    width:100,
+                    height:3000,
+                    child: TabBarView(
+                      children: [
+                        ///TODO :USER USERID
+                        ListView(
+                          physics: NeverScrollableScrollPhysics(),                           children: [
+                            RestaurantMenu(),
+                          ],
+                        ),
+
+                        RestaurantReviews(),
+
+                        RestaurantAbout(),
+                      ],
+                    ),
+                  ),
+                ),
+
             ],
           ),
         ));
@@ -214,22 +245,7 @@ class _RestaurantInfoState extends State<RestaurantInfo> {
 
           /// RESTAURANT INFO
 
-          Card(
-            child: TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.search,
-                    color: CustomColors.primary,
-                    size: CustomSizes.iconSizeMedium),
-                hintText: 'What are you craving?',
-                hintStyle: TextStyle(
-                    fontSize: CustomSizes.header4,
-                    color: CustomColors.black.withOpacity(0.5)),
-              ),
-            ),
-          ),
+
         ]),
       ),
 

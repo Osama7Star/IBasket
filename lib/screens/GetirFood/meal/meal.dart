@@ -8,6 +8,7 @@ import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 import 'widgets/image_viewer.dart';
 
+/// IN THIS PAGE WE SHOW THE DETAILS ABOUT MEALS
 class Meal extends StatefulWidget {
   const Meal({Key? key}) : super(key: key);
 
@@ -94,20 +95,7 @@ class _MealState extends State<Meal> {
                     isCenter: false,
                   ),
                 ),
-                Card(
-                  margin: EdgeInsets.zero,
-                  elevation: 0,
-                  child: TextField(
-                    textAlign: TextAlign.left,
-                    decoration: InputDecoration(
-                      hintText: 'Add a note ',
-                      hintStyle: TextStyle(color: Colors.black.withOpacity(0.3)),
-                      contentPadding: EdgeInsets.symmetric(
-                          vertical: CustomSizes.height8 * 1.5,
-                          horizontal: CustomSizes.height8),
-                    ),
-                  ),
-                ),
+
                 /// ADDING NOTE
                 SizedBox(height: CustomSizes.verticalSpace),
                 Row(mainAxisAlignment: MainAxisAlignment.center, children: [
