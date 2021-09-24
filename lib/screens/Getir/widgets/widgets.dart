@@ -27,7 +27,16 @@ class AddressBar extends StatelessWidget {
         );
       },
       child: Container(
-        color: CustomColors.yellow,
+
+        decoration: BoxDecoration(
+
+
+          color: CustomColors.yellow,
+          border: const Border(
+            bottom: BorderSide(width: 0.3, color: CustomColors.blackWithOpacity),
+          ),
+
+        ),
         child: Column(
           children: [
             Row(children: [
@@ -63,6 +72,7 @@ class AddressBar extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Container(
+
                     color: CustomColors.yellow,
                     child: Column(
                       children: [
@@ -138,7 +148,7 @@ class MainCategories extends StatelessWidget {
                       function: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => MainPage()),
+                          MaterialPageRoute(builder: (context) => Restaurants()),
                         );
                       },
                       width: getScreenWidth()*0.17,

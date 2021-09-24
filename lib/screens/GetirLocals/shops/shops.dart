@@ -73,7 +73,7 @@ class _ShopsState extends State<Shops> {
                     itemCount: restaurantsList.length,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {
-                      return Restaurants(
+                      return RestaurantWidget(
                           restaurant: restaurantsList[index],
                           isFullScreen: true,
                       function:   (){

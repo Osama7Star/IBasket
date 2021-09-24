@@ -23,7 +23,7 @@ class FilterSort extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 const ChoicesWidget(
-                  text: 'Filtrele',
+                  text: 'Filters',
                   icon: Icons.filter_alt_sharp,
                 ),
                 Container(
@@ -34,7 +34,7 @@ class FilterSort extends StatelessWidget {
                   const EdgeInsets.only(left: 10.0, right: 10.0),
                 ),
                 const ChoicesWidget(
-                    text: 'Sırala', icon: Icons.sort_sharp),
+                    text: 'Sorting', icon: Icons.sort_sharp),
               ])),
     );
   }

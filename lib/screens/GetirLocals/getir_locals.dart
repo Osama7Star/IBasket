@@ -82,7 +82,7 @@ class _GetirLocalsState extends State<GetirLocals> {
                   itemCount: restaurantsList.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (BuildContext context, int index) {
-                    return Restaurants(restaurant: restaurantsList[index],function: (){
+                    return RestaurantWidget(restaurant: restaurantsList[index],function: (){
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => Shop()),
@@ -137,7 +137,7 @@ class _GetirLocalsState extends State<GetirLocals> {
                     itemCount: restaurantsList.length,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {
-                      return Restaurants(
+                      return RestaurantWidget(
                           restaurant: restaurantsList[index],
                           isFullScreen: true,
                       function:   (){
