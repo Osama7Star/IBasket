@@ -8,6 +8,7 @@ import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
 import 'package:getir_clone/screens/GetirLocals/shop/shop.dart';
 import 'package:getir_clone/screens/GetirLocals/shops/shops.dart';
+import 'package:getir_clone/screens/GetirLocals/shops/widget/shop_horizontal_widget.dart';
 import 'package:getir_clone/screens/GetirLocals/shops/widget/shop_widget.dart';
 import 'package:getir_clone/screens/GetirMore/home/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
@@ -23,8 +24,10 @@ class GetirLocals extends StatefulWidget {
 }
 
 class _GetirLocalsState extends State<GetirLocals> {
-  bool isVertical = true;
 
+  bool  isVertical = true;
+  Color iconColors1 = CustomColors.primary;
+  Color iconColors2 = CustomColors.black;
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -71,9 +74,49 @@ class _GetirLocalsState extends State<GetirLocals> {
             ),
           ),
 
+          Padding(
+            padding:
+            EdgeInsets.symmetric(horizontal: CustomSizes.padding5),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  titleandshowall(
+                      text: "Restaurants (194)", function: () {}),
+                  Row(children: [
+                    IconButton(
+                        icon: Icon(
+                          Icons.vertical_split_rounded,
+                          color:iconColors1 ,
+                          size: CustomSizes.iconSizeMedium,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            isVertical  = true;
+                            iconColors1 = CustomColors.primary;
+                            iconColors2 = CustomColors.black;
+                          });
+                        }),
+                    SizedBox(width: CustomSizes.horizontalSpace),
+                    IconButton(
+                        icon: Icon(
+                          Icons.horizontal_split_outlined,
+                          color: iconColors2,
+                          size: CustomSizes.iconSizeMedium,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            isVertical  = false;
+                            iconColors1 = CustomColors.black;
+                            iconColors2 = CustomColors.primary;
 
 
-         Card(
+                          });
+                        }),
+                  ])
+                ]),
+          ),
+
+       isVertical?  Card(
            margin: EdgeInsets.zero,
            child: ListView.builder(
              shrinkWrap: true,
@@ -91,7 +134,25 @@ class _GetirLocalsState extends State<GetirLocals> {
                    );
                  },);
                }),
-         )
+         ):Card(
+         margin: EdgeInsets.zero,
+         child: ListView.builder(
+             shrinkWrap: true,
+             physics: const NeverScrollableScrollPhysics(),
+             itemCount: shopModelList.length,
+             scrollDirection: Axis.vertical,
+             itemBuilder: (BuildContext context, int index) {
+               return ShopHorizontal(
+                 shop: shopModelList[index],
+                 function:   (){
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                   );
+                 },);
+             }),
+       )
+
 
         ]
       )

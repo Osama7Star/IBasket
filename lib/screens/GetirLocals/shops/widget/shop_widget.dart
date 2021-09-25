@@ -52,10 +52,10 @@ class _ShoptWidgetState extends State<ShopWidget> {
                             child: Stack(
                               children: [
                                 Positioned(
-                                  left:10,
+                                  right:10,
                                   bottom:10,
                                   child:
-                                    Container(
+                                  widget.shop.open?  Container(
                                       padding:EdgeInsets.all(CustomSizes.padding8),
                                       decoration:BoxDecoration(
                                         borderRadius: BorderRadius.circular(6),
@@ -63,13 +63,14 @@ class _ShoptWidgetState extends State<ShopWidget> {
                                         color:CustomColors.red,
 
                                       ),
-                                      child:CustomText(text:'Colosed',color:CustomColors.white,fontSize: CustomSizes.header5,)
-                                    )
+                                      child:CustomText(text:'Closed',color:CustomColors.white,fontSize: CustomSizes.header5,)
+                                    ):
+                                      Container(width:0),
                                 ),
                                 isFavorite
                                     ? Positioned(
                                         top: 0,
-                                        left: 0,
+                                        right: 0,
                                         child: IconButton(
                                           icon: Icon(Icons.favorite),
                                           color: CustomColors.primary,
@@ -97,7 +98,7 @@ class _ShoptWidgetState extends State<ShopWidget> {
                                       ),
                                 Positioned(
                                     bottom: 10,
-                                    right: 10,
+                                    left: 10,
                                     child: Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(7),
@@ -131,9 +132,9 @@ class _ShoptWidgetState extends State<ShopWidget> {
                                     ? getScreenWidth()
                                     : getScreenWidth() * 0.8,
                                 height: CustomSizes.height5 * 1.3,
-                                color: CustomColors.white.withOpacity(0.4),
+                                color: CustomColors.white.withOpacity(0.6),
                                 child: Text(''))
-                            :Text(''),
+                            :Container(width:0),
                       ],
                     ),
 
