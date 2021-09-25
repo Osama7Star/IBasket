@@ -31,7 +31,7 @@ class ShopHorizontal extends StatelessWidget {
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width,
-                          height: CustomSizes.height5,
+                          height: CustomSizes.height6,
                           decoration:  BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.cover,
@@ -43,22 +43,22 @@ class ShopHorizontal extends StatelessWidget {
                         Positioned(
                             top: 0,
                             left: 0,
-                            child: Container(
-
+                            child: shop.open?Container(
+                              padding:EdgeInsets.all(CustomSizes.header8/2),
                               width: getScreenWidth() * 0.2,
-                              color: CustomColors.primary,
+                              color: CustomColors.red,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   CustomText(
-                                    text: "20 Tl",
+                                    text: "Closed",
                                     color: CustomColors.white,
                                     fontSize: CustomSizes.header6,
                                   ),
-                                  Icon(Icons.arrow_drop_down_sharp,size:CustomSizes.iconSize,color:CustomColors.white)
+                                //  Icon(Icons.arrow_drop_down_sharp,size:CustomSizes.iconSize,color:CustomColors.white)
                                 ],
                               ),
-                            )),
+                            ):Container(width:0)),
                         Positioned(
                           bottom: 0,
                           left: 0,
@@ -97,7 +97,7 @@ class ShopHorizontal extends StatelessWidget {
                     width: getScreenWidth() * 0.3,
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Card(
                             child: Container(
@@ -125,6 +125,7 @@ class ShopHorizontal extends StatelessWidget {
                               ),
                             ),
                           ),
+                          SizedBox(height:CustomSizes.verticalSpace),
                           Icon(
                             Icons.favorite,
                             color: CustomColors.primary,

@@ -6,8 +6,10 @@ import 'package:getir_clone/screens/GetirLocals/shops/shops.dart';
 import 'package:getir_clone/screens/GetirMore/home/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 
-class Shop extends StatelessWidget {
-  const Shop({Key? key}) : super(key: key);
+class ShopPage extends StatelessWidget {
+  const ShopPage({Key? key,required this.shop}) : super(key: key);
+
+  final ShopModel shop;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class Shop extends StatelessWidget {
       appBar:CustomAppBar(context:context,text:'getrirlocals'),
       body:ListView(
         children:[
-          ShopInfo(shop:shopModelList[0]),
+          ShopInfo(shop:shop),
           GridView.builder(
             shrinkWrap: true,
             itemCount: categoryList.length,

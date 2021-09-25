@@ -130,7 +130,7 @@ class _GetirLocalsState extends State<GetirLocals> {
                  function:   (){
                    Navigator.push(
                      context,
-                     MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                     MaterialPageRoute(builder: (context) => ShopPage(shop:shopModelList[index])),
                    );
                  },);
                }),
@@ -147,7 +147,7 @@ class _GetirLocalsState extends State<GetirLocals> {
                  function:   (){
                    Navigator.push(
                      context,
-                     MaterialPageRoute(builder: (context) => RestaurantHomePage(restaurant: restaurantsList[index])),
+                     MaterialPageRoute(builder: (context) => ShopPage(shop:shopModelList[index])),
                    );
                  },);
              }),

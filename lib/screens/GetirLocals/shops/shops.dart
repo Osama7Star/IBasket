@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/getir_locals/shop_model.dart';
 import 'package:getir_clone/models/restaurants_model.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/restaurant_horizontal.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/resturants_widget.dart';
@@ -70,7 +71,7 @@ class _ShopsState extends State<Shops> {
               child: SizedBox(
                 height: getScreenHeight(),
                 child: ListView.builder(
-                    itemCount: restaurantsList.length,
+                    itemCount: shopModelList.length,
                     scrollDirection: Axis.vertical,
                     itemBuilder: (BuildContext context, int index) {
                       return RestaurantWidget(
@@ -79,7 +80,7 @@ class _ShopsState extends State<Shops> {
                       function:   (){
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Shop()),
+                          MaterialPageRoute(builder: (context) => ShopPage(shop:shopModelList[index])),
                         );
                       },);
                     }),
@@ -91,7 +92,7 @@ class _ShopsState extends State<Shops> {
             child: SizedBox(
               child: ListView.builder(
                   primary: false,
-                  itemCount: restaurantsList.length,
+                  itemCount: shopModelList.length,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (BuildContext context, int index) {
                     return RestaurantHorizontalDesign(
@@ -100,8 +101,7 @@ class _ShopsState extends State<Shops> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => RestaurantHomePage(
-                                  restaurant: restaurantsList[index])),
+                              builder: (context) => ShopPage(shop:shopModelList[index])),
                         );
                       },);
                   }),
