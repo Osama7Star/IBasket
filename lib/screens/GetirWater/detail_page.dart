@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/models/getir_water/water_model.dart';
 import 'package:getir_clone/screens/GetirFood/meal/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
@@ -6,8 +7,8 @@ import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key? key}) : super(key: key);
-
+  const DetailPage({Key? key,required this.water}) : super(key: key);
+  final WaterModel water;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,14 +25,14 @@ class DetailPage extends StatelessWidget {
                       child: Column(
                         children: [
                           Image.network(
-                              "https://cdn.getir.com/product/61015198c538bcd0a7c5e261_tr_1631173687732.jpeg",height: getScreenHeight()/2,
+                              water.imageUrl,height: getScreenHeight()/2,
                               fit:BoxFit.fill),
                           Row(
                               mainAxisAlignment:MainAxisAlignment.center,
                               children:[
-                                CustomText(text:"₺10.95",fontSize:CustomSizes.header5,color:CustomColors.black.withOpacity(0.5),textDecoration: TextDecoration.lineThrough),
+                                CustomText(text:"₺${water.oldPrice}",fontSize:CustomSizes.header4,color:CustomColors.black.withOpacity(0.5),textDecoration: TextDecoration.lineThrough),
                                 SizedBox(width:CustomSizes.padding8),
-                                CustomText(text:"₺8,59",fontSize:CustomSizes.header3,color:CustomColors.primary),
+                                CustomText(text:"₺${water.currentPrice}",fontSize:CustomSizes.header3,color:CustomColors.primary),
 
                               ]
                           ) ,
