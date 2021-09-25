@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/category_model.dart';
 import 'package:getir_clone/models/getir_water/water_model.dart';
 import 'package:getir_clone/screens/Getir/widgets/widgets.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/promotions/widgets/widgets.dart';
@@ -16,7 +16,7 @@ class GetirWater extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBar(context: context, text: 'getirWater'),
+        appBar: CustomAppBar(context: context, text: 'getir',text2: 'water'),
         body: ListView(
           children: [
             const AddressBar(),
@@ -24,69 +24,76 @@ class GetirWater extends StatelessWidget {
               'https://cdn.getir.com/misc/611e4a50c270af509cd486b5_banner_en_1629375136600.jpeg',
             ),
             const MainCategories(),
-            SingleChildScrollView(
-              child: Column(children: [
-                WaterBox(
-                    function: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DetailPage()),
-                      );
-                    },
-                    water: waterList[0]),
-                WaterBox(
-                    function: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DetailPage()),
-                      );
-                    },
-                    water: waterList[0]),
-                WaterBox(
-                    function: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DetailPage()),
-                      );
-                    },
-                    water: waterList[0]),
-                WaterBox(
-                    function: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DetailPage()),
-                      );
-                    },
-                    water: waterList[0]),
-              ]),
-            ),
-            GridView.builder(
-              shrinkWrap: true,
-              itemCount: waterList.length,
-              primary: false,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 1,
-                mainAxisSpacing: 1,
-                childAspectRatio: (3 / 5),
+            Card(
+              margin:EdgeInsets.zero,
+              child: SingleChildScrollView(
+                child: Column(children: [
+                  WaterBox(
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DetailPage()),
+                        );
+                      },
+                      water: waterList[0]),
+                  WaterBox(
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DetailPage()),
+                        );
+                      },
+                      water: waterList[0]),
+                  WaterBox(
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DetailPage()),
+                        );
+                      },
+                      water: waterList[0]),
+                  WaterBox(
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DetailPage()),
+                        );
+                      },
+                      water: waterList[0]),
+                ]),
               ),
-              itemBuilder: (context, index) {
-                return WaterBox(
-                    height: 200,
-                    dividedNumber: 1.3,
-                    padding: 4,
-                    radius: 5,
-                    water: waterList[index],
-                    function: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DetailPage()),
-                      );
-                    });
-              },
+            ),
+            Card(
+              margin:EdgeInsets.zero,
+              child: GridView.builder(
+                shrinkWrap: true,
+                itemCount: waterList.length,
+                primary: false,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 1,
+                  mainAxisSpacing: 1,
+                  childAspectRatio: (3 / 5),
+                ),
+                itemBuilder: (context, index) {
+                  return WaterBox(
+                      height: 200,
+                      dividedNumber: 1.3,
+                      padding: 4,
+                      radius: 5,
+                      water: waterList[index],
+                      function: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => DetailPage()),
+                        );
+                      });
+                },
+              ),
             )
           ],
-        ));
+        ),
+      bottomNavigationBar: const CustomBottomNavBar(selectedMenu: MenuState.home),);
   }
 }
 
@@ -112,13 +119,14 @@ class WaterBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: function,
-      child: Stack(
-        children: [
-          Stack(
-            children: [
-              Column(
+    return Stack(
+      children: [
+        Stack(
+          children: [
+            GestureDetector(
+              onTap: function,
+
+              child: Column(
                 children: [
                   Container(
                     padding: EdgeInsets.only(
@@ -186,17 +194,20 @@ class WaterBox extends StatelessWidget {
                           isCenter: false)
                 ],
               ),
-              Positioned(
-                  right: CustomSizes.padding5,
-                  child: IconInContainer(
-                      icon: Icons.add,
-                      iconSize: CustomSizes.iconSize / dividedNumber,
-                      padding: padding,
-                      radius: radius)),
-            ],
-          ),
-        ],
-      ),
+            ),
+            Positioned(
+                right: CustomSizes.padding5,
+                child: IconInContainer(
+                    icon: Icons.add,
+                    iconSize: CustomSizes.iconSize / dividedNumber,
+                    padding: padding,
+                    radius: radius,
+                    isCircle: false,
+                  borderColor: CustomColors.white,
+                )),
+          ],
+        ),
+      ],
     );
   }
 }

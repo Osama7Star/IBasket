@@ -9,18 +9,27 @@ class Category extends StatelessWidget {
   const Category({
     Key? key,
     required this.category,
-    this.imageInLeft = false,required this.function,
+    this.imageInLeft = false,
+    required this.function,
   }) : super(key: key);
 
   final CategoryModel category;
 
   final bool imageInLeft;
-  final VoidCallback function;
+  final Function() function;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: function,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => const Products(
+                    text: 'Products',
+                  )),
+        );
+      },
       child: Container(
           decoration: const BoxDecoration(
               color: Colors.white,
@@ -89,15 +98,12 @@ class CategoryList extends StatelessWidget {
         childAspectRatio: (8 / 3),
       ),
       itemBuilder: (context, index) {
-        return Category(category: categoryList[index],function:  (){
-              () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => Products(text: 'Products',)),
-            );
-          };
-        },);
+        return Category(
+          category: categoryList[index],
+          function: () {
+            () {};
+          },
+        );
       },
     );
   }

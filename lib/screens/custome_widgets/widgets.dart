@@ -9,16 +9,32 @@ import 'buttons.dart';
 CustomAppBar(
         {required BuildContext context,
         required String text,
+          String? text2,
         Color? color,
-        double? fontSize}) =>
+        double? fontSize,
+       }) =>
     AppBar(
       centerTitle: true,
       backgroundColor: CustomColors.primary2,
-      title: CustomText(
-          text: text,
-          fontSize: fontSize ?? CustomSizes.header5,
-          color: color ?? CustomColors.yellow,
-          fontWeight: FontWeight.bold),
+      title: RichText(
+          text: TextSpan(
+            text: '',
+            children: <TextSpan>[
+              TextSpan(
+                  text: text,
+                  style: TextStyle(
+                      color: CustomColors.yellow,
+                      fontSize: CustomSizes.header3,
+                      fontFamily: 'Schyler')),
+               TextSpan(
+                  text: text2??'',
+                  style: TextStyle(
+                      color: CustomColors.white,
+                      fontSize: CustomSizes.header3,
+                      fontFamily: 'Schyler'))
+              ,
+            ],
+          )),
     );
 
 CustomAppBarWithIcons(
@@ -27,12 +43,13 @@ CustomAppBarWithIcons(
         bool hideLeftIcon = false,
         Widget? widget,
         Color? color,
-        double? fontSize}) =>
+        double? fontSize,
+          IconData icon = Icons.close}) =>
     AppBar(
       leading: IconButton(
         icon: hideLeftIcon
             ? Container(width: 0)
-            : Icon(Icons.close, size: CustomSizes.iconSizeMedium / 1.2),
+            : Icon(icon, size: CustomSizes.iconSizeMedium / 1.2),
         onPressed: () {
           Navigator.of(context).pop();
         },
