@@ -28,9 +28,7 @@ class _ShopInfoState extends State<ShopInfo> {
                   image: NetworkImage(widget.shop.image),
                   fit: BoxFit.cover)),
           child: Stack(children: [
-            const DiscountBannerWidget(
-                text: "20 TL discount",
-                icon: Icons.account_balance_wallet_rounded),
+
             Positioned(
                 right: CustomSizes.padding5,
                 top: CustomSizes.padding5,
@@ -58,106 +56,111 @@ class _ShopInfoState extends State<ShopInfo> {
           ])),
 
       /// RESTAURANT IMAGE
+      Card(
+        margin:EdgeInsets.zero,
+        child: Padding(
+          padding: EdgeInsets.all(CustomSizes.padding6),
+          child: Column(children: [
+            Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+              Expanded(
+                  flex: 6,
+                  child: CustomText(
+                      text: widget.shop.name,
+                      fontSize: CustomSizes.header4,
+                      isCenter: false)),
+              const Expanded(
+                flex: 2,
+                child: RestaurantsReviewWidget(
+                    review: 3.4, restaurantsNumber: 200, icon: Icons.star),
+              ),
+            ]),
+            SizedBox(height: CustomSizes.verticalSpace),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              CustomText(
+                text: 'Çiğ Köfte ',
+                fontSize: CustomSizes.header5,
+                color: CustomColors.black.withOpacity(0.5),
+              ),
+              CustomText(
+                text: 'Favorite Local Bites ',
+                fontSize: CustomSizes.header5,
+                color: CustomColors.black.withOpacity(0.5),
+              ),
+              CustomText(
+                text: 'Closing 23:00 ',
+                fontSize: CustomSizes.header5,
+                color: CustomColors.black.withOpacity(0.5),
+              ),
+            ]),
+            SizedBox(height: CustomSizes.verticalSpace / 2),
+            const Divider(),
+            SizedBox(height: CustomSizes.verticalSpace / 2),
+
+            SizedBox(height: CustomSizes.verticalSpace / 2),
+            Row(
+              children: [
+                DeliverTypeCircle(
+                  widget: Center(
+                      child: Icon(Icons.shopping_bag,
+                          color: CustomColors.yellow,
+                          size: CustomSizes.iconSize / 1.5)),
+                  color: CustomColors.primary,
+                  borderColor: CustomColors.primary,
+                ),
+                SizedBox(
+                    width: CustomSizes.horizontalSpace / 2),
+                CustomText(
+                  text: 'getir',
+                  color: CustomColors.primary,
+                  fontSize: CustomSizes.header6,
+                ),
+                CustomText(
+                    text: 'delivery ',
+                    color:
+                    CustomColors.black.withOpacity(0.6),
+                    fontSize: CustomSizes.header6),
+              ],
+            ),
+            SizedBox(height: CustomSizes.verticalSpace),
+            Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              CustomText(
+                  text: "30-40 min ", color: CustomColors.black.withOpacity(0.5)),
+              CustomText(text: "* ", color: CustomColors.black.withOpacity(0.5)),
+              CustomText(
+                  text: "Free Delivery",
+                  color: CustomColors.black.withOpacity(0.5)),
+              CustomText(text: "* ", color: CustomColors.black.withOpacity(0.5)),
+              CustomText(
+                  text: "Min.  ₺ 15.00 ",
+                  color: CustomColors.black.withOpacity(0.5)),
+            ]),
+            SizedBox(height: CustomSizes.verticalSpace),
+
+            /// RESTAURANT INFO
+
+
+          ]),
+        ),
+      ),
       Padding(
-        padding: EdgeInsets.all(CustomSizes.padding6),
-        child: Column(children: [
-          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-            Expanded(
-                flex: 6,
-                child: CustomText(
-                    text: widget.shop.name,
-                    fontSize: CustomSizes.header4,
-                    isCenter: false)),
-            Expanded(
-              flex: 2,
-              child: RestaurantsReviewWidget(
-                  review: 3.4, restaurantsNumber: 200, icon: Icons.star),
-            ),
-          ]),
-          SizedBox(height: CustomSizes.verticalSpace),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            CustomText(
-              text: 'Çiğ Köfte ',
-              fontSize: CustomSizes.header5,
-              color: CustomColors.black.withOpacity(0.5),
-            ),
-            CustomText(
-              text: 'Favorite Local Bites ',
-              fontSize: CustomSizes.header5,
-              color: CustomColors.black.withOpacity(0.5),
-            ),
-            CustomText(
-              text: 'Closing 23:00 ',
-              fontSize: CustomSizes.header5,
-              color: CustomColors.black.withOpacity(0.5),
-            ),
-          ]),
-          SizedBox(height: CustomSizes.verticalSpace / 2),
-          const Divider(),
-          SizedBox(height: CustomSizes.verticalSpace / 2),
-          Row(children: [
-            DeliverTypeCircle(
-              color: CustomColors.grey,
-              widget: Icon(
-                Icons.shopping_bag,
-                color: CustomColors.white,
-                size: CustomSizes.iconSize / 1.5,
-              ),
-            ),
-            SizedBox(width: CustomSizes.verticalSpace),
-            CustomText(
-                text: "Only Restaurant delivert option is available.",
-                color: CustomColors.black.withOpacity(0.5))
-          ]),
-          SizedBox(height: CustomSizes.verticalSpace / 2),
-          Row(children: [
-            const DeliverTypeCircle(
-                color: CustomColors.green,
-                widget: CustomText(
-                    text: "R",
-                    color: CustomColors.white,
-                    fontWeight: FontWeight.bold)),
-            SizedBox(width: CustomSizes.verticalSpace),
-            const CustomText(text: "Restaurant ", color: CustomColors.green),
-            CustomText(
-                text: " delivery", color: CustomColors.black.withOpacity(0.5)),
-          ]),
-          SizedBox(height: CustomSizes.verticalSpace),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            CustomText(
-                text: "30-40 min ", color: CustomColors.black.withOpacity(0.5)),
-            CustomText(text: "* ", color: CustomColors.black.withOpacity(0.5)),
-            CustomText(
-                text: "Free Delivery",
-                color: CustomColors.black.withOpacity(0.5)),
-            CustomText(text: "* ", color: CustomColors.black.withOpacity(0.5)),
-            CustomText(
-                text: "Min.  ₺ 15.00 ",
-                color: CustomColors.black.withOpacity(0.5)),
-          ]),
-          SizedBox(height: CustomSizes.verticalSpace),
-          const Divider(),
-          SizedBox(height: CustomSizes.verticalSpace),
+        padding:  EdgeInsets.all(CustomSizes.padding5),
+        child: Card(
+          child: TextField(
 
-          /// RESTAURANT INFO
+            obscureText: true,
+            decoration: InputDecoration(
+              border: InputBorder.none,
 
-          Card(
-            child: TextField(
-              obscureText: true,
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                focusedBorder: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.search,
-                    color: CustomColors.primary,
-                    size: CustomSizes.iconSizeMedium),
-                hintText: 'What are you craving?',
-                hintStyle: TextStyle(
-                    fontSize: CustomSizes.header4,
-                    color: CustomColors.black.withOpacity(0.5)),
-              ),
+              prefixIcon: Icon(Icons.search,
+                  color: CustomColors.primary,
+                  size: CustomSizes.iconSizeMedium),
+              hintText: 'Search in this store',
+              hintStyle: TextStyle(
+                  fontSize: CustomSizes.header4,
+                  color: CustomColors.black.withOpacity(0.5)),
             ),
           ),
-        ]),
+        ),
       ),
 
       /// SEARCH INPUT FIELD

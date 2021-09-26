@@ -62,7 +62,7 @@ class _GetirLocalsState extends State<GetirLocals> {
               itemBuilder: (context, index) {
                 return  Category(category: categoryList[index],imageInLeft: true,function:
                       () {
-                        print('test');
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -73,7 +73,7 @@ class _GetirLocalsState extends State<GetirLocals> {
               },
             ),
           ),
-
+          SizedBox(height:CustomSizes.verticalSpace*2),
           Padding(
             padding:
             EdgeInsets.symmetric(horizontal: CustomSizes.padding5),
@@ -81,7 +81,45 @@ class _GetirLocalsState extends State<GetirLocals> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   titleandshowall(
-                      text: "Restaurants (194)", function: () {}),
+                      text: "The Newest", function: () {}),
+
+                ]),
+          ),
+          SizedBox(height:CustomSizes.verticalSpace),
+          SizedBox(
+            height: CustomSizes.height2 ,
+            child: Card(
+              margin: EdgeInsets.zero,
+              child: ListView.builder(
+
+                  itemCount: shopModelList.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (BuildContext context, int index) {
+                    return ShopWidget(
+                      shop: shopModelList[index],
+                      isFullScreen: false,
+                      function:   (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => ShopPage(shop:shopModelList[index]),),
+                        );
+                      },);
+                  }),
+            ),
+          ),
+
+
+
+
+          SizedBox(height:CustomSizes.verticalSpace),
+          Padding(
+            padding:
+            EdgeInsets.symmetric(horizontal: CustomSizes.padding5),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  titleandshowall(
+                      text: "All Stores", function: () {}),
                   Row(children: [
                     IconButton(
                         icon: Icon(
@@ -115,6 +153,7 @@ class _GetirLocalsState extends State<GetirLocals> {
                   ])
                 ]),
           ),
+          SizedBox(height:CustomSizes.verticalSpace),
 
        isVertical?  Card(
            margin: EdgeInsets.zero,
@@ -124,15 +163,23 @@ class _GetirLocalsState extends State<GetirLocals> {
                itemCount: shopModelList.length,
                scrollDirection: Axis.vertical,
                itemBuilder: (BuildContext context, int index) {
-                 return ShopWidget(
-                     shop: shopModelList[index],
-                     isFullScreen: true,
-                 function:   (){
-                   Navigator.push(
-                     context,
-                     MaterialPageRoute(builder: (context) => ShopPage(shop:shopModelList[index])),
-                   );
-                 },);
+                 return Column(
+                   children: [
+                     ShopWidget(
+                         shop: shopModelList[index],
+                         isFullScreen: true,
+                     function:   (){
+                       Navigator.push(
+                         context,
+                         MaterialPageRoute(builder: (context) => ShopPage(shop:shopModelList[index])),
+                       );
+                     },),
+                     Padding(
+                       padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
+                       child: Divider(),
+                     ),
+                   ],
+                 );
                }),
          ):Card(
          margin: EdgeInsets.zero,

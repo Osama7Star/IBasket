@@ -46,7 +46,7 @@ class titleandshowall extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           CustomText(text:text,color: CustomColors.black.withOpacity(0.7),),
           CustomText(text:text2,color: CustomColors.primary,),

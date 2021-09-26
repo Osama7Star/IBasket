@@ -53,7 +53,10 @@ class Category extends StatelessWidget {
                           ]),
                     ),
                   ),
-                  Expanded(flex: 2, child: Image.network(category.imageUrl)),
+                  Expanded(flex: 2, child: Padding(
+                    padding: const EdgeInsets.only(right:8.0),
+                    child: Image.network(category.imageUrl),
+                  )),
                 ])
               : Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
                   Expanded(flex: 2, child: Image.network(category.imageUrl)),
