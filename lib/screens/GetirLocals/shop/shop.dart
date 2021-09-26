@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/category_model.dart';
 import 'package:getir_clone/models/getir_locals/shop_model.dart';
+import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirLocals/shop/widgets/shop_info.dart';
 import 'package:getir_clone/screens/GetirLocals/shops/shops.dart';
 import 'package:getir_clone/screens/GetirMore/home/widgets/widgets.dart';
+import 'package:getir_clone/screens/GetirMore/products/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 
@@ -15,10 +17,14 @@ class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CustomAppBar(context:context,text:'getrirlocals'),
+        appBar:CustomAppBar(context:context,text:'getir',text2:'local'),
       body:ListView(
         children:[
+          /// SHOP INFORMATION (IMAGE ,NAME , RATING )
           ShopInfo(shop:shop),
+          /// END SHOP INFORMATION (IMAGE ,NAME , RATING )
+
+          /// CATEGORIES IN SHOP
           Padding(
             padding:  EdgeInsets.all(CustomSizes.padding5),
             child: GridView.builder(
@@ -43,6 +49,31 @@ class ShopPage extends StatelessWidget {
                 }
                 );
               },
+            ),
+          ),
+          ///END  CATEGORIES IN SHOP
+          Card(
+            margin: EdgeInsets.zero,
+            child: Container(
+              padding:
+              EdgeInsets.symmetric(horizontal: CustomSizes.padding8 / 1.5),
+              child: GridView.builder(
+                shrinkWrap: true,
+                itemCount: productList.length,
+                primary: false,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                  childAspectRatio: 3 / 6.5,
+                ),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding8),
+                    child: productWidget(product: productList[index]),
+                  );
+                },
+              ),
             ),
           ),
         ]

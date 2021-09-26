@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/category_model.dart';
 import 'package:getir_clone/models/getir_locals/shop_model.dart';
-import 'package:getir_clone/models/restaurants_model.dart';
-import 'package:getir_clone/screens/GetirFood/restaurants/widgets/restaurant_horizontal.dart';
-import 'package:getir_clone/screens/GetirFood/restaurants/widgets/resturants_widget.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
-import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
 import 'package:getir_clone/screens/GetirLocals/shop/shop.dart';
 import 'package:getir_clone/screens/GetirLocals/shops/shops.dart';
 import 'package:getir_clone/screens/GetirLocals/shops/widget/shop_horizontal_widget.dart';
@@ -33,7 +29,7 @@ class _GetirLocalsState extends State<GetirLocals> {
     SizeConfig().init(context);
 
     return Scaffold(
-      appBar:CustomAppBar(context:context,text:'getirMore'),
+      appBar:CustomAppBar(context:context,text:'getir',text2:'local'),
       body:ListView(
         children:[
           const AddressBar(),

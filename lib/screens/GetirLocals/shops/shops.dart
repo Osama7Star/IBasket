@@ -24,7 +24,7 @@ class _ShopsState extends State<Shops> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:CustomAppBar(context:context,text:'test'),
+        appBar:CustomAppBar(context:context,text:'getir',text2:'local'),
       body:ListView(
         children:[
           FilterSort(),
