@@ -44,7 +44,7 @@ class _RestaurantsState extends State<Restaurants> {
                 children: [
                   CustomSlider(),
 
-                  const MainCategories(),
+                   MainCategories(pageNumber: 1,),
                   SizedBox(height: CustomSizes.verticalSpace),
 
                   /// FILTER AND SORT WIDGET

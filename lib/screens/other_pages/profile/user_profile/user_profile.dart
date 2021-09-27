@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/buttons.dart';
 import 'package:getir_clone/screens/custome_widgets/input_field.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
@@ -42,6 +43,8 @@ class _UserProfileState extends State<UserProfile> {
             fontSize: CustomSizes.header4,
             widget: Container(width: 0),
             hideLeftIcon: true),
+        bottomNavigationBar:
+        CustomBottomNavBar(selectedMenu: MenuState.profile),
         body: Stack(
           children: [
             ListView(children: [

@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/getir/category_model.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirMore/products/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
@@ -21,9 +18,9 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   bool showData = false;
-  TextEditingController controller = new TextEditingController();
+  TextEditingController controller = TextEditingController();
   IconData passwordSuffixIcon = Icons.mic;
-  String searchWord='';
+  String searchWord = '';
 
   @override
   Widget build(BuildContext context) {
@@ -39,6 +36,7 @@ class _SearchState extends State<Search> {
           child: ListView(children: [
             ///TODO: SEND DATA FROM SON TO PARENT
             Card(
+              elevation: 0,
                 margin: EdgeInsets.zero,
                 child: InputFieldW(
                   showData: showData,
@@ -97,61 +95,68 @@ class _SearchState extends State<Search> {
                           ),
                         ),
                       ])
-                :
-
-            SizedBox(height:CustomSizes.verticalSpace*3),
+                : SizedBox(height: CustomSizes.verticalSpace * 3),
             Padding(
-              padding:  EdgeInsets.only(left:CustomSizes.padding5),
-              child: CustomText(text:'Popular Search',isCenter:false,color: CustomColors.blackWithOpacity,),
+              padding: EdgeInsets.only(left: CustomSizes.padding5),
+              child: CustomText(
+                text: 'Popular Search',
+                isCenter: false,
+                color: CustomColors.blackWithOpacity,
+              ),
             ),
-            SizedBox(height:CustomSizes.verticalSpace*2),
+            SizedBox(height: CustomSizes.verticalSpace * 2),
 
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Card(
                 margin: EdgeInsets.zero,
                 child: Padding(
-                  padding:  EdgeInsets.all(CustomSizes.padding5),
+                  padding: EdgeInsets.all(CustomSizes.padding5),
                   child: Row(children: [
                     Padding(
-                      padding:  EdgeInsets.only(right:CustomSizes.padding5),
+                      padding: EdgeInsets.only(right: CustomSizes.padding5),
                       child: CustomButton(
                           text: 'water',
                           textColor: CustomColors.primary,
                           function: () {}),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right:8.0),
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: CustomButton(
                           text: 'ice cream',
                           textColor: CustomColors.primary,
                           function: () {}),
-                    ),Padding(
-                      padding: const EdgeInsets.only(right:8.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: CustomButton(
                           text: 'milk',
                           textColor: CustomColors.primary,
                           function: () {}),
-                    ),Padding(
-                      padding: const EdgeInsets.only(right:8.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: CustomButton(
                           text: 'bread',
                           textColor: CustomColors.primary,
                           function: () {}),
-                    ),Padding(
-                      padding: const EdgeInsets.only(right:8.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: CustomButton(
                           text: 'eggs',
                           textColor: CustomColors.primary,
                           function: () {}),
-                    ),Padding(
-                      padding: const EdgeInsets.only(right:8.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: CustomButton(
                           text: 'test',
                           textColor: CustomColors.primary,
                           function: () {}),
-                    ),Padding(
-                      padding: const EdgeInsets.only(right:8.0),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
                       child: CustomButton(
                           text: 'test',
                           textColor: CustomColors.primary,
@@ -164,6 +169,6 @@ class _SearchState extends State<Search> {
           ]),
         ),
         bottomNavigationBar:
-            CustomBottomNavBar(selectedMenu: MenuState.search));
+            const CustomBottomNavBar(selectedMenu: MenuState.search));
   }
 }

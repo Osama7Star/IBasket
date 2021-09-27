@@ -23,7 +23,8 @@ class HomePage extends StatelessWidget {
           const AddressBar(),
           const CustomSlider(),
 
-          const MainCategories(),
+           MainCategories(pageNumber:0),
+
           Padding(
             padding:  EdgeInsets.all(CustomSizes.padding5),
             child: const CategoriesList(),

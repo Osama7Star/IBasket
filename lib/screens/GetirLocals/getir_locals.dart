@@ -37,7 +37,7 @@ class _GetirLocalsState extends State<GetirLocals> {
           const CustomSlider(),
 
 
-          const MainCategories(),
+           MainCategories(pageNumber:4),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
             child: FilterSort(),

@@ -38,7 +38,6 @@ class RestaurantHomePage extends StatelessWidget {
                   margin: EdgeInsets.zero,
                   child: TabBar(
                     tabs: [
-                      /// TODO : MAKE MARGIN BETWEN BOTTOMNAVIGATION BAR
                       Tab(
                           child: CustomText(
                               text: 'Menus',

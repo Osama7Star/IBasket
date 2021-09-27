@@ -28,7 +28,7 @@ class GetirWater extends StatelessWidget {
             const AddressBar(),
             const CustomSlider(),
 
-            const MainCategories(),
+             MainCategories(pageNumber:3),
             Card(
               margin: EdgeInsets.zero,
               child: Padding(

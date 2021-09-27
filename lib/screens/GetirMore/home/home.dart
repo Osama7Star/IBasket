@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
               const CustomSlider(),
 
 
-              const MainCategories(),
+               MainCategories(pageNumber:2),
               Padding(
                 padding:  EdgeInsets.all(CustomSizes.padding5),
                 child: const CategoryList(),
