@@ -86,6 +86,30 @@ class ShopHorizontal extends StatelessWidget {
                         padding:  EdgeInsets.symmetric(vertical:CustomSizes.padding8),
                         child: CustomText(text: shop.name,isCenter:false,maxLines: 1,fontSize: CustomSizes.header5,color: CustomColors.black),
                       ),
+                      SizedBox(height:CustomSizes.verticalSpace),
+                      Row(
+                        children: [
+                          DeliverTypeCircle(
+                            widget: Center(
+                                child: Icon(Icons.shopping_bag,
+                                    color: CustomColors.yellow,
+                                    size: CustomSizes.iconSize / 1.5)),
+                            color: CustomColors.primary,
+                            borderColor: CustomColors.primary,
+                          ),
+                          SizedBox(width:CustomSizes.verticalSpace/2),
+                          CustomText(
+                              text: shop.deliveryTime,
+                              fontSize: CustomSizes.header6,
+                              color:CustomColors.blackWithOpacity),
+                          CustomText(
+                              text: '  -  Min ₺${shop.minimum}',
+                              fontSize: CustomSizes.header6,
+                              color:CustomColors.blackWithOpacity),
+                        ],
+                      ),
+                      SizedBox(height:CustomSizes.verticalSpace),
+
 
 
                     ]),

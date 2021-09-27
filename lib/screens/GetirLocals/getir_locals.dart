@@ -29,7 +29,7 @@ class _GetirLocalsState extends State<GetirLocals> {
     SizeConfig().init(context);
 
     return Scaffold(
-      appBar:CustomAppBar(context:context,text:'getir',text2:'local'),
+      appBar:CustomAppBar(context:context,text:'getir',text2:'locals'),
       body:ListView(
         children:[
           const AddressBar(),
@@ -42,7 +42,7 @@ class _GetirLocalsState extends State<GetirLocals> {
             padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
             child: FilterSort(),
           ),
-          SizedBox(height:CustomSizes.verticalSpace),
+          SizedBox(height:CustomSizes.verticalSpace*3),
           Padding(
             padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
             child: GridView.builder(

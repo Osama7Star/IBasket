@@ -48,7 +48,7 @@ class titleandshowall extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          CustomText(text:text,color: CustomColors.black.withOpacity(0.7),),
+          CustomText(text:text,color: CustomColors.blackWithOpacity,),
           CustomText(text:text2,color: CustomColors.primary,),
 
         ],

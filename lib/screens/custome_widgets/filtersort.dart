@@ -10,13 +10,24 @@ class FilterSort extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+
       child: Container(
-          margin:
-          EdgeInsets.symmetric(horizontal: CustomSizes.padding1),
+
+
           padding: EdgeInsets.all(CustomSizes.padding5),
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(7),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: const Offset(
+                    0, 3), // changes position of shadow
+              ),
+            ],
+            borderRadius: BorderRadius.circular(10),
             color: CustomColors.white1,
           ),
           child: Row(

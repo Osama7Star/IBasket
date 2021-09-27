@@ -21,15 +21,7 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => const Products(
-                    text: 'Products',
-                  )),
-        );
-      },
+      onTap: function,
       child: Container(
           decoration: const BoxDecoration(
               color: Colors.white,

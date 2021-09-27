@@ -20,10 +20,7 @@ class Basket extends StatefulWidget {
 class _BasketState extends State<Basket> {
   int mealsNumber = 0;
 
-  /*
-  * 0 FOR GETIR FOOD
-  * ELSE FOR OTHER GETIR
-  * */
+
 
   @override
   Widget build(BuildContext context) {
@@ -266,6 +263,8 @@ class BasketExtra extends StatelessWidget {
                 icon: Icons.add,
                 radius: 10,
                 iconSize: CustomSizes.iconSize / 1.5,
+                isCircle: false,
+                borderColor: CustomColors.white,
               )),
         ],
       ),
