@@ -53,20 +53,31 @@ class AddressBar extends StatelessWidget {
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Icon(
-                            Icons.home,
-                            color: Colors.pink,
-                            size: CustomSizes.iconSize,
+                          Expanded(
+                            flex:1,
+                            child: Icon(
+                              Icons.home,
+                              color: Colors.pink,
+                              size: CustomSizes.iconSize,
+                            ),
                           ),
                           const VerticalDivider(color: Colors.red, width: 20),
-                          CustomText(text: 'Home', fontSize: CustomSizes.header4),
-                          CustomText(
-                              text: 'Kervan geçmez',
-                              color: CustomColors.black.withOpacity(0.5),
-                              fontSize: CustomSizes.header4),
-                          Icon(Icons.arrow_forward_ios,
-                              color: CustomColors.primary,
-                              size: CustomSizes.iconSize/1.5),
+                          Expanded(flex:2,child: CustomText(text: 'Home ', fontSize: CustomSizes.header4)),
+                          Expanded(
+                            flex:5,
+                            child: CustomText(
+                                text: 'Kervan geçmez Kervan geçmez  Kervan geçmez  ',
+                                color: CustomColors.black.withOpacity(0.5),
+                                fontSize: CustomSizes.header4,
+                            maxLines: 1,),
+                          ),
+                         Expanded(
+                           flex:1,
+                           child:
+                           Icon(Icons.arrow_forward_ios,
+                               color: CustomColors.primary,
+                               size: CustomSizes.iconSize/1.2),
+                         )
                         ])),
               ),
               Expanded(
@@ -104,10 +115,16 @@ class AddressBar extends StatelessWidget {
   }
 }
 
-class MainCategories extends StatelessWidget {
+class MainCategories extends StatefulWidget {
   const MainCategories({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<MainCategories> createState() => _MainCategoriesState();
+}
+
+class _MainCategoriesState extends State<MainCategories> {
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +152,7 @@ class MainCategories extends StatelessWidget {
                     function: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => const HomePage()),
                       );
                     },
                     fontWeight: FontWeight.bold,

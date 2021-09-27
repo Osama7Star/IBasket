@@ -54,7 +54,7 @@ class _WaterBoxState extends State<WaterBox> {
                         decoration: BoxDecoration(
 
                           border: Border.all(
-                              color: CustomColors.black.withOpacity(0.1)),
+                              color: borderColor),
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10),
                           ),
@@ -179,19 +179,11 @@ class _WaterBoxState extends State<WaterBox> {
                 child: Container(
                     padding: EdgeInsets.all(CustomSizes.padding8),
                     decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 0.1,
-                            blurRadius: 10,
-                            offset: const Offset(0, 3), // changes position of shadow
-                          ),
-                        ],
                         color: Colors.white,
                         border: Border.all(
                             color: CustomColors.black.withOpacity(0.1)),
                         borderRadius: const BorderRadius.all(
-                          Radius.circular(7),
+                          Radius.circular(3),
                         )),
                     child: Icon(Icons.add,
                         size: CustomSizes.iconSize,
