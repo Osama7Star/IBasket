@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:getir_clone/models/getir_food/cuisine_model.dart';
 import 'package:getir_clone/models/getir_food/restaurants_model.dart';
 import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
+import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
+import 'package:getir_clone/screens/custome_widgets/slider.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/Getir/widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/cusines.dart';
@@ -40,9 +42,8 @@ class _RestaurantsState extends State<Restaurants> {
               height: getScreenHeight(),
               child: ListView(
                 children: [
-                  Image.network(
-                    'https://cdn.getir.com/misc/611e4a50c270af509cd486b5_banner_en_1629375136600.jpeg',
-                  ),
+                  CustomSlider(),
+
                   const MainCategories(),
                   SizedBox(height: CustomSizes.verticalSpace),
 
@@ -232,6 +233,10 @@ class _RestaurantsState extends State<Restaurants> {
               ),
             ),
           ],
-        ));
+        ),
+        bottomNavigationBar: const CustomBottomNavBar(selectedMenu: MenuState.home)
+    );
+
+
   }
 }
