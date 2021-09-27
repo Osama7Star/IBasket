@@ -19,19 +19,23 @@ class RestaurantHomePage extends StatelessWidget {
         length: 3,
         child: Scaffold(
           resizeToAvoidBottomInset: false,
-          appBar: CustomAppBarWithIcons(context:context,text:'getirfood',widget:
-          const BasketCard(value: 200,fromWhichPage: 0)),
+          appBar: CustomAppBarWithIcons(
+              context: context,
+              text: 'getirfood',
+              widget: const BasketCard(value: 200, fromWhichPage: 0)),
           body: ListView(
             children: [
               /// RESTAURANTS INFORMATION
               Card(
-                  margin:EdgeInsets.zero,child: RestaurantInfo(restaurant: restaurant)),
+                  margin: EdgeInsets.zero,
+                  child: RestaurantInfo(restaurant: restaurant)),
+
               ///END RESTAURANTS INFORMATION
               // the tab bar with two items
               SizedBox(
                 height: CustomSizes.height7,
                 child: Card(
-                  margin:EdgeInsets.zero,
+                  margin: EdgeInsets.zero,
                   child: TabBar(
                     tabs: [
                       /// TODO : MAKE MARGIN BETWEN BOTTOMNAVIGATION BAR
@@ -57,15 +61,15 @@ class RestaurantHomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height:CustomSizes.verticalSpace),
+              SizedBox(height: CustomSizes.verticalSpace),
+
               /// SEARCH INPUT FIELD
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal:CustomSizes.padding5),
+                padding: EdgeInsets.symmetric(horizontal: CustomSizes.padding5),
                 child: Card(
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-
                       prefixIcon: Icon(Icons.search,
                           color: CustomColors.primary,
                           size: CustomSizes.iconSizeMedium),
@@ -78,31 +82,31 @@ class RestaurantHomePage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height:CustomSizes.verticalSpace),
+              SizedBox(height: CustomSizes.verticalSpace),
+
               /// SEARCH INPUT FIELD
 
+              SingleChildScrollView(
+                child: SizedBox(
+                  width: 100,
+                  height: 3000,
+                  child: TabBarView(
+                    children: [
+                      ///TODO :USER USERID
+                      ListView(
+                        physics: NeverScrollableScrollPhysics(),
+                        children: [
+                          RestaurantMenu(),
+                        ],
+                      ),
 
-                SingleChildScrollView(
-                  child: SizedBox(
-                    width:100,
-                    height:3000,
-                    child: TabBarView(
-                      children: [
-                        ///TODO :USER USERID
-                        ListView(
-                          physics: NeverScrollableScrollPhysics(),                           children: [
-                            RestaurantMenu(),
-                          ],
-                        ),
+                      RestaurantReviews(),
 
-                        RestaurantReviews(),
-
-                        RestaurantAbout(),
-                      ],
-                    ),
+                      RestaurantAbout(),
+                    ],
                   ),
                 ),
-
+              ),
             ],
           ),
         ));
@@ -244,8 +248,6 @@ class _RestaurantInfoState extends State<RestaurantInfo> {
           SizedBox(height: CustomSizes.verticalSpace),
 
           /// RESTAURANT INFO
-
-
         ]),
       ),
 
@@ -261,11 +263,12 @@ class RestaurantMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),      children: [
+      physics: NeverScrollableScrollPhysics(),
+      children: [
         Column(children: [
           titleandshowall(text: "Çiğ Köfte", function: () {}),
           Card(
-            child: Column(children:  [
+            child: Column(children: [
               ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
@@ -274,25 +277,22 @@ class RestaurantMenu extends StatelessWidget {
                   itemBuilder: (BuildContext context, int index) {
                     return MealsWidget(
                       meal: mealList[index],
-
-
                     );
                   }),
             ]),
           ),
           titleandshowall(text: "İçecek", function: () {}),
           Card(
-            child: Column(children:  [
-
+            child: Column(children: [
               ListView.builder(
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount:4,
+                  itemCount: 4,
                   scrollDirection: Axis.vertical,
                   itemBuilder: (BuildContext context, int index) {
-                    return  const SideMealWidget(text: 'Ayran (200 ml)', price: 5.00);
+                    return const SideMealWidget(
+                        text: 'Ayran (200 ml)', price: 5.00);
                   }),
-
             ]),
           ),
           titleandshowall(text: "Plastic Bag", function: () {}),
@@ -361,15 +361,17 @@ class RestaurantAbout extends StatelessWidget {
 
       Card(
           child: Column(children: const [
-        RestaurantWorkingHours(),
+        RestaurantWorkingHours(text1: 'Monday', text2: '11:30 - 20:30'),
         Divider(),
-        RestaurantWorkingHours(),
+        RestaurantWorkingHours(text1: 'Tuesday', text2: '11:30 - 20:30'),
         Divider(),
-        RestaurantWorkingHours(),
+        RestaurantWorkingHours(text1: 'Wednesday', text2: '11:30 - 20:30'),
         Divider(),
-        RestaurantWorkingHours(),
+        RestaurantWorkingHours(text1: 'Friday', text2: '11:30 - 20:30'),
         Divider(),
-        RestaurantWorkingHours(),
+        RestaurantWorkingHours(text1: 'Saturday', text2: '11:30 - 20:30'),
+        Divider(),
+        RestaurantWorkingHours(text1: 'Sunday', text2: 'Closed'),
       ])),
 
       /// RESTAURANT ABOUT

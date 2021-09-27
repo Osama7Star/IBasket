@@ -189,8 +189,10 @@ class MealDetails extends StatelessWidget {
 }
 class RestaurantWorkingHours extends StatelessWidget {
   const RestaurantWorkingHours({
-    Key? key,
+    Key? key, required this.text1,required this.text2,
   }) : super(key: key);
+
+  final String text1,text2;
 
   @override
   Widget build(BuildContext context) {
@@ -198,11 +200,11 @@ class RestaurantWorkingHours extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal:CustomSizes.padding1,vertical:CustomSizes.padding7),
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         CustomText(
-            text: "Monday",
+            text:text1,
             fontSize: CustomSizes.header5,
             color: CustomColors.black),
         CustomText(
-            text: "14:00 - 22:00",
+            text: text2,
             fontSize: CustomSizes.header5,
             color: CustomColors.black)
       ]),
