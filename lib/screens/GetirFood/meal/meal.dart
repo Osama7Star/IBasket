@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/meal.dart';
+import 'package:getir_clone/models/getir_food/meal_model.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/meal/widgets/widgets.dart';
@@ -10,8 +10,9 @@ import 'widgets/image_viewer.dart';
 
 /// IN THIS PAGE WE SHOW THE DETAILS ABOUT MEALS
 class Meal extends StatefulWidget {
-  const Meal({Key? key}) : super(key: key);
+  const Meal({Key? key, required this.meal}) : super(key: key);
 
+  final MealModel meal ;
   @override
   State<Meal> createState() => _MealState();
 }
@@ -19,8 +20,7 @@ enum SingingCharacter { lafayette, jefferson }
 class _MealState extends State<Meal> {
   int mealsNumber = 0;
   int _site = 0 ;
-  SingingCharacter? _character = SingingCharacter.lafayette;
-  bool _value = false;
+
   int val = -1;
   @override
   Widget build(BuildContext context) {
@@ -42,14 +42,14 @@ class _MealState extends State<Meal> {
                     );
                   },
                   child: Image.network(
-                      "https://cdn.getiryemek.com/cuisines/1619220348726_480x300.jpeg",height: getScreenHeight()/2,
+                      widget.meal.imageUrl,height: getScreenHeight()/2,
                   fit:BoxFit.fill),
                 ),
                 Card(
                   margin: EdgeInsets.zero,
                   child: Padding(
                     padding: EdgeInsets.all(CustomSizes.padding5),
-                    child:  MealDetails(meal: mealList[0]),
+                    child:  MealDetails(meal: widget.meal),
                   ),
                 ),
                 /// MEALS DETAILS
@@ -58,33 +58,17 @@ class _MealState extends State<Meal> {
 
                 SizedBox(height: CustomSizes.verticalSpace*2),
 
-                MealChoices(site: _site,header:'Ekstra Nakzeme Terchi',widget:Column(
+                MealChoices(site: _site,header:'Acı Tercihi',widget:Column(
                     children:[
 
-                      RadioBox(text: 'Ekstra CheddarPeynir',groupValue: _site,value1: 1),
-                      RadioBox(text: 'Pastırma',groupValue: _site,value1: 2)
+                      RadioBox(text: 'Acılı',groupValue: _site,value1: 1),
+                      RadioBox(text: 'Acısız',groupValue: _site,value1: 2)
 
                     ]
                 )),
-                SizedBox(height: CustomSizes.verticalSpace*2),
-                MealChoices(site: _site,header:'Ekstra Nakzeme Terchi',widget:Column(
-                    children:[
 
-                      RadioBox(text: 'Ekstra CheddarPeynir',groupValue: _site,value1: 1),
-                      RadioBox(text: 'Pastırma',groupValue: _site,value1: 2)
 
-                    ]
-                )),
-                SizedBox(height: CustomSizes.verticalSpace*2),
 
-                MealChoices(site: _site,header:'Ekstra Nakzeme Terchi',widget:Column(
-                    children:[
-
-                      RadioBox(text: 'Ekstra CheddarPeynir',groupValue: _site,value1: 1),
-                      RadioBox(text: 'Pastırma',groupValue: _site,value1: 2)
-
-                    ]
-                )),
                 SizedBox(height: CustomSizes.verticalSpace*3),
                 Padding(
                   padding: EdgeInsets.all(CustomSizes.padding5),
@@ -94,6 +78,24 @@ class _MealState extends State<Meal> {
                     color: CustomColors.black.withOpacity(0.5),
                     isCenter: false,
                   ),
+                ),
+                 Card(
+                  margin:EdgeInsets.zero,
+                  child:SizedBox(
+                    height:100,
+                    child: Padding(
+                      padding: EdgeInsets.all(CustomSizes.padding5),
+                      child: TextField(
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+
+                            hintText: 'Add a note',
+                          hintStyle: TextStyle(fontSize: CustomSizes.header4, color: CustomColors.black.withOpacity(0.3)),
+
+                        ),
+                      ),
+                    ),
+                  )
                 ),
 
                 /// ADDING NOTE
@@ -171,7 +173,7 @@ class _MealState extends State<Meal> {
                           isRounded: true,
                           color: CustomColors.white,
                           widget: CustomText(
-                            text: '₺ 420,00',
+                            text: '₺ ${widget.meal.price}',
                             color: CustomColors.primary,
                             fontSize: CustomSizes.header3,
                             fontWeight: FontWeight.bold,

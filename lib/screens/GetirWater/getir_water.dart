@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/models/getir_water/water_model.dart';
-import 'package:getir_clone/models/restaurants_model.dart';
+import 'package:getir_clone/models/getir_food/restaurants_model.dart';
 import 'package:getir_clone/screens/Getir/widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/meal/widgets/widgets.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/resturants_widget.dart';

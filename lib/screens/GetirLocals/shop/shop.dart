@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/category_model.dart';
+import 'package:getir_clone/models/getir/category_model.dart';
 import 'package:getir_clone/models/getir_locals/shop_model.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
@@ -92,14 +92,14 @@ class ShopPage extends StatelessWidget {
 
 
           Padding(
-            padding:  EdgeInsets.all(CustomSizes.padding5),
+            padding:  EdgeInsets.all(CustomSizes.padding5,),
             child: CustomText(text:'food',fontSize:CustomSizes.header4,color:CustomColors.blackWithOpacity,isCenter:false),
           ),
           Card(
             margin: EdgeInsets.zero,
             child: Container(
               padding:
-              EdgeInsets.symmetric(horizontal: CustomSizes.padding8 / 1.5),
+              EdgeInsets.symmetric(horizontal: CustomSizes.padding8 / 1.5,vertical: CustomSizes.padding5),
               child: GridView.builder(
                 shrinkWrap: true,
                 itemCount: productList.length,

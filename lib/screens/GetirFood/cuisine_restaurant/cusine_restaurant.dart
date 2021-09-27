@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/restaurants_model.dart';
+import 'package:getir_clone/models/getir_food/restaurants_model.dart';
 import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/category_model.dart';
+import 'package:getir_clone/models/getir/category_model.dart';
 import 'package:getir_clone/screens/GetirMore/products/products.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -96,7 +96,15 @@ class CategoryList extends StatelessWidget {
         return Category(
           category: categoryList[index],
           function: () {
-            () {};
+
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const Products(
+                      text: 'Products',
+                    )),
+              );
+
           },
         );
       },

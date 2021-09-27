@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/meal.dart';
+import 'package:getir_clone/models/getir_food/meal_model.dart';
 import 'package:getir_clone/screens/custome_widgets/texts.dart';
 import 'package:getir_clone/screens/GetirFood/meal/meal.dart';
 import 'package:getir_clone/utilities/colors.dart';
@@ -16,28 +16,65 @@ class DiscountBannerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:  EdgeInsets.all(CustomSizes.padding5),
-      child: Container(
-          color: CustomColors.yellow,
-          child: Padding(
-            padding: EdgeInsets.all(CustomSizes.padding8),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  icon,
-                  color: CustomColors.primary,
-                  size: CustomSizes.iconSize,
+      child: Row(
+        children: [
+          Container(
+              color: CustomColors.yellow,
+              child: Padding(
+                padding: EdgeInsets.all(CustomSizes.padding8),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      icon,
+                      color: CustomColors.primary,
+                      size: CustomSizes.iconSize,
+                    ),
+                    SizedBox(width: CustomSizes.horizontalSpace),
+                     CustomText(
+                      text: text,
+                      color: CustomColors.primary,
+                       fontWeight:FontWeight.bold
+                    ),
+                  ],
                 ),
-                SizedBox(width: CustomSizes.horizontalSpace),
-                 CustomText(
-                  text: text,
-                  color: CustomColors.primary,
-                   fontWeight:FontWeight.bold
-                ),
-              ],
-            ),
-          )),
+              )),
+          CustomPaint(
+              size: Size(15,
+                 25),
+              painter: DrawShape())
+        ],
+      ),
     );
+  }
+}
+
+class DrawShape extends CustomPainter {
+  Paint painter = Paint();
+
+  DrawTriangleShape() async => painter = Paint()
+      ..color = CustomColors.yellow
+      ..style = PaintingStyle.fill;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    var path = Path();
+
+    path.moveTo(0, 0);
+    path.lineTo(size.width, 0);
+    path.lineTo(0, size.height/2);
+    path.lineTo(size.width, size.height);
+    path.lineTo(0, size.height);
+
+    path.close();
+
+
+    canvas.drawPath(path, painter);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
   }
 }
 
@@ -86,7 +123,7 @@ class MealsWidget extends StatelessWidget {
         {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Meal()),
+            MaterialPageRoute(builder: (context) => Meal(meal: meal,)),
           );
         },
       child: Container(
@@ -134,7 +171,8 @@ class MealDetails extends StatelessWidget {
               text: meal.name,
               fontWeight: FontWeight.bold,
               fontSize: CustomSizes.header4,
-              color: CustomColors.black.withOpacity(0.7)),
+              color: CustomColors.black.withOpacity(0.7),
+          isCenter:false),
           SizedBox(height: CustomSizes.verticalSpace),
           CustomText(
               text: meal.details,

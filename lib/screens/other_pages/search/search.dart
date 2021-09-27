@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/category_model.dart';
+import 'package:getir_clone/models/getir/category_model.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirMore/products/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/bottom_bar.dart';

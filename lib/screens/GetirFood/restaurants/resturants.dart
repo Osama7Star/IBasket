@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:getir_clone/models/cuisine_model.dart';
-import 'package:getir_clone/models/restaurants_model.dart';
+import 'package:getir_clone/models/getir_food/cuisine_model.dart';
+import 'package:getir_clone/models/getir_food/restaurants_model.dart';
 import 'package:getir_clone/screens/GetirFood/resturant_details/resturant_details.dart';
 import 'package:getir_clone/screens/custome_widgets/filtersort.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
@@ -61,7 +61,7 @@ class _RestaurantsState extends State<Restaurants> {
                   Card(
                     margin: EdgeInsets.zero,
                     child: SizedBox(
-                      height: CustomSizes.height2 + CustomSizes.height2 * 0.02,
+                      height: CustomSizes.height2 ,
                       child: ListView.builder(
                           itemCount: restaurantsList.length,
                           scrollDirection: Axis.horizontal,
