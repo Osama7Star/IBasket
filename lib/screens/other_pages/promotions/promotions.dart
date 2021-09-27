@@ -49,7 +49,7 @@ class Promotions extends StatelessWidget {
                 padding:  EdgeInsets.only(left:CustomSizes.padding1*2,top:CustomSizes.padding5,bottom:CustomSizes.padding5),
                 child: Row(
                     children:[
-                      IconInContainer(icon: Icons.add,radius:10),
+                       IconInContainer(icon: Icons.add,iconSize:CustomSizes.iconSize/1.2,padding:CustomSizes.padding7,radius:10,borderColor: CustomColors.white,isCircle:false),
                       SizedBox(width:CustomSizes.verticalSpace*2),
                       CustomText(
                           text: 'Kampanya Kodu Ekle ',
@@ -142,10 +142,11 @@ class PromotionCard extends StatelessWidget {
                             color: CustomColors.black,
                             fontSize: CustomSizes.header5,
                             isCenter: false)),
-                    const Expanded(
+                     Expanded(
                         flex: 1,
-                        child:IconInContainer(icon: Icons.arrow_forward_ios,)
-                    )
+                        child: IconInContainer(icon: Icons.arrow_forward_ios,iconSize:CustomSizes.iconSize/1.2,padding:CustomSizes.padding5,radius:50,borderColor: CustomColors.white,isCircle:false),
+
+      )
                   ])
             ])),
       ),
