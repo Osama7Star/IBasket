@@ -78,4 +78,31 @@ List<MealModel> mealList = [
       details: 'good offer',
       imageUrl:
           'https://cdn.getiryemek.com/products/1622013054287_500x375.jpeg'),
+  MealModel(
+      id: 1,
+      name: 'Ceviz Lahmacun',
+      smallDetails: '',
+      price: 12,
+      oldPrice: 0,
+      details: 'Garinitürsüz',
+      imageUrl:
+      'https://cdn.getiryemek.com/products/1622818227051_500x375.jpeg'),
+  MealModel(
+      id: 1,
+      name: 'Ceviz Lahmacun',
+      smallDetails: '',
+      price: 12,
+      oldPrice: 0,
+      details: 'Garinitürsüz',
+      imageUrl:
+      'https://cdn.getiryemek.com/products/1622818227051_500x375.jpeg'),
+  MealModel(
+      id: 1,
+      name: 'Ceviz Lahmacun',
+      smallDetails: '',
+      price: 12,
+      oldPrice: 0,
+      details: 'Garinitürsüz',
+      imageUrl:
+      'https://cdn.getiryemek.com/products/1622818227051_500x375.jpeg'),
 ];

@@ -182,7 +182,7 @@ class CustomBottomNavBar extends StatelessWidget {
             ),
           ),
         ),
-         Positioned(bottom:5,child: IconInContainer(icon: Icons.add, radius: 50,iconSize: CustomSizes.iconSize*1.2,padding: 16,borderColor: CustomColors.white,)),
+         Positioned(bottom:5,child: IconInContainer(icon: Icons.apps, radius: 50,iconSize: CustomSizes.iconSize*1.2,padding: 16,borderColor: CustomColors.white,)),
       ],
     );
   }

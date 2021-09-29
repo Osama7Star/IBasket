@@ -12,19 +12,19 @@ class Promotions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return  DefaultTabController(
+    return DefaultTabController(
       length: 2,
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: CustomAppBar(context: context, text:'Getir',fontSize:CustomSizes.header3),
+        appBar: CustomAppBar(
+            context: context, text: 'Getir', fontSize: CustomSizes.header3),
         body: ListView(
           children: [
-
             // the tab bar with two items
             SizedBox(
               height: 50,
               child: Card(
+                margin: EdgeInsets.zero,
                 child: TabBar(
                   tabs: [
                     /// TODO : MAKE MARGIN BETWEN BOTTOMNAVIGATION BAR
@@ -44,51 +44,63 @@ class Promotions extends StatelessWidget {
                 ),
               ),
             ),
-            Card(
-              child: Padding(
-                padding:  EdgeInsets.only(left:CustomSizes.padding1*2,top:CustomSizes.padding5,bottom:CustomSizes.padding5),
-                child: Row(
-                    children:[
-                       IconInContainer(icon: Icons.add,iconSize:CustomSizes.iconSize/1.2,padding:CustomSizes.padding7,radius:10,borderColor: CustomColors.white,isCircle:false),
-                      SizedBox(width:CustomSizes.verticalSpace*2),
-                      CustomText(
-                          text: 'Kampanya Kodu Ekle ',
-                          color: CustomColors.primary,
-                          fontSize: CustomSizes.header5,
-                          isCenter: false),
-                    ]
-                ),
+            Padding(
+              padding: EdgeInsets.all(CustomSizes.padding5),
+              child: Column(
+                children: [
+                  Card(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                          left: CustomSizes.padding1 * 2,
+                          top: CustomSizes.padding5,
+                          bottom: CustomSizes.padding5),
+                      child: Row(children: [
+                        IconInContainer(
+                            icon: Icons.add,
+                            iconSize: CustomSizes.iconSize / 1.2,
+                            padding: CustomSizes.padding7,
+                            radius: 10,
+                            borderColor: CustomColors.white,
+                            isCircle: false),
+                        SizedBox(width: CustomSizes.verticalSpace * 2),
+                        CustomText(
+                            text: 'Kampanya Kodu Ekle ',
+                            color: CustomColors.primary,
+                            fontSize: CustomSizes.header5,
+                            isCenter: false),
+                      ]),
+                    ),
+                  ),
+                  SizedBox(
+                    height: getScreenHeight(),
+                    child: TabBarView(
+                      children: [
+                        ///TODO :USER USERID
+                        SingleChildScrollView(
+                          child: SizedBox(
+                              height: getScreenHeight() - 275,
+                              child: const pro()),
+                          physics: const NeverScrollableScrollPhysics(),
+                        ),
+
+                        SingleChildScrollView(
+                            child: SizedBox(
+                                height: getScreenHeight() - 275,
+                                child: const pro()),
+                            physics: NeverScrollableScrollPhysics()),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ),
 
             // create widgets for each tab bar here
             /// TODO : PADDING BOTTOM PROBLEM
-            Column(
-              children: [
-
-                SizedBox(
-                  height: getScreenHeight(),
-                  child: TabBarView(
-                    children: [
-                      ///TODO :USER USERID
-                      SingleChildScrollView(
-                        child:
-                        SizedBox(height: getScreenHeight(), child: const pro()),
-                        physics: const NeverScrollableScrollPhysics(),
-                      ),
-
-                      SingleChildScrollView(
-                          child:
-                          SizedBox(height: getScreenHeight(), child: const pro()),
-                          physics: NeverScrollableScrollPhysics()),
-                    ],
-                  ),
-                ),
-              ],
-            ),
           ],
         ),
-          bottomNavigationBar:CustomBottomNavBar(selectedMenu: MenuState.promotion),
+        bottomNavigationBar:
+            CustomBottomNavBar(selectedMenu: MenuState.promotion),
       ),
     );
   }
@@ -98,7 +110,8 @@ class PromotionCard extends StatelessWidget {
   const PromotionCard({
     Key? key,
     required this.text,
-    required this.imageUrl,required this.function,
+    required this.imageUrl,
+    required this.function,
   }) : super(key: key);
 
   final String text;
@@ -108,7 +121,7 @@ class PromotionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:function,
+      onTap: function,
       child: Card(
         child: Container(
             padding: EdgeInsets.all(CustomSizes.padding5),
@@ -116,7 +129,7 @@ class PromotionCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child:
-            Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Image.network(
@@ -138,15 +151,20 @@ class PromotionCard extends StatelessWidget {
                         flex: 6,
                         child: CustomText(
                             text:
-                            'Feast ürünlerinde 30% indirim Feast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirim !',
+                                'Feast ürünlerinde 30% indirim Feast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirimFeast ürünlerinde 30% indirim !',
                             color: CustomColors.black,
                             fontSize: CustomSizes.header5,
                             isCenter: false)),
-                     Expanded(
-                        flex: 1,
-                        child: IconInContainer(icon: Icons.arrow_forward_ios,iconSize:CustomSizes.iconSize/1.2,padding:CustomSizes.padding5,radius:50,borderColor: CustomColors.white,isCircle:false),
-
-      )
+                    Expanded(
+                      flex: 1,
+                      child: IconInContainer(
+                          icon: Icons.arrow_forward_ios,
+                          iconSize: CustomSizes.iconSize / 1.2,
+                          padding: CustomSizes.padding5,
+                          radius: 50,
+                          borderColor: CustomColors.white,
+                          isCircle: false),
+                    )
                   ])
             ])),
       ),
@@ -163,18 +181,147 @@ class pro extends StatelessWidget {
       Column(children: [
         PromotionCard(
             text:
-            'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
             imageUrl:
-            'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
-        function: (){
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => PromotionDetail()),
-          );
-        }),
-
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text:
+                'Kampanyadan yararlanmak için 60 TL minimum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/60641ded216206a90dad79f7_android_tr_1617174044548.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
+        PromotionCard(
+            text: 'asdum sepet tutarını geçmeniz gerekir.',
+            imageUrl:
+                'https://cdn.getir.com/misc/61517f20003542a66ae9c317_banner_en_1632731098423.jpeg',
+            function: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PromotionDetail()),
+              );
+            }),
       ])
     ]);
   }
 }
-

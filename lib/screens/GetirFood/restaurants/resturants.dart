@@ -33,13 +33,13 @@ class _RestaurantsState extends State<Restaurants> {
     return Scaffold(
         appBar: CustomAppBarWithIcons(
             context: context,
-            text: 'getirfood',
+            text: 'getir',
             widget: BasketCard(value: 200, fromWhichPage: 0)),
         body: ListView(
           children: [
             const AddressBar(),
             SizedBox(
-              height: getScreenHeight(),
+              height: getScreenHeight()-100,
               child: ListView(
                 children: [
                   CustomSlider(),
@@ -186,29 +186,58 @@ class _RestaurantsState extends State<Restaurants> {
                   isVertical
                       ? Padding(
                     padding: const EdgeInsets.only(bottom:150),
-                        child: Card(
-                          margin: EdgeInsets.zero,
-                          child: ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              itemCount: restaurantsList.length,
-                              scrollDirection: Axis.vertical,
-                              itemBuilder: (BuildContext context, int index) {
-                                return RestaurantWidget(
-                                  restaurant: restaurantsList[index],
-                                  isFullScreen: true,
-                                  function: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              RestaurantHomePage(
-                                                  restaurant: restaurantsList[
-                                                      index])),
+                        child: Column(
+                          children: [
+                            Card(
+                              margin: EdgeInsets.zero,
+                              child: ListView.builder(
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemCount: restaurantsList.length,
+                                  scrollDirection: Axis.vertical,
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return RestaurantWidget(
+                                      restaurant: restaurantsList[index],
+                                      isFullScreen: true,
+                                      function: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  RestaurantHomePage(
+                                                      restaurant: restaurantsList[
+                                                          index])),
+                                        );
+                                      },
                                     );
-                                  },
-                                );
-                              }),
+                                  }),
+                            ),
+                            Text('test'),
+                            Card(
+                              margin: EdgeInsets.zero,
+                              child: ListView.builder(
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemCount: restaurantsList.length,
+                                  scrollDirection: Axis.vertical,
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return RestaurantWidget(
+                                      restaurant: restaurantsList[index],
+                                      isFullScreen: true,
+                                      function: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  RestaurantHomePage(
+                                                      restaurant: restaurantsList[
+                                                      index])),
+                                        );
+                                      },
+                                    );
+                                  }),
+                            ),
+                          ],
                         ),
                       )
                       : Padding(

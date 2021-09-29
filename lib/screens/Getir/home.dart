@@ -7,7 +7,6 @@ import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
 import 'widgets/categories.dart';
 
-
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -16,26 +15,32 @@ class HomePage extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-        backgroundColor: CustomColors.white2,
+      backgroundColor: CustomColors.white2,
+      appBar: CustomAppBar(context: context, text: 'getir'),
+      body:
+      SingleChildScrollView(
+        child: Column(
+            children:[
+            AddressBar(),
+        SizedBox(
+          height: getScreenHeight()-200,
 
-        appBar: CustomAppBar(context: context, text:'getir'),
-        body: ListView(children: [
-          const AddressBar(),
-          const CustomSlider(),
+          child: ListView(
+              children: [
+                const CustomSlider(),
+                MainCategories(pageNumber: 0),
+                Padding(
+                    padding: EdgeInsets.all(CustomSizes.padding5),
+                    child: const CategoriesList(),)
+                    ]
 
-           MainCategories(pageNumber:0),
-
-          Padding(
-            padding:  EdgeInsets.all(CustomSizes.padding5),
-            child: const CategoriesList(),
-          ),
-        ],
-
-
+                ),
         ),
-    bottomNavigationBar: const CustomBottomNavBar(selectedMenu: MenuState.home),);
+            ]
+        ),
+      ) ,
+        bottomNavigationBar:
+        const CustomBottomNavBar(selectedMenu: MenuState.home)
+      );
   }
-
 }
-
-

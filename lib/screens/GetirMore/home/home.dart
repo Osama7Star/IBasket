@@ -15,19 +15,28 @@ class Home extends StatelessWidget {
     return Scaffold(
 
         backgroundColor: CustomColors.white2,
-        appBar:CustomAppBar(context: context, text:'getirMore'),
+        appBar:CustomAppBar(context: context, text:'getir',text2: 'more'),
         body:ListView(
-            children:[
-              const AddressBar(),
-              const CustomSlider(),
+          children: [
+            const AddressBar(),
+
+            SizedBox(
+              height: getScreenHeight()-220,
+
+              child: ListView(
+                  children:[
+                    const CustomSlider(),
 
 
-               MainCategories(pageNumber:2),
-              Padding(
-                padding:  EdgeInsets.all(CustomSizes.padding5),
-                child: const CategoryList(),
+                     MainCategories(pageNumber:2),
+                    Padding(
+                      padding:  EdgeInsets.all(CustomSizes.padding5),
+                      child: const CategoryList(),
+                    ),
+                  ]
               ),
-            ]
+            ),
+          ],
         ),
      bottomNavigationBar: const CustomBottomNavBar(selectedMenu: MenuState.home),);
 

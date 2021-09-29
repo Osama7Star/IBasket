@@ -28,11 +28,11 @@ class AddressBar extends StatelessWidget {
       },
       child: Container(
 
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
 
 
           color: CustomColors.yellow,
-          border: const Border(
+          border: Border(
             bottom: BorderSide(
                 width: 0.3, color: CustomColors.blackWithOpacity),
           ),
