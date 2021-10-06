@@ -7,6 +7,7 @@ import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/profile/addresses/add_address/addresses.dart';
 import 'package:getir_clone/screens/other_pages/profile/custom_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/profile/language/language.dart';
+import 'package:getir_clone/screens/other_pages/profile/previous_orders.dart/previous_order.dart';
 import 'package:getir_clone/screens/other_pages/promotions/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
@@ -259,9 +260,14 @@ class _UserProfileState extends State<UserProfile> {
                           Divider(),
                           ProfileList(
                               icon1: Icons.shopping_bag,
-                              text: 'Favourite Orders',
+                              text: 'Previous Orders',
                               icon2: Icons.arrow_forward_ios,
-                              function: () {}),
+                              function: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) =>  PreviousOrder()),
+                                );
+                              }),
                           Divider(),
                           ProfileList(
                               icon1: Icons.credit_card_outlined,

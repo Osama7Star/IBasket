@@ -23,7 +23,7 @@ class CustomBottomNavBar extends StatelessWidget {
       alignment: Alignment.topCenter,
       children: [
         Container(
-          color: Colors.white70,
+          color: Colors.transparent,
           child: Padding(
             padding: EdgeInsets.only(top: CustomSizes.padding3),
             child: Container(
