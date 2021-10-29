@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:getir_clone/models/getir_more/product_model.dart';
 import 'package:getir_clone/screens/GetirFood/restaurants/widgets/widgets.dart';
 import 'package:getir_clone/screens/custome_widgets/product/product.dart';
@@ -8,7 +9,6 @@ import 'package:getir_clone/screens/other_pages/profile/user_profile/previous_or
 import 'package:getir_clone/screens/other_pages/profile/user_profile/widgets/widgets.dart';
 import 'package:getir_clone/utilities/colors.dart';
 import 'package:getir_clone/utilities/sizes.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class OrderDetails extends StatelessWidget {
   const OrderDetails({Key? key}) : super(key: key);

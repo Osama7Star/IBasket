@@ -15,7 +15,9 @@ class HomePage extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-      backgroundColor: CustomColors.white2,
+        extendBody: true,
+
+        backgroundColor: CustomColors.white2,
       appBar: CustomAppBar(context: context, text: 'getir'),
       body:
       SingleChildScrollView(

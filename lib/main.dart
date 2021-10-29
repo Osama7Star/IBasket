@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/Getir/home.dart';
 import 'package:getir_clone/screens/GetirLocals/getir_locals.dart';
+import 'package:getir_clone/screens/authentication/login/login.dart';
 import 'package:getir_clone/screens/custome_widgets/widgets.dart';
 import 'package:getir_clone/screens/other_pages/checkout/checkout.dart';
 import 'package:getir_clone/screens/other_pages/profile/payment/payment.dart';
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.deepPurple,
       ),
-      home: const HomePage(),
-
+     // home: const HomePage(),
+        home: const  Login()
     );
   }
 }
