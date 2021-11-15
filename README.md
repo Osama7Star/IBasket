@@ -1,16 +1,23 @@
-# getir_clone
+# Github Clone.
+## a clone for famous grocery and food delivery app Getir (only design) using Flutter
+<table>
 
-A new Flutter project.
+   <tr>
+    <td> <img src="images/1.jpeg"  alt="1" width = 360px height = 640px ></td>
+    <td> <img src="images/2.jpeg"  alt="1" width = 360px height = 640px ></td>
+    <td> <img src="images/3.jpeg"  alt="1" width = 360px height = 640px ></td>
+ </tr>
+  
+  <tr>
+    <td> <img src="images/4.jpeg"  alt="1" width = 360px height = 640px ></td>
+    <td> <img src="images/5.jpeg"  alt="1" width = 360px height = 640px ></td>
+    <td> <img src="images/6.jpeg"  alt="1" width = 360px height = 640px ></td>
 
-## Getting Started
+  </tr>
+   <tr>
+    <td> <img src="images/7.jpeg"  alt="1" width = 360px height = 640px ></td>
+    <td> <img src="images/8.jpeg"  alt="1" width = 360px height = 640px ></td>
+    <td> <img src="images/9.jpeg"  alt="1" width = 360px height = 640px ></td>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  </tr>
+</table>
