@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:getir_clone/screens/Getir/home.dart';
+import 'package:getir_clone/screens/GetirBitaksi/getir_bitaksi.dart';
 import 'package:getir_clone/screens/main_page/main_page.dart';
 
 void main() {
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
      // home: const HomePage(),
-        home: const  MainPage()
+        home: const  GetirBiTaksi()
     );
   }
 }
