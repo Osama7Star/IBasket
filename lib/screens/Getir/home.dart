@@ -26,6 +26,7 @@ class HomePage extends StatelessWidget {
             AddressBar(),
         SizedBox(
           height: getScreenHeight()-200,
+         // height: 1000,
 
           child: ListView(
               children: [

@@ -20,6 +20,7 @@ class InputField extends StatelessWidget {
     this.activeValidation = true,
     this.prefixIcon,
     this.suffixIcon, this.controller, this.onChanged,
+    this.borderRadius = 4 ,
   }) : super(key: key);
   final String labelText, hintText;
   final IconButton? icon;
@@ -40,6 +41,7 @@ class InputField extends StatelessWidget {
   final IconButton? suffixIcon;
   final TextEditingController? controller;
   final Function(dynamic )? onChanged;
+  final double borderRadius;
 
 
   @override
@@ -74,23 +76,23 @@ class InputField extends StatelessWidget {
             vertical: verticalPadding ?? CustomSizes.padding1,
             horizontal: horizontalPadding ?? CustomSizes.padding1),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4.0),
+          borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
               color: CustomColors.red, width: 0.2, style: BorderStyle.solid),
         ),
         focusedErrorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4.0),
+          borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
               color: CustomColors.red, width: 0.2, style: BorderStyle.solid),
         ),
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
+            borderRadius: BorderRadius.circular(borderRadius),
             borderSide: const BorderSide(
-                color: CustomColors.black,
+                color: CustomColors.primary,
                 width: 0.2,
                 style: BorderStyle.solid)),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(4.0),
+          borderRadius: BorderRadius.circular(borderRadius),
           borderSide: const BorderSide(
               color: CustomColors.black, width: 0.2, style: BorderStyle.solid),
         ),

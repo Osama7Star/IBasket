@@ -25,8 +25,20 @@ class CustomSlider extends StatelessWidget {
 final List<Widget> imageSliders =  imgList
     .map((item) =>
 
-    Image.network(item,
-        fit: BoxFit.cover, width: double.infinity,height:100),
+    Column(
+      children: [
+        Stack(
+          children: [
+            Image.network(item,
+                fit: BoxFit.cover, width: double.infinity,height:160),
+            Positioned(
+              bottom:0,
+                child: Text('test'))
+          ],
+        ),
+
+      ],
+    ),
 
 )
     .toList();
