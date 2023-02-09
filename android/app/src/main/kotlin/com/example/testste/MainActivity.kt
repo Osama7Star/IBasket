@@ -1,4 +1,4 @@
-package com.example.getir_clone
+package com.alnajm.osama.getircloneapp
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -33,7 +33,7 @@ final List<Widget> imageSliders =  imgList
                 fit: BoxFit.cover, width: double.infinity,height:160),
             Positioned(
               bottom:0,
-                child: Text('test'))
+                child: Text(''))
           ],
         ),
 
@@ -45,9 +45,9 @@ final List<Widget> imageSliders =  imgList
 
 
 final List<String> imgList = [
-  'https://cdn.getir.com/promos/614190e5c26a22234d735f92_banner_en_1631876061106.jpeg',
-  'https://cdn.getir.com/misc/61375beaad3f38acf463b919_banner_en_1632241023739.jpeg',
-  'https://cdn.getir.com/promos/6129114fbb5f737b83472af6_banner_en_1630089463487.jpeg',
-  'https://cdn.getir.com/misc/614b3915fd6512ee2c75c504_banner_en_1632319821755.jpeg',
-  'https://cdn.getir.com/misc/611fddc5fdd26429973dde82_banner_en_1629478389237.jpeg'
+  'https://img.freepik.com/free-vector/hand-drawn-vegetables-supermarket-twitch-banner_23-2149385524.jpg?w=2000',
+  'https://img.freepik.com/free-vector/flat-supermarket-twitch-banner_23-2149375306.jpg?w=2000',
+  'https://images.template.net/63195/Online-Grocery-Store-Facebook-Post-Template.jpeg',
+  'https://static.vecteezy.com/system/resources/previews/001/254/407/non_2x/online-grocery-shopping-banner-template-with-produce-vector.jpg',
+  'https://static.vecteezy.com/system/resources/thumbnails/001/254/407/small_2x/online-grocery-shopping-banner-template-with-produce.jpg'
 ];
