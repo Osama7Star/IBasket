@@ -1,7 +1,10 @@
-# IMarket App
+# IBasket App
 ## Grocery delivery app, using Flutter Framework 
 
-# This app was developed for Educational purposes only, it's not for any business purpose over, if there any similarities with features or design with other apps, this was not intend and done just for the learning purposes
+#  Flutter-based delivery app designed for educational purposes only, with no commercial intent.
+# The app may have similarities with other popular apps, but it is purely for learning purposes and not meant to infringe on any trademark.
+# This design is a standalone version with no connection to any API or database.
+# It is not designed to receive or process customer orders.
 
 
 <table>
